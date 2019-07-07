@@ -1,0 +1,64 @@
+at first no edit facility
+at first no total earned on space
+
+
+Next Edit
+-alternative to targeting in the campaign_delivery
+-else in model of campaign text
+
+  urgent
+  --wiTHDRAWAL facility for publisher
+   -- build in such a way that it always charge for all available charging option and default of each is 0.00
+
+ ---PAGES
+ slug:terms,How_it_Works,privacy
+ -documentation/pub_guidlines
+ -------------Documentaton-----------
+ --Payment details type and campaign billing information 
+   blog->Page Documentation payment and budget
+   blog->Page Documentation Creating New Campaign
+   blog->Page Documentation Creating New CPA Campaign
+   blog->Page Documentation Campaign Targeting
+   blog->Page Documentation Add Space
+   blog->What is custch cpa
+   blog->Page Documentation What is custch cpa
+   blog->Page Documentation What is custch cpc
+   blog->Page Documentation form extra details
+   blog->campaign format available on custch
+   blog->Integrating Custch Ads on Wordpress
+   blog->Introducing Custch Afflate Program
+   blog->powered by custch
+
+
+ -------------Categories-----------
+------------------Form link-------------------------
+custch.com/form/slug
+-label
+-rules for field and implementaion
+-
+
+
+
+
+-----------START SMALL----
+--we expand gently
+
+
+------------ON EXPANDING TO NEW COUNTRY/COUNTRIES---------
+--uncomment the new country/countries
+--add the new country/contries details
+--create a blog
+--promote in that contry/contries
+
+
+
+Next Update
+-new data notification
+-form feature image support
+-in the form,ability to add url to rediect to after successful form operation
+-image management and suppot for additional content
+--Bug
+-space in name not working
+-sort the datalist
+-form bouce rate statistics
+-ability to add brand name / website domain
