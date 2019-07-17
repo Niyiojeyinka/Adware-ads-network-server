@@ -916,7 +916,7 @@ show_page("advertiser_dashboard/payment");
         //Correct Currency from Server
 
         $query = array(
-            "SECKEY" => "FLWSECK-48e0c862fba4ed9b64c8eb8758f5d788-X",
+            "SECKEY" => "secret key here",
             "txref" => $ref
         );
          /* $query = array(
