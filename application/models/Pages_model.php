@@ -4,7 +4,7 @@ class Pages_model extends CI_Model {
 
 
 /***
- * Name:      Gettew
+ * Name:     Custch
  * Package:    Pages_model.php
  * About:        A model class that handle gettew's blogging model operation
  * Copyright:  (C) 2017,

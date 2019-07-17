@@ -155,17 +155,6 @@ $result = $res->result_array();
 return $result;
 }
 
-/*public function count_results()
-{
-
-$res2 = $this->db->get_where("blog",array("status" => "published"));
-$result2 = count($res2->result_array());
-return $result2;
-
-
-
-}
-*/
 public function get_common($position)
 {
 //position option :pre_content,post_content,mid_content
@@ -173,11 +162,6 @@ public function get_common($position)
 
 $query = $this->db->get_where('common_tab',array("position" => $position));
   return $query->result_array();
-
-
-
-
-
 
 }
 
