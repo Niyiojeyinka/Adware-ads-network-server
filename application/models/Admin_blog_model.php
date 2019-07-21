@@ -415,23 +415,4 @@ $result = $res->result_array();
 return $result;
 }
 
-
-
-
-public function get_draft()
-{
-
-
-}
-
-
-
-/*public function move_to_publish()
-{
-
-
-}
-
-*/
-
 }

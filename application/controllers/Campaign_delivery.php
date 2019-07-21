@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /***
- * Name:      Custch
+ * Name:      AdNetwork
  * Package:     advertiser_dashboard.php
  * About:        A controller that handles advertiser operation
  * Copyright:  (C) 2018,
@@ -60,7 +60,7 @@ unset($hold);
 //var_dump($space_categories);
 if(empty($space_categories))
 {
-  array_push($space_categories,"custch");
+  array_push($space_categories,"AdNetwork");
   //set ads category to show if publisher category is unavailable
 }
 
@@ -189,7 +189,7 @@ if(!empty($campaign_to_render))
 }
 echo "var gotten".$mou." = ".json_encode($campaign_to_render).";";
 echo "$(document).ready(function() {
- $('#".$space['div_id']."').html('<div ".$text_style."><a href=\''+gotten".$mou."['click_url']+gotten".$mou."['ref_id']+'/".$space_id."\'><div><span class=\'w3-text-blue\'>'+gotten".$mou."['text_title']+'</span><div class=\'w3-container w3-small\'>'+gotten".$mou."['text_content']+'</div><span class=\'w3-text-blue\'>'+gotten".$mou."['disp_link']+'</span> <span class=\'w3-text-blue w3-tiny\'>Powered by <a  class=\'w3-text-indigo w3-small w3-serif\' href=\'http://www.custch.com\'><b>Custch</b></a></span></div></a></div>');
+ $('#".$space['div_id']."').html('<div ".$text_style."><a href=\''+gotten".$mou."['click_url']+gotten".$mou."['ref_id']+'/".$space_id."\'><div><span class=\'w3-text-blue\'>'+gotten".$mou."['text_title']+'</span><div class=\'w3-container w3-small\'>'+gotten".$mou."['text_content']+'</div><span class=\'w3-text-blue\'>'+gotten".$mou."['disp_link']+'</span> <span class=\'w3-text-blue w3-tiny\'>Powered by <a  class=\'w3-text-indigo w3-small w3-serif\' href=\'http://www.AdNetwork.com\'><b>AdNetwork</b></a></span></div></a></div>');
   }
     );";
 
@@ -232,7 +232,7 @@ unset($hold);
 //var_dump($space_categories);
 if(empty($space_categories))
 {
-  array_push($space_categories,"custch");
+  array_push($space_categories,"AdNetwork");
   //set ads category to show if publisher category is unavailable
 }
 
@@ -356,7 +356,7 @@ echo "var imggotten".$mou." = ".json_encode($campaign_to_render).";";
 
 //image ads here
 echo "$(document).ready(function() {
- $('#".$space['div_id']."').html('<div style=\'max-width:".$size[0]."px;height:".$size[1]."px;\' class=\'w3-display-container\'><a href=\''+imggotten".$mou."['click_url']+imggotten".$mou."['ref_id']+'/".$space_id."\'><img class=\'\' style=\'display:block;width:100%;\' src=\''+imggotten".$mou."['banner_url']+'\'/></a><div class=\'w3-display-topright w3-text-blue w3-tiny w3-serif w3-border w3-border-blue\'><b><a href=\'http://www.custch.com\'>Custch Ads</a></b></div></div>');
+ $('#".$space['div_id']."').html('<div style=\'max-width:".$size[0]."px;height:".$size[1]."px;\' class=\'w3-display-container\'><a href=\''+imggotten".$mou."['click_url']+imggotten".$mou."['ref_id']+'/".$space_id."\'><img class=\'\' style=\'display:block;width:100%;\' src=\''+imggotten".$mou."['banner_url']+'\'/></a><div class=\'w3-display-topright w3-text-blue w3-tiny w3-serif w3-border w3-border-blue\'><b><a href=\'http://www.AdNetwork.com\'>AdNetwork Ads</a></b></div></div>');
   }
     );";
 
@@ -393,7 +393,7 @@ unset($hold);
 //var_dump($space_categories);
 if(empty($space_categories))
 {
-  array_push($space_categories,"custch");
+  array_push($space_categories,"AdNetwork");
   //set ads category to show if publisher category is unavailable
 }
 
@@ -516,7 +516,7 @@ echo "var imggotten".$mou." = ".json_encode($campaign_to_render).";";
 
 //image ads here
 echo "$(document).ready(function() {
- $('#".$space['div_id']."').html('<div style=\'max-width: 100%;\' class=\'w3-display-container w3-card-4 w3-margin w3-white\'><a href=\''+imggotten".$mou."['click_url']+imggotten".$mou."['ref_id']+'/".$space_id."\'><img class=\'\' style=\'display:block;width:100%;\' src=\''+imggotten".$mou."['banner_url']+'\'/><div class=\'w3-padding \'>'+imggotten".$mou."['text_title']+'</div></a><div class=\'w3-display-topright w3-text-blue w3-tiny w3-serif w3-border w3-border-blue\'><b><a href=\'http://www.custch.com\'>Custch Ads</a></b></div></div>');
+ $('#".$space['div_id']."').html('<div style=\'max-width: 100%;\' class=\'w3-display-container w3-card-4 w3-margin w3-white\'><a href=\''+imggotten".$mou."['click_url']+imggotten".$mou."['ref_id']+'/".$space_id."\'><img class=\'\' style=\'display:block;width:100%;\' src=\''+imggotten".$mou."['banner_url']+'\'/><div class=\'w3-padding \'>'+imggotten".$mou."['text_title']+'</div></a><div class=\'w3-display-topright w3-text-blue w3-tiny w3-serif w3-border w3-border-blue\'><b><a href=\'http://www.AdNetwork.com\'>AdNetwork Ads</a></b></div></div>');
   }
     );";
 
@@ -674,7 +674,7 @@ unset($hold);
 
  //display here 
 echo "$(document).ready(function() {
- $('#".$space['div_id']."').html('<br><div class=\'w3-container w3-display-container w3-padding\'><style type=\'text/css\'>@media screen and (max-width: 500px){#text{text-align: justify;}}@media screen and (min-width: 500px){#text{text-align: center;}</style>".$campaigns_rendable_html."<div class=\'w3-display-topright w3-text-blue w3-tiny w3-serif w3-border w3-border-blue w3-margin-right\'><b><a href=\'http://www.custch.com\'>Recommendation by Custch</a></b></div></div>');
+ $('#".$space['div_id']."').html('<br><div class=\'w3-container w3-display-container w3-padding\'><style type=\'text/css\'>@media screen and (max-width: 500px){#text{text-align: justify;}}@media screen and (min-width: 500px){#text{text-align: center;}</style>".$campaigns_rendable_html."<div class=\'w3-display-topright w3-text-blue w3-tiny w3-serif w3-border w3-border-blue w3-margin-right\'><b><a href=\'http://www.AdNetwork.com\'>Recommendation by AdNetwork</a></b></div></div>');
   }
     );";
 

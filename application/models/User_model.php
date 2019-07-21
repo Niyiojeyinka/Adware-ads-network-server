@@ -49,12 +49,6 @@ $this->db->insert('advertisers',$reg);
 
 
  return true;
-
-
-
-
-
-
 }
 //new
 public function select_with_password($pass)
@@ -166,10 +160,6 @@ public function get_user_by_id()
 
     $query = $this->db->get_where('users',array("id" => $_SESSION["id"]));
   return $query->row_array();
-
-
-
-
 }
 
 public function insert_login_time($user_table)
@@ -300,30 +290,6 @@ return true;
 
 }
 
-/*public function login_check()
-{
-
-
-
-
-$this->db->select('password');
-$query = $this->db->get_where('users',array("email" => $this->input->post("email")));
-$_pass = $this->input->post('pass');
-if (in_array($_pass,$query->row_array()))
-{ return true;
-}
-   else
-   {
-   return false;
-   }
-
-
-
-
-
-
-}*/
-
 
 public function insert_vcode($account_type,$vcode,$email)
 {
@@ -352,7 +318,6 @@ return $query->row_array()["email"];
 return FALSE;
 
 }
-
 
 }
 

@@ -19,13 +19,6 @@ class Media_model extends CI_Model {
 
 }
 
-
-
-
-
-
-
-
 public function save_image()
 {
    $_time =  date('d-m-y')." ".date('g:i:sA');
@@ -39,48 +32,19 @@ public function save_image()
 'link' => $this->upload->data("file_name"),
 'time' => time()
 );
-
-
-
-
-
-
-
   $this->db->insert('media',$datab2);
-
-
-
  return true;
-
-
-
-
-
 }
 
 
 
 public function get_media_img($offset,$limit)
 {
-/*if( $offset > 0)
-{
-
-$offset = ($offset-1) * $limit;
-
-
-}*/
-
-
-    $this->db->order_by("id","DESC");
-
-
+   $this->db->order_by("id","DESC");
 $res = $this->db->get("media",$limit,$offset);
 $result = $res->result_array();
 return $result;
 }
-
-
-
 
 
 }

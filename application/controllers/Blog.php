@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /***
- * Name:      Custch
+ * Name:      AdNetwork
  * Package:     Page.php
  * About:        A controller that handles blogging operation
  * Copyright:  (C) 2017,
@@ -64,7 +64,7 @@ $config['display_pages'] = false;
 $data['pagination'] = $this->pagination->create_links();
 
 
-      $data['title'] = "Custch's Official Blog | Custch.com";
+      $data['title'] = "AdNetwork's Official Blog | AdNetwork.com";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -89,7 +89,7 @@ $statu = $data['item']['status'];
         {
                 show_404();
         }
-        $data['title'] =  "Custch's Official Blog | ".$data['item']['title'];
+        $data['title'] =  "AdNetwork's Official Blog | ".$data['item']['title'];
       $data['author'] = "Olaniyi Ojeyinka";
 $data['items'] = $this->blog_model->get_posts_pag(0,7);
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";

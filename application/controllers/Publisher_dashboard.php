@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /***
- * Name:      Custch
+ * Name:      AdNetwork
  * Package:     publisher_dashboard.php
  * About:        A controller that handles publisher operation
  * Copyright:  (C) 2018,
@@ -46,7 +46,7 @@ public function index()
 {
 
 
-      $data['title'] = "Custch | Publisher Dashboard";
+      $data['title'] = "AdNetwork | Publisher Dashboard";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -81,7 +81,7 @@ public function settings()
 
 
 
-      $data['title'] = "Custch | Publisher Settings";
+      $data['title'] = "AdNetwork | Publisher Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -113,7 +113,7 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
    {
 
 
-      $data['title'] = "Custch | Publisher Settings";
+      $data['title'] = "AdNetwork | Publisher Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -197,7 +197,7 @@ $this->publisher_model->update_payment_details();
 
 
 
-      $data['title'] = "Custch | Publisher Payment Settings";
+      $data['title'] = "AdNetwork | Publisher Payment Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -307,9 +307,7 @@ $details = "You make a withdrawal Request of
               show_page("Publisher_dashboard");
 
 }
-
 //echo success
-
     }else{
              $_SESSION['err_msg'] = "<script>alert('Insufficient Balance');</script>";
               $this->session->mark_as_flash('err_msg');
@@ -317,18 +315,13 @@ $details = "You make a withdrawal Request of
     }
  }
 
-
-
-
-
-
 public function view_details($ref_id)
 {
 
 
 
 
-      $data['title'] = "Custch | Publisher Space Reporting";
+      $data['title'] = "AdNetwork | Publisher Space Reporting";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -367,7 +360,7 @@ public function affilate()
 
 
 
-      $data['title'] = "Custch | Publisher Affilate";
+      $data['title'] = "AdNetwork | Publisher Affilate";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -422,11 +415,7 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
        $this->pagination->initialize($config);
   $data['pagination'] = $this->pagination->create_links();
-
-
-
-
-      $data['title'] = "Custch | Publisher Campaign";
+      $data['title'] = "AdNetwork | Publisher Campaign";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -456,7 +445,7 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
    {
 
 
-      $data['title'] = "Custch | Add ADs Space";
+      $data['title'] = "AdNetwork | Add ADs Space";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -482,9 +471,6 @@ $this->publisher_model->insert_space($ref_id);
     $this->session->mark_as_flash('action_status_report');
     show_page("publisher_dashboard/add_space/".$ref_id);
 }
-
-
-
  }
 //function ends here
 
@@ -493,16 +479,9 @@ $this->publisher_model->insert_space($ref_id);
       $this->form_validation->set_rules("current_password","Password","trim|required");
     $this->form_validation->set_rules("new_email","New Email","trim|required|is_unique[publishers.email]");
     $this->form_validation->set_rules("confirm_email","Confirm New Email","trim|required|matches[new_email]");
-
-
-
     if ($this->form_validation->run() ==  FALSE)
    {
-
-
-         
-
-      $data['title'] = "Custch | Publisher Settings";
+     $data['title'] = "AdNetwork | Publisher Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -514,15 +493,9 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
       $this->load->view('/common/publisher_top_tiles',$data);
     $this->load->view('/user/publisher/settings_view',$data);
      $this->load->view('/common/users_footer_view',$data);
-
-
 }else{
 
-
 //change here
-
-
-
      $user_det =   $this->publisher_model->get_publisher_by_id();
 
        if ($user_det['password'] == md5(md5(trim($this->input->post('current_password')))))
@@ -543,16 +516,9 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
              $_SESSION['action_status_report'] = '<b class="w3-text-red">uknown error occurred</b>';
               $this->session->mark_as_flash('action_status_report');
               show_page("publisher_dashboard/settings");
-
-
           }
 
        }else{
-
-
-                   //incorrect password  error page
-
-
              $_SESSION["action_status_report"] = '<b class="w3-text-red">The Current Account
              Email you entered is incorrect</b><br>';
               $this->session->mark_as_flash('action_status_report');

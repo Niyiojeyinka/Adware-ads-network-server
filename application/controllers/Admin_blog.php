@@ -24,9 +24,6 @@ public function __construct()
 
 
 }
-
-
-
   public function add_post()
   {
     //check login for admin here later
@@ -61,7 +58,7 @@ $data =[];
   //check_admin_login();
 
 
-$data['title'] ="Custch | Add Post";
+$data['title'] ="AdNetwork | Add Post";
 $data['description'] ="Admin Dashboard";
 
 $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
@@ -98,22 +95,12 @@ $this->session->mark_as_flash('action_status_report');
   }
   }
  }
-
-
-
-
-
   public function add_page()
   {
-
-
-
-        $this->form_validation->set_rules("title","Post Title","required");
+     $this->form_validation->set_rules("title","Post Title","required");
      $this->form_validation->set_rules("contents","Post Contents","required");
      $this->form_validation->set_rules("keywords","Post Keywords","required");
      $this->form_validation->set_rules("desc","Post Descriptions","required");
-
-
 
   if($this->form_validation->run() == FALSE)
   {
@@ -121,7 +108,7 @@ $data =[];
   //show error
 
 
-$data['title'] ="Custch | Add Page";
+$data['title'] ="AdNetwork | Add Page";
 $data['description'] ="Admin Dashboard";
 
 $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
@@ -145,20 +132,10 @@ $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
   </span>";
   $this->session->mark_as_flash('err_reports');
   show_page("admin_blog/add_page");
-
-
-
-
   }
 
 
 }
-
-
-
-
-
-
 public function edit_page($id =NULL,$err=NULL)
 	{
 
@@ -215,22 +192,9 @@ else{
 
 	}
 
-
-
-
-
 }
 
-
-
-
-
-
 	}
-
-
-
-
 
   public function edit_post($id =NULL,$err=NULL)
   {
@@ -252,12 +216,6 @@ else{
 
 
         $this->form_validation->set_rules("title","Post Title","required");
-
-
-
-
-
-
   $config['upload_path'] = "assets/media/images";
   $config['allowed_types'] = 'gif|jpg|png|jpeg';
    $config['max_size'] = '500';
@@ -320,38 +278,19 @@ $img_url = $this->upload->data("file_name");
 
   }
 
-
-
-
 }
 
 
 
   }
-
-
-
-
-
-
   public function articles($offset=0)
   {
 
   //  $err = $this->uri->segment(3, 0);
   $limit = 6;
     $this->load->library('pagination');
-
-
-
-
-      $data['items'] = $this->blog_model->get_articles($offset,$limit);
-
-
-
-
+     $data['items'] = $this->blog_model->get_articles($offset,$limit);
   $config['base_url'] = site_url("admin_blog/articles");
-
-
 
 $config['total_rows'] = count( $this->blog_model->get_articles(null,null));
 
@@ -363,9 +302,6 @@ $config['first_tag_close'] = '</span>';
 $config['last_tag_open'] = '<br><span class="w3-btn w3-blue w3-text-white">';
 $config['last_tag_close'] = '</span>';
 $config['first_link'] = 'First';
-
-
-
 $config['prev_link'] = 'Prev';
 $config['next_link'] = 'Next';
 $config['next_tag_open'] = '<span style="margin-left:20%" class="w3-btn w3-blue w3-text-white">';
@@ -385,15 +321,7 @@ $data['pagination'] = $this->pagination->create_links();
 
             $this->load->view('admin/articles_view',$data);
     $this->load->view('admin/footer_view');
-
-
-
-
-
   }
-
-
-
 
 	public function pages($err="no",$offset=0)
 	{
@@ -401,18 +329,8 @@ $data['pagination'] = $this->pagination->create_links();
  	//	$err = $this->uri->segment(3, 0);
 	$limit = 4;
 		$this->load->library('pagination');
-
-
-
-
-      $data['items'] = $this->pages_model->get_pagelist($offset,$limit);
-
-
-
-
+     $data['items'] = $this->pages_model->get_pagelist($offset,$limit);
 	$config['base_url'] = site_url("admin_blog/pages/no");
-
-
 
 $config['total_rows'] = count($this->pages_model->get_pagelist(null,null));
 //$config['total_rows'] = $this->db->count_all('pages');
@@ -425,9 +343,6 @@ $config['first_tag_close'] = '</span>';
 $config['last_tag_open'] = '<br><span class="w3-btn w3-blue w3-text-white">';
 $config['last_tag_close'] = '</span>';
 $config['first_link'] = 'First';
-
-
-
 $config['prev_link'] = 'Prev';
 $config['next_link'] = 'Next';
 $config['next_tag_open'] = '<span style="margin-left:20%" class="w3-btn w3-blue w3-text-white">';
@@ -442,7 +357,7 @@ $data['pagination'] = $this->pagination->create_links();
 
 
 
-$data['title'] ="Custch | Pages";
+$data['title'] ="AdNetwork | Pages";
 $data['description'] ="Admin Dashboard";
 
 $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
@@ -453,11 +368,6 @@ $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 
 						$this->load->view('admin/pages/pagelist_view',$data);
 		$this->load->view('admin/footer_view');
-
-
-
-
-
 	}
 
 
@@ -467,20 +377,10 @@ $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 
   $limit = 4;
     $this->load->library('pagination');
-
-
-
-
       $data['items'] = $this->blog_model->get_postlist($offset,$limit);
 
-
-
-
   $config['base_url'] = site_url("admin_blog/posts");
-
-
-
-$config['total_rows'] = count($this->blog_model->get_postlist(null,null));
+ $config['total_rows'] = count($this->blog_model->get_postlist(null,null));
 //$config['total_rows'] = $this->db->count_all('pages');
 
   $config['per_page'] = $limit;
@@ -491,9 +391,6 @@ $config['first_tag_close'] = '</span>';
 $config['last_tag_open'] = '<br><span class="w3-btn w3-blue w3-text-white">';
 $config['last_tag_close'] = '</span>';
 $config['first_link'] = 'First';
-
-
-
 $config['prev_link'] = 'Prev';
 $config['next_link'] = 'Next';
 $config['next_tag_open'] = '<span style="margin-left:20%" class="w3-btn w3-blue w3-text-white">';
@@ -511,22 +408,14 @@ $data['pagination'] = $this->pagination->create_links();
 
     $this->load->view('admin/sidebar_view',$data);
 
-            $this->load->view('admin/blog/postlist_view',$data);
+    $this->load->view('admin/blog/postlist_view',$data);
     $this->load->view('admin/footer_view');
-
-
-
-
-
   }
 
 
 
 	public function delete_page($id)
 	{
-
-
-
 
 	$this->admin_blog_model->delete_item('page',$id);
 
@@ -535,19 +424,11 @@ $data['pagination'] = $this->pagination->create_links();
       $this->session->mark_as_flash('err_reports');
 
 	show_page("admin_blog/pages");
-
-
-
-
-
 	}
 
 
 	public function move($id=NULL,$type=NULL)
 	{
-
-
-
    $data['item'] = $this->blog_model->get_post_id($id);
  $status = $data['item']['status'];
 
@@ -560,20 +441,12 @@ $data['pagination'] = $this->pagination->create_links();
 
 show_page('admin_blog/posts');
 
-
-
-
-
-
 	}
 
 
   public function article_action($id=NULL)
   {
-
-
-
-   $data['item'] = $this->blog_model->get_post_id($id);
+  $data['item'] = $this->blog_model->get_post_id($id);
    $user = $this->user_model->get_user_by_its_id($data['item']['author_id']);
  $status = $data['item']['status'];
 
@@ -584,15 +457,7 @@ show_page('admin_blog/posts');
         $this->session->mark_as_flash('action_status_report');
 
 show_page('admin_blog/articles');
-
-
-
-
-
   }
-
-
-
 
 
 	public function draft($err= null)
@@ -605,35 +470,16 @@ show_page('admin_blog/articles');
 
       $data['items'] = $this->blog_model->get_posts_draft(null,null);
 
-
-
-
-
 		$this->load->view('/admin/header_view',$data);
 
 		$this->load->view('admin/sidebar_view',$data);
 
 						$this->load->view('admin/blog/draft_view',$data);
 		$this->load->view('admin/footer_view');
-
-
-
-
-
 	}
-
-
-
-
-
-
 
   public function delete_post($id=NULL)
   {
-
-
-
-
   if($this->admin_model->delete_item('post',$id))
   {
 

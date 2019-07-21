@@ -20,7 +20,7 @@ public function __construct()
 
 
 
-      $data['title'] = "Custch | Delivering Quality Advertisement of the future For Africans";
+      $data['title'] = "AdNetwork | Delivering Quality Advertisement of the future For Africans";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
       $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african businesses share their story online while also creating a better platform for African Publishers To Monetize their Contents";
@@ -38,7 +38,7 @@ $this->load->view('/common/public_header_plate_view',$data);
 public function suspended_account_alert()
 {
 
-echo "<html><head><title>Account Suspended</title></head><body><script> alert('Hello,Your Account Has been suspended,This may be as a result of click fraud/invalid views/unsupported Traffics or any other offence.You can contact us at Support@custch.com if you think this is a mistake. Thank You'); 
+echo "<html><head><title>Account Suspended</title></head><body><script> alert('Hello,Your Account Has been suspended,This may be as a result of click fraud/invalid views/unsupported Traffics or any other offence.You can contact us at Support@AdNetwork.com if you think this is a mistake. Thank You'); 
 setTimeout('redirect()',100);
 function redirect()
 {
@@ -55,7 +55,7 @@ public function pending_account_alert()
 
 
 
-echo "<html><head><title>Custch Pending Account</title></head><body><script> alert('Your Publisher Account Registration Application is currently Pending and it will be approved(less than 6hrs) after Website/Blog Quality review thank you for choosing CUSTCH AFRICA'); 
+echo "<html><head><title>AdNetwork Pending Account</title></head><body><script> alert('Your Publisher Account Registration Application is currently Pending and it will be approved(less than 6hrs) after Website/Blog Quality review thank you for choosing AdNetwork AFRICA'); 
 setTimeout('redirect()',100);
 function redirect()
 {
@@ -78,10 +78,10 @@ if ($this->form_validation->run() == FALSE)
 
     
 
-      $data["title"] ="Custch | Forgot Password";
-      $data["keywords"] ="Custch,nigeria,money,online";
-      $data["author"] ="Custch";
-     $data["description"] ="Recover your password on custch";
+      $data["title"] ="AdNetwork | Forgot Password";
+      $data["keywords"] ="AdNetwork,nigeria,money,online";
+      $data["author"] ="AdNetwork";
+     $data["description"] ="Recover your password on AdNetwork";
 
                  $this->load->view('common/header_view',$data);
                 $this->load->view('/common/desktop_nav_view',$data);
@@ -128,10 +128,10 @@ $config['wordwrap'] = TRUE;
 $this->email->initialize($config);
 
 
-$this->email->from('support@Custch.com', 'System');
+$this->email->from('support@AdNetwork.com', 'System');
 $this->email->to($theemail);
 
-$this->email->subject('Custch | Forgotten Password');
+$this->email->subject('AdNetwork | Forgotten Password');
 $this->email->message('Your Password recovery link is /n '.$link);
 
 $this->email->send();
@@ -178,10 +178,10 @@ $this->form_validation->set_rules("npass","New Password","trim|required|is_uniqu
 
   
 
-      $data["title"] ="Custch Africa | Login";
-      $data["keywords"] ="Custch Africa,nigeria,money,online";
-      $data["author"] ="Custch Africa";
-     $data["description"] ="Earn Money online using Custch Africa platform";
+      $data["title"] ="AdNetwork Africa | Login";
+      $data["keywords"] ="AdNetwork Africa,nigeria,money,online";
+      $data["author"] ="AdNetwork Africa";
+     $data["description"] ="Earn Money online using AdNetwork Africa platform";
 
                  $this->load->view('common/header_view',$data);
              $this->load->view('public/change_pass_view',$data);
@@ -230,7 +230,7 @@ public function single_page($slug = NULL)
         }
 
 
-        $data['title'] = 'Custch | '.$data['item']['title'];
+        $data['title'] = 'AdNetwork | '.$data['item']['title'];
       $data['keywords'] = $data['item']['keywords'];
       $data['keywords'] = $data['item']['description'];
       $data['author'] = $data['item']['author'];
@@ -255,7 +255,7 @@ public function register()
     $this->form_validation->set_rules("accounttype","Account Type","required");
     if (!$this->form_validation->run())
     {
-      $data['title'] = "Custch | Register";
+      $data['title'] = "AdNetwork | Register";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform.";
@@ -303,7 +303,7 @@ if (!isset($_SESSION['reg_account_type']))
     $this->form_validation->set_rules('phone', 'Mobile Number', 'required|numeric',array("numeric" => "Please Provide a valid Phone Number"));
   if (!$this->form_validation->run())
     {
-      $data['title'] = "Custch | Register";
+      $data['title'] = "AdNetwork | Register";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform.";
@@ -341,7 +341,7 @@ $this->session->mark_as_temp('first_details',30000);
 public function How_it_Works()
 {
 
- $data['title'] = "Custch | How it Works";
+ $data['title'] = "AdNetwork | How it Works";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform.";
@@ -369,7 +369,7 @@ $data['contents'] = $this->pages_model->get_how_it_works() ;
 
   if (!$this->form_validation->run())
      {
-      $data['title'] = "Custch | Register";
+      $data['title'] = "AdNetwork | Register";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform.";
@@ -441,9 +441,9 @@ $this->form_validation->set_rules("email","Email","trim|required|valid_email",ar
 if (!$this->form_validation->run())
 {
   	//login page
-        $data['web_favicon_slug'] = "assets/images/custch.png";
+        $data['web_favicon_slug'] = "assets/images/AdNetwork.png";
         $data['description'] = NULL;
- $data['title'] = "Custch | Sign In";
+ $data['title'] = "AdNetwork | Sign In";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform.";
@@ -488,9 +488,9 @@ $this->load->view('/common/public_header_plate_view',$data);
          }
 public function form_intro()
 {
-  //https://www.custch.com/blog/new-product-alert-introducing-custch-form-for-advertisers
+  //https://www.AdNetwork.com/blog/new-product-alert-introducing-AdNetwork-form-for-advertisers
   
-  show_page('blog/new-product-alert-introducing-custch-form-for-advertisers');
+  show_page('blog/new-product-alert-introducing-AdNetwork-form-for-advertisers');
 }
 
 public function contact_us()
@@ -532,9 +532,9 @@ $this->email->initialize($config);
 
 
 $this->email->from($this->input->post('email'), 'System');
-$this->email->to('support@Custch.com');
+$this->email->to('support@AdNetwork.com');
 
-$this->email->subject('Custch Contact Us | '.$this->input->post('name'));
+$this->email->subject('AdNetwork Contact Us | '.$this->input->post('name'));
 
 $this->email->message($this->input->post('message'));
 
@@ -563,10 +563,10 @@ $this->form_validation->set_rules("name","Name","trim|required");
 
         $data["web_favicon_slug"] =base_url('assets/images/favicon.ico');
 
-        $data["title"] ="Custch | Quality Advertising for Africa";
-        $data["keywords"] ="Custch,africa,money,online";
-        $data["author"] ="Custch";
-         $data["description"] ="advertise,monitize with Custch platform";
+        $data["title"] ="AdNetwork | Quality Advertising for Africa";
+        $data["keywords"] ="AdNetwork,africa,money,online";
+        $data["author"] ="AdNetwork";
+         $data["description"] ="advertise,monitize with AdNetwork platform";
        $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 
         $this->load->view('common/header_view',$data);
@@ -610,7 +610,7 @@ public function advertisers($tracking_code= NULL)
     
   }
 
-      $data['title'] = "Custch | Advertisers";
+      $data['title'] = "AdNetwork | Advertisers";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Advertiser,Advertisers,adverise,Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
       $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african businesses share their story online ";
@@ -624,7 +624,7 @@ $this->load->view('/common/public_header_plate_view',$data);
 }
 public function publishers($tracking_code = NULL)
 {
- $data['title'] = "Custch | Publishers";
+ $data['title'] = "AdNetwork | Publishers";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Publisher,blogger,Advertisers,adverise,Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
       $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african publishers monetize their contents with native Recommendation and few other Ad Format ";
@@ -637,7 +637,7 @@ $this->load->view('/common/public_header_plate_view',$data);
 }
   public function ad_format()
   {
- $data['title'] = "Custch | Campaign Formats";
+ $data['title'] = "AdNetwork | Campaign Formats";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Advertiser,Advertisers,adverise,Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
       $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african businesses share their story online ";

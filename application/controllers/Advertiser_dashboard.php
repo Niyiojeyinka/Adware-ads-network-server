@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /***
- * Name:      Custch
+ * Name:      AdNetwork
  * Package:  advertiser_dashboard.php
  * About:        A controller that handles advertiser operation
  * Copyright:  (C) 2018,
@@ -33,7 +33,7 @@ public function index()
 {
 
 
-      $data['title'] = "Custch | Advertiser Dashboard";
+      $data['title'] = "AdNetwork | Advertiser Dashboard";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -67,7 +67,7 @@ public function settings()
 
 
 
-      $data['title'] = "Custch | Advertiser Settings";
+      $data['title'] = "AdNetwork | Advertiser Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -98,7 +98,7 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
     $this->form_validation->set_rules("confirm_password","Confirm New Password","trim|required|matches[new_password]");
     if ($this->form_validation->run() ==  FALSE)
    {
-      $data['title'] = "Custch | Advertiser Settings";
+      $data['title'] = "AdNetwork | Advertiser Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -233,7 +233,7 @@ show_page('advertiser_dashboard/view_details/'.$ref_id);
 
          
 
-      $data['title'] = "Custch | Advertiser Settings";
+      $data['title'] = "AdNetwork | Advertiser Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -305,7 +305,7 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 public function affilate()
 {
 
-      $data['title'] = "Custch | Advertiser Affilate";
+      $data['title'] = "AdNetwork | Advertiser Affilate";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -329,7 +329,7 @@ public function choose_campaign_type($ref_id=NULL)
 {
 
 
-      $data['title'] = "Custch | Choose Campaign Type";
+      $data['title'] = "AdNetwork | Choose Campaign Type";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -366,7 +366,7 @@ if(!$this->form_validation->run())
 {
  $data['error'] =  $this->upload->display_errors();
 
-      $data['title'] = "Custch | Add Banner Campaign";
+      $data['title'] = "AdNetwork | Add Banner Campaign";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -418,7 +418,7 @@ $this->form_validation->set_rules('destination_link','Destination Link','require
 if(!$this->form_validation->run())
 {
 
-      $data['title'] = "Custch | Add Banner Campaign";
+      $data['title'] = "AdNetwork | Add Banner Campaign";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -480,7 +480,7 @@ if(!$this->form_validation->run())
 {
  $data['error'] =  $this->upload->display_errors();
 
-      $data['title'] = "Custch | Add Campaign";
+      $data['title'] = "AdNetwork | Add Campaign";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -543,7 +543,7 @@ if(!$this->form_validation->run())
 {
  $data['error'] =  $this->upload->display_errors();
 
-      $data['title'] = "Custch | Add Campaign";
+      $data['title'] = "AdNetwork | Add Campaign";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -588,7 +588,7 @@ show_page("advertiser_dashboard/campaign_target/".$ref_id);
 public function campaign_target($ref_id = NULL)
 {
 
-      $data['title'] = "Custch | Campaign Targeting";
+      $data['title'] = "AdNetwork | Campaign Targeting";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -650,7 +650,7 @@ if(!$this->form_validation->run())
 
 {
 
-      $data['title'] = "Custch | Campaign Budget";
+      $data['title'] = "AdNetwork | Campaign Budget";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -731,7 +731,7 @@ $this->advertiser_model->insert_campaign_step_three($ref_id,$data['user']);
 
 
 
-      $data['title'] = "Custch | Advertiser Campaign";
+      $data['title'] = "AdNetwork | Advertiser Campaign";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -769,7 +769,7 @@ show_page('advertiser_dashboard/campaign_budget/'.$ref_id);
 
   }
 
-      $data['title'] = "Custch | Advertiser Settings";
+      $data['title'] = "AdNetwork | Advertiser Settings";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -841,7 +841,7 @@ public function payment()
 $this->form_validation->set_rules('amount','Amount','required');
 if(!$this->form_validation->run())
 {
-  $data['title'] = "Custch | Advertiser Affilate";
+  $data['title'] = "AdNetwork | Advertiser Affilate";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -862,7 +862,7 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 }else{
 
-  $data['title'] = "Custch | Advertiser Affilate";
+  $data['title'] = "AdNetwork | Advertiser Affilate";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -1055,7 +1055,7 @@ $this->form_validation->set_rules('field_name[]','Field Name','required',array('
 $this->form_validation->set_rules('access_type','access Type','required');
 if(!$this->form_validation->run())
 {
-      $data['title'] = "Custch | CPA FORMS";
+      $data['title'] = "AdNetwork | CPA FORMS";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -1124,7 +1124,7 @@ show_page('advertiser_dashboard/post_form_addition/'.$ref_id);
 
 public function edit_cpa_form($ref_id = NULL)
 {
-  $data['title'] = "Custch | CPA FORMS";
+  $data['title'] = "AdNetwork | CPA FORMS";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -1160,7 +1160,7 @@ public function post_form_addition($ref_id)
   if(!isset($_POST['submit']))
   {
 
-  $data['title'] = "Custch | Form Editor";
+  $data['title'] = "AdNetwork | Form Editor";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -1196,7 +1196,7 @@ public function edit_post_form_addition($ref_id)
   if(!isset($_POST['submit']))
   {
 
-  $data['title'] = "Custch | Form Editor";
+  $data['title'] = "AdNetwork | Form Editor";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -1260,7 +1260,7 @@ public function cpa_forms_list($offset = 0)
 
 
  
-  $data['title'] = "Custch | Forms CPA";
+  $data['title'] = "AdNetwork | Forms CPA";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
@@ -1283,8 +1283,6 @@ public function edit_form_field($ref_id){
 
 if(array_key_exists('delete', $_POST)) {    
   $old_form_makeup_data_array =json_decode($this->advertiser_model->get_cpa_form_by_ref_id($ref_id)['form_makeup_data'],true);
-//var_dump($old_form_makeup_data_array);
-//echo "Before Operation <br><br>";
  $field_to_delete =[];
 for ($i=0; $i <$_POST['no_field'] ; $i++) {
  
@@ -1324,11 +1322,11 @@ public function view_data_list($ref_id,$offset= 0)
 {
 
 
-      $data['title'] = "Custch | Data List";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data['title'] = "AdNetwork | Data List";
+$data['author'] = "Olaniyi Ojeyinka";
+$data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
+$data['description'] = "The online Mobile Advertising Platform for africa.";
+$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 $data['user'] = $this->advertiser_model->get_advertiser_by_id();
 $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns();
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();

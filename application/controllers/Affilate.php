@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /***
- * Name:      Custch
+ * Name:      AdNetwork
  * Package:     Affilate.php
  * About:        A controller that handles advertiser operation
  * Copyright:  (C) 2018,
@@ -33,7 +33,7 @@ public function index()
 {
 
 
-      $data['title'] = "Custch | Advertiser Dashboard";
+      $data['title'] = "AdNetwork | Advertiser Dashboard";
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform for africa.";
