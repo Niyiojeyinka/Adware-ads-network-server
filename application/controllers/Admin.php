@@ -13,16 +13,14 @@ public function __construct()
   
  if ((!isset($this->session->admin_name)) ||(!isset($this->session->admin_logged_in)))
  {
-
-
-    header('Location: '.site_url('ch_admin'));
-
-
-
+   show_page("ch_admin");
  }
-
-
-
+ //get details from db later (The web details)
+      $this->siteName = "Ad Network";
+      $this->author = "The author";
+      $this->keywords = "The keywords here";
+      $this->description= "the description";
+      $this->noindex =  $this->noindex;
 }
 
 
@@ -34,12 +32,12 @@ public function index() {
 
 
 
-      $data["title"] ="Custch | Admin Dashboard";
-      $data["keywords"] ="publisher,advertiser,advertising,marketting";
-      $data["author"] ="Custch Ltd";
-     $data["description"] ="Quality Mobile advertising for Africa";
+      $data["title"] =$this->siteName." | Admin Dashboard";
+      $data["keywords"] = $this->keywords;
+      $data["author"] = $this->author;
+     $data["description"] = $this->description;
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 $data['num_of_publishers_24'] = count($this->user_model->count_publishers_reg_at_time(86400));
 $data['num_of_advertisers_24'] = count($this->user_model->count_advertisers_reg_at_time(86400));
 $data['num_of_publishers_7d'] = count($this->user_model->count_publishers_reg_at_time(86400*7));
@@ -89,118 +87,6 @@ $data['num_total_views'] = count($this->admin_model->count_total_views());
 
 
 
-/*
-//admin earning
-$amount_array = $this->admin_model->get_admin_total_earning();
-$data['total_a_earning'] = 0;
-
-//var_dump($amount_array);
-
-for ($i=0; $i < count($amount_array) ; $i++) { 
-
-$data['total_a_earning'] = $data['total_a_earning'] + $amount_array[$i]['amount'];
-
-
-}
-
-
-  $data['num_minor_transaction'] =  count($this->admin_model->admin_earning_by_type("minor"));
-$data['num_major_transaction'] =  count($this->admin_model->admin_earning_by_type("major"));
-
-$data['num_of_total_transaction'] = $data['num_minor_transaction'] + $data['num_major_transaction'] ;
-
-
-$admin_earning_24 = $this->admin_model->admin_earning_at_time(86400);
-
-$admin_earning_30d = $this->admin_model->admin_earning_at_time(2592000);
-
-
-
-
-$data['num_of_transaction_24'] = count($admin_earning_24);
-$data['num_of_transaction_30d'] = count($admin_earning_30d);
- 
-
-
- $data['total_earning_24'] = 0;
-
-//var_dump($admin_earning_24);
-
-for ($i=0; $i < count($admin_earning_24) ; $i++) { 
-
-$data['total_earning_24'] = $data['total_earning_24'] + $admin_earning_24[$i]['amount'];
-
-
-}
-
-
- $data['total_earning_30d'] = 0;
-
-//var_dump($amount_array);
-
-for ($i=0; $i < count($admin_earning_24) ; $i++) { 
-
-$data['total_earning_30d'] = $data['total_earning_30d'] + $admin_earning_30d[$i]['amount'];
-
-
-}
-
-$admin_earning_24_minor = $this->admin_model->admin_earning_type_at_time(86400,"minor");
- $data['admin_earning_24_minor'] = 0;
-
-
-for ($i=0; $i < count($admin_earning_24_minor ) ; $i++) { 
-
-$data['admin_earning_24_minor'] = $data['admin_earning_24_minor'] + $admin_earning_24_minor[$i]['amount'];
-
-
-}
-
-
-
-
-$admin_earning_30d_minor = $this->admin_model->admin_earning_type_at_time(2592000,"minor");
- $data['admin_earning_30d_minor'] = 0;
-
-for ($i=0; $i < count($admin_earning_30d_minor ) ; $i++) { 
-
-$data['admin_earning_30d_minor'] = $data['admin_earning_30d_minor'] + $admin_earning_30d_minor[$i]['amount'];
-
-
-}
-
-
-
-$admin_earning_24_major = $this->admin_model->admin_earning_type_at_time(86400,"major");
-$data['admin_earning_24_major'] = 0;
-
-
-for ($i=0; $i < count($admin_earning_24_major ) ; $i++) { 
-
-$data['admin_earning_24_major'] = $data['admin_earning_24_major'] + $admin_earning_24_major[$i]['amount'];
-
-
-}
-
-
-
-$admin_earning_30d_major = $this->admin_model->admin_earning_type_at_time(2592000,"major");
-$data['admin_earning_30d_major'] = 0;
-
-
-for ($i=0; $i < count($admin_earning_30d_major ) ; $i++) { 
-
-$data['admin_earning_30d_major'] = $data['admin_earning_30d_major'] + $admin_earning_30d_major[$i]['amount'];
-
-
-}
-
-*/
-
-
-
-
-
 
 //add pagination here later
 $data['pending_campaigns'] = $this->admin_model->get_pending_campaigns();
@@ -221,10 +107,10 @@ public function pending_account_profile($id= NULL)
 {
 
 
-$data['title'] ="Custch | User Profile";
+$data['title'] =$this->siteName." | User Profile";
 $data['description'] ="Admin Dashboard";
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 $limit = NULL;
 $data['user'] = $this->user_model->get_user_by_its_id($id,"publishers");
 
@@ -281,10 +167,10 @@ $data['adv_bal_earning'] = $data['adv_bal_earning'] + $bal_array[$i]['account_ba
 }
 
 
-$data['title'] ="Custch | Accounting By Countries";
+$data['title'] =$this->siteName." | Accounting By Countries";
 $data['description'] ="Admin Dashboard";
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 
 
   $this->load->view('/admin/header_view',$data);
@@ -390,7 +276,7 @@ public function publishers_list($offset = 0) {
   $config['last_link'] = 'Last';
   $config['display_pages'] = false;
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 
   	   $this->pagination->initialize($config);
   $data['pagination'] = $this->pagination->create_links();
@@ -454,7 +340,7 @@ public function advertisers_list($offset = 0) {
        $this->pagination->initialize($config);
   $data['pagination'] = $this->pagination->create_links();
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 
 $data['title'] = "Advertisers List | Admin Area";
 
@@ -513,10 +399,9 @@ $data['items'] = $this->admin_model->get_withdrawal($cond,$offset,$limit);
   $data['pagination'] = $this->pagination->create_links();
 
 
-$data['title'] ="Custch | Admin Payment Page";
-$data['description'] ="Admin Dashboard";
-
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data['title'] =$this->siteName." | Admin Payment Page";
+$data['description'] = $this->description;
+$data["noindex"] = $this->noindex;
 $limit = NULL;
 $data['payment_items'] = $this->user_model->get_payment_items($offset,$limit);
 $cond = array(
@@ -736,10 +621,10 @@ $this->session->mark_as_flash('action_status_report');
 public function send_msg($user_type,$id = NULL)
 {
 
-$data['title'] ="Custch | Send Messsage to user";
+$data['title'] =$this->siteName." | Send Messsage to user";
 $data['description'] ="Admin Dashboard";
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 //$limit = NULL;
 
 
@@ -803,10 +688,10 @@ public function email($table_type,$id = NULL)
 
 
 
-$data['title'] ="Custch | Send Email to user";
+$data['title'] =$this->siteName." | Send Email to user";
 $data['description'] ="Admin Dashboard";
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 $limit = NULL;
 
 
@@ -884,12 +769,12 @@ public function view_campaign_details($ref_id = NULL)
 
 
 
-      $data["title"] ="Custch | Admin Dashboard";
-      $data["keywords"] ="publisher,advertiser,advertising,marketting";
-      $data["author"] ="Custch Ltd";
-     $data["description"] ="Quality Mobile advertising for Africa";
+      $data["title"] =$this->siteName." | Admin Dashboard";
+      $data["keywords"] = $this->keywords;
+      $data["author"] = $this->author;
+     $data["description"] = $this->description;
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 $data['campaign'] = $this->admin_model->get_campaign_by_ref_id($ref_id);
 
  $this->load->view('/admin/header_view',$data);
@@ -908,12 +793,12 @@ public function view_space_details($ref_id = NULL)
 
 
 
-      $data["title"] ="Custch | Admin Dashboard";
-      $data["keywords"] ="publisher,advertiser,advertising,marketting";
-      $data["author"] ="Custch Ltd";
-     $data["description"] ="Quality Mobile advertising for Africa";
+      $data["title"] =$this->siteName." | Admin Dashboard";
+      $data["keywords"] = $this->keywords;
+      $data["author"] = $this->author;
+     $data["description"] = $this->description;
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 $data['space'] = $this->admin_model->get_space_by_ref_id($ref_id);
 
  $this->load->view('/admin/header_view',$data);
@@ -1061,10 +946,10 @@ show_page($slug);
   public function publisher_profile_details($id = NULL)
   {
 
-$data['title'] ="Custch | Publisher Profile";
+$data['title'] =$this->siteName." | Publisher Profile";
 $data['description'] ="Admin Dashboard";
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 $limit = NULL;
 $data['user'] = $this->user_model->get_user_by_its_id($id,"publishers");
 
@@ -1083,10 +968,10 @@ $data['user'] = $this->user_model->get_user_by_its_id($id,"publishers");
   public function advertiser_profile_details($id = NULL)
   {
 
-$data['title'] ="Custch | Advertiser Profile";
+$data['title'] =$this->siteName." | Advertiser Profile";
 $data['description'] ="Admin Dashboard";
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
 $limit = NULL;
 $data['user'] = $this->user_model->get_user_by_its_id($id,"advertisers");
 
@@ -1200,12 +1085,12 @@ public function Campaigns($offset=0)
 
         //check login for admin here later
 
-      $data["title"] ="Custch | Admin Dashboard";
-      $data["keywords"] ="publisher,advertiser,advertising,marketting";
-      $data["author"] ="Custch Ltd";
-     $data["description"] ="Quality Mobile advertising for Africa";
+      $data["title"] =$this->siteName." | Admin Dashboard";
+      $data["keywords"] = $this->keywords;
+      $data["author"] = $this->author;
+     $data["description"] = $this->description;
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
       $this->load->view('/admin/header_view',$data);
 
       $this->load->view('admin/sidebar_view',$data);
@@ -1262,12 +1147,12 @@ public function spaces($offset=0)
 
         //check login for admin here later
 
-      $data["title"] ="Custch | Admin Dashboard";
-      $data["keywords"] ="publisher,advertiser,advertising,marketting";
-      $data["author"] ="Custch Ltd";
-     $data["description"] ="Quality Mobile advertising for Africa";
+      $data["title"] =$this->siteName." | Admin Dashboard";
+      $data["keywords"] = $this->keywords;
+      $data["author"] = $this->author;
+     $data["description"] = $this->description;
 
-$data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+$data["noindex"] = $this->noindex;
       $this->load->view('/admin/header_view',$data);
 
       $this->load->view('admin/sidebar_view',$data);

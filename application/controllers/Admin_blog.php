@@ -14,13 +14,14 @@ public function __construct()
      
   if (!isset($this->session->admin_name) || !isset($this->session->admin_logged_in))
  {
-
-
-    header('Location: '.site_url('ch_admin'));
-
-
-
+       show_page("ch_admin");
  }
+//get details from db later (The web details)
+      $this->siteName = "Ad Network";
+      $this->author = "The author";
+      $this->keywords = "The keywords here";
+      $this->description= "the description";
+      $this->noindex =  $this->noindex;
 
 
 }
