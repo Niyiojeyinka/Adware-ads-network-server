@@ -40,6 +40,13 @@ public function __construct()
         show_page('page/suspended_account_alert');
       }
 
+      $this->siteName = "Ad Network";
+      $this->author = "The author";
+      $this->tagLine ="The tag line";
+      $this->keywords = "The keywords here";
+      $this->description= "the description";
+      $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+
 
 }
 public function index()
