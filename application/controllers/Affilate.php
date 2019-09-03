@@ -22,22 +22,23 @@ public function __construct()
      $this->load->model(array('blog_model','pages_model','advertiser_model'));
          $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper','blog_helper'));
-    // session_start();
-    /* if($_SESSION["accounttype"] != "Advertiser")
-      {
-        show_page('page/logout');
-      }
-*/
+    //get details from db later (The web details)
+      $this->siteName = "Ad Network";
+      $this->author = "The author";
+      $this->keywords = "The keywords here";
+      $this->description= "the description";
+      //$this->user =  $this->advertiser_model->get_advertiser_by_id();
+      $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 }
 public function index()
 {
 
 
-      $data['title'] = "AdNetwork | Advertiser Dashboard";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." | Advertiser Dashboard";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->advertiser_model->get_advertiser_by_id();
 
 		$this->load->view('/common/header_view',$data);

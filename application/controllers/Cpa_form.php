@@ -22,6 +22,14 @@ public function __construct()
      $this->load->model(array('blog_model','advertiser_model','campaign_model','publisher_model'));
     $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper','blog_helper'));
+       //get details from db later (The web details)
+      $this->siteName = "Ad Network";
+      $this->author = "The author";
+      $this->keywords = "The keywords here";
+      $this->description= "the description";
+      $this->user =  $this->advertiser_model->get_advertiser_by_id();
+      $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+
    
 }
 //check for cookie/session for multiple form input
@@ -29,12 +37,11 @@ public function __construct()
 public function index($slug,$advert_id=NULL,$space_id=NULL)
 {
       $data['cpa_form'] = $this->advertiser_model->get_cpa_form_by_slug($slug);
-      $data['title'] = $data['cpa_form']['name']." powered by Custch.com ";
-      $data['author'] = "Custch Advertiser";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
-      $data['cpa_form'] = $this->advertiser_model->get_cpa_form_by_slug($slug);
+      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
       if (isset($_SESSION['prevent_multiple_sub'])) {
         
 if (in_array($slug, $_SESSION['prevent_multiple_sub'])) {
@@ -57,11 +64,11 @@ public function submit_form($slug,$advert_id=NULL,$space_id=NULL)
   if (isset($_POST['submit'])){
    
      $data['cpa_form'] = $this->advertiser_model->get_cpa_form_by_slug($slug);
-      $data['title'] = $data['cpa_form']['name']." powered by Custch.com ";
-      $data['author'] = "Custch Advertiser";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
     $gotten_data = json_decode($data['cpa_form']['form_data']);
 
      unset($_POST['submit']);
@@ -134,11 +141,11 @@ $this->load->view('/common/footer_view',$data);
 public function submitted_already($slug)
 {
      $data['cpa_form'] = $this->advertiser_model->get_cpa_form_by_slug($slug);
-      $data['title'] = $data['cpa_form']['name']." powered by Custch.com ";
-      $data['author'] = "Custch Advertiser";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
    
 $this->load->view('/common/form_header_view',$data);
 $this->load->view('/public/form_submitted_already_view',$data);
