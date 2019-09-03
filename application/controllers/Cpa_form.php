@@ -27,7 +27,6 @@ public function __construct()
       $this->author = "The author";
       $this->keywords = "The keywords here";
       $this->description= "the description";
-      $this->user =  $this->advertiser_model->get_advertiser_by_id();
       $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 
    

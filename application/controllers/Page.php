@@ -11,7 +11,13 @@ public function __construct()
     $this->load->helper(array('url','form','blog_helper','page_helper'));
     $this->load->library(array('session','form_validation','user_agent'));
     $this->load->model(array('blog_model','admin_model','pages_model','user_model'));
-     
+      $this->siteName = "Ad Network";
+      $this->author = "The author";
+      $this->tagLine ="The tag line";
+      $this->keywords = "The keywords here";
+      $this->description= "the description";
+      $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+
 }
 
 
@@ -20,11 +26,10 @@ public function __construct()
 
 
 
-      $data['title'] = "AdNetwork | Delivering Quality Advertisement of the future For Africans";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
-      $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african businesses share their story online while also creating a better platform for African Publishers To Monetize their Contents";
-      
+      $data['title'] = $this->siteName." | ".$this->tagLine;
+       $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
 
 
   
@@ -78,10 +83,10 @@ if ($this->form_validation->run() == FALSE)
 
     
 
-      $data["title"] ="AdNetwork | Forgot Password";
-      $data["keywords"] ="AdNetwork,nigeria,money,online";
-      $data["author"] ="AdNetwork";
-     $data["description"] ="Recover your password on AdNetwork";
+      $data["title"] =$this->siteName." | Forgot Password";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
 
                  $this->load->view('common/header_view',$data);
                 $this->load->view('/common/desktop_nav_view',$data);
@@ -178,10 +183,10 @@ $this->form_validation->set_rules("npass","New Password","trim|required|is_uniqu
 
   
 
-      $data["title"] ="AdNetwork Africa | Login";
-      $data["keywords"] ="AdNetwork Africa,nigeria,money,online";
-      $data["author"] ="AdNetwork Africa";
-     $data["description"] ="Earn Money online using AdNetwork Africa platform";
+      $data["title"] =$this->siteName." | Login";
+       $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
 
                  $this->load->view('common/header_view',$data);
              $this->load->view('public/change_pass_view',$data);
@@ -230,7 +235,7 @@ public function single_page($slug = NULL)
         }
 
 
-        $data['title'] = 'AdNetwork | '.$data['item']['title'];
+        $data['title'] = $this->siteName.'| '.$data['item']['title'];
       $data['keywords'] = $data['item']['keywords'];
       $data['keywords'] = $data['item']['description'];
       $data['author'] = $data['item']['author'];
@@ -255,10 +260,10 @@ public function register()
     $this->form_validation->set_rules("accounttype","Account Type","required");
     if (!$this->form_validation->run())
     {
-      $data['title'] = "AdNetwork | Register";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform.";
+      $data['title'] = $this->siteName." | Register";
+    $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
 
     $this->load->view('/common/header_view',$data);
 
@@ -303,10 +308,10 @@ if (!isset($_SESSION['reg_account_type']))
     $this->form_validation->set_rules('phone', 'Mobile Number', 'required|numeric',array("numeric" => "Please Provide a valid Phone Number"));
   if (!$this->form_validation->run())
     {
-      $data['title'] = "AdNetwork | Register";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform.";
+      $data['title'] = $this->siteName." | Register";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
     
     $this->load->view('/common/header_view',$data);
 $this->load->view('/common/public_header_plate_view',$data);
@@ -341,10 +346,10 @@ $this->session->mark_as_temp('first_details',30000);
 public function How_it_Works()
 {
 
- $data['title'] = "AdNetwork | How it Works";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform.";
+ $data['title'] = .$this->siteName." | How it Works";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
 $data['items'] = $this->blog_model->get_posts_pag(0,7);
 $data['contents'] = $this->pages_model->get_how_it_works() ;
 
@@ -369,10 +374,10 @@ $data['contents'] = $this->pages_model->get_how_it_works() ;
 
   if (!$this->form_validation->run())
      {
-      $data['title'] = "AdNetwork | Register";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,ghana,kenya,south,west,north,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform.";
+      $data['title'] = $this->siteName." | Register";
+       $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
 $data['terms'] = $this->pages_model->get_terms() ;
     $this->load->view('/common/header_view',$data);
     $this->load->view('/common/public_header_plate_view',$data);
@@ -443,10 +448,10 @@ if (!$this->form_validation->run())
   	//login page
         $data['web_favicon_slug'] = "assets/images/AdNetwork.png";
         $data['description'] = NULL;
- $data['title'] = "AdNetwork | Sign In";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform.";
+ $data['title'] = $this->siteName." | Sign In";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
     $this->load->view('/common/header_view',$data);
 
     
@@ -563,10 +568,10 @@ $this->form_validation->set_rules("name","Name","trim|required");
 
         $data["web_favicon_slug"] =base_url('assets/images/favicon.ico');
 
-        $data["title"] ="AdNetwork | Quality Advertising for Africa";
-        $data["keywords"] ="AdNetwork,africa,money,online";
-        $data["author"] ="AdNetwork";
-         $data["description"] ="advertise,monitize with AdNetwork platform";
+        $data["title"] =$this->siteName." | ".$this->tagLine;
+    $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
        $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 
         $this->load->view('common/header_view',$data);
@@ -610,10 +615,10 @@ public function advertisers($tracking_code= NULL)
     
   }
 
-      $data['title'] = "AdNetwork | Advertisers";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Advertiser,Advertisers,adverise,Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
-      $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african businesses share their story online ";
+      $data['title'] = $this->siteName." | Advertisers";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
   
     $this->load->view('/common/header_view',$data);
 $this->load->view('/common/public_header_plate_view',$data);
@@ -624,10 +629,10 @@ $this->load->view('/common/public_header_plate_view',$data);
 }
 public function publishers($tracking_code = NULL)
 {
- $data['title'] = "AdNetwork | Publishers";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Publisher,blogger,Advertisers,adverise,Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
-      $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african publishers monetize their contents with native Recommendation and few other Ad Format ";
+ $data['title'] = $this->siteName." | Publishers";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
 
 
     $this->load->view('/common/header_view',$data);
@@ -637,10 +642,10 @@ $this->load->view('/common/public_header_plate_view',$data);
 }
   public function ad_format()
   {
- $data['title'] = "AdNetwork | Campaign Formats";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Advertiser,Advertisers,adverise,Nigeria,africa,Advertising,advert,story,post,AdNetwork,Adnetwork uganda,adnetwork nigeria ,AdNetwork kenya ,Adnetwork ghana,AdNetwork south africa";
-      $data['description'] = "The Innovative online Mobile Recommendation & Advertising  Platform for Africans,helping african businesses share their story online ";
+ $data['title'] = $this->siteName." | Campaign Formats";
+      $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
    
     $this->load->view('/common/header_view',$data);
 $this->load->view('/common/public_header_plate_view',$data);
