@@ -11,12 +11,14 @@ public function __construct()
     $this->load->helper(array('url','form','blog_helper','page_helper'));
     $this->load->library(array('session','form_validation','user_agent'));
     $this->load->model(array('blog_model','admin_model','pages_model','user_model'));
-    $this->siteName = "Ad Network";
-    $this->author = "The author";
-    $this->tagLine ="The tag line";
-    $this->keywords = "The keywords here";
-    $this->description= "the description";
-    $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+   
+   
+      $this->siteName = $this->advertiser_model->get_system_variable("site_name");
+      $this->author = $this->advertiser_model->get_system_variable("author");
+      $this->keywords = $this->advertiser_model->get_system_variable("keywords");
+      $this->description= $this->advertiser_model->get_system_variable("description");
+      $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+
 
 }
 
