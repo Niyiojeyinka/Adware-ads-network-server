@@ -1,8 +1,7 @@
 <?php
 /***
- * Name:       Pryce changed from plugpress on Dec 14, 2017 1:33:09 PM changed
- from price com;parison to prediction site another  rewrite to story ads network
- * Package:     User.php
+ * Name:       Adnetwork server
+ * Package:     Initail.php
  * About:        A controller that handle auto table creation operation operation
  * Copyright:  (C) 2018,
  * Author:     Ojeyinka Philip Olaniyi
@@ -322,15 +321,6 @@ class Initial extends CI_Controller {
             time int(100),
             PRIMARY KEY (id)
     );";
-    
-//websites:array of sites
-    /*
-if payment is paypal the user email will be save in column bank_no
-if payment is western union save in bank no also
-if bank save as usual but name + swift code
-
-
-    */
 
 
 
@@ -341,7 +331,18 @@ if bank save as usual but name + swift code
     long_value text,
     PRIMARY KEY (id)
 );";
+/*
+default data
+variable_name variable_value  long_value
+site_name      Ad Network Name    __
+author         maybe AdNetwork name
+tagline               __     Your tagline
+keywords           __          SEO keywords
+description      ___          Seo description
 
+
+
+*/
 
 
  $sql18 = "CREATE TABLE affilate_clicks (
@@ -437,14 +438,22 @@ $sql23 = "CREATE TABLE countries (
 );";
 
 
+/*
+insert the default data above into the db system_var
+*/
+$sql24 = "INSERT INTO system_var (variable_name, variable_value, long_value)
+ VALUES ('site_name','Adnetwork','' ),
+ ('author','Adnetwork Inc','' ),
+ ('tagline','','Your Network tagline' ),
+ ('keywords','','Your site SEO keywords separed by comma' ),
+ ('description','','Your Site SEO keywords' );";
 
 
- $arr = array($sql1,$sql2,$sql3,$sql4,$sql5,$sql6,$sql7,$sql8,$sql9,$sql10,$sql11,$sql12,$sql13,$sql14,$sql15,$sql16,$sql17,$sql18,$sql19,$sql20,$sql21,$sql22,$sql23);
+ $tables = array($sql1,$sql2,$sql3,$sql4,$sql5,$sql6,$sql7,$sql8,$sql9,$sql10,$sql11,$sql12,$sql13,$sql14,$sql15,$sql16,$sql17,$sql18,$sql19,$sql20,$sql21,$sql22,$sql23);
 
- foreach($arr as $value)
+ foreach($tables as $table)
  {
- $_control= $this->db->query($value);
-  if ($_control)
+  if ($this->db->query($table))
   {
 
   echo "Tables sucessfully created"."<br>";
