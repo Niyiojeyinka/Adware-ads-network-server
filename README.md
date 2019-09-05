@@ -34,3 +34,5 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codei
 
 Since  this software was not orignally created to be open source so some function are not dynamic but hard coded
 will be working on modifying it suit the new purpose and also make it easy to install
+
+App live on www.custch.com
