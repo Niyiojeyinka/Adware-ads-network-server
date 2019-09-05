@@ -109,6 +109,19 @@ public function get_advertiser_by_its_id($id)
   return $query->row_array();
 }
 
+public function get_system_variable($varianle_name)
+{
+
+  $query = $this->db->get_where("system_var",array("variable_name" => $variable_name));
+/*check if variable value is empty and if yes the column to use is long_value otherwise we nare going to use variable value
+*/
+  if ($query->row_array()['variable_value'] ==""){
+      return $query->row_array()['long_value'];
+  }else{
+  return $query->row_array()['variable_value'];
+  }
+}
+
 public function get_minimum_value($type)
 {
 

@@ -23,7 +23,9 @@ public function __construct()
     $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper','blog_helper'));
        //get details from db later (The web details)
-      $this->siteName = "Ad Network";
+
+
+      $this->siteName = $this->advertiser_model->get_system_variable("site_name");
       $this->author = "The author";
       $this->keywords = "The keywords here";
       $this->description= "the description";
