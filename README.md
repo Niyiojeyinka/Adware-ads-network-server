@@ -3,6 +3,17 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codei
 ------------------------------------------------------- Features------------------------------------------------------------------
 
 
+
+<br><br>
+
+-----------------------------------------------------Network or Admin Features----------------------------------------------------------
+--Monitor campaign and ads spaces
+--Manage Advertisers & Publishers
+--Approve Publisher account
+--PRocess withdrawal
+
+
+
 -----------------------------------------------------Publisher Account----------------------------------------------------------
 --Withdrawal Request<br>
 --Account Settings<br>
@@ -17,8 +28,8 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codei
 --Form builder : Create and Manage Forms <br>
 --Manage Ads<br>
 --Ads Performance Report <br>
---Integration with Flutterwave Payment Gateway
---Multicurrency and Countries
----for more information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com
+--Integration with Flutterwave Payment Gateway<br>
+--Multicurrency and Multi-Country support<br>
+---for any information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com
 
 And Admin Section to manage Ads ,Approve Pending Publishers,Manage and Process withdrawal ,Manage all users and more
