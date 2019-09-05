@@ -34,6 +34,7 @@ public function __construct()
       $this->keywords = $this->advertiser_model->get_system_variable("keywords");
       $this->description= $this->advertiser_model->get_system_variable("description");
       $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $this->user =  $this->advertiser_model->get_advertiser_by_id();
 
 }
 public function index()

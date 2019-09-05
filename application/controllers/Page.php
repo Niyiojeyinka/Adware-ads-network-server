@@ -10,15 +10,16 @@ public function __construct()
 
     $this->load->helper(array('url','form','blog_helper','page_helper'));
     $this->load->library(array('session','form_validation','user_agent'));
-    $this->load->model(array('blog_model','admin_model','pages_model','user_model'));
+    $this->load->model(array('advertiser_model','blog_model','admin_model','pages_model','user_model'));
    
-   
+
       $this->siteName = $this->advertiser_model->get_system_variable("site_name");
       $this->author = $this->advertiser_model->get_system_variable("author");
       $this->keywords = $this->advertiser_model->get_system_variable("keywords");
       $this->description= $this->advertiser_model->get_system_variable("description");
       $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 
+    $this->tagLine =$this->advertiser_model->get_system_variable("tagline");
 
 }
 
@@ -348,7 +349,7 @@ $this->session->mark_as_temp('first_details',30000);
 public function How_it_Works()
 {
 
- $data['title'] = .$this->siteName." | How it Works";
+ $data['title'] = $this->siteName." | How it Works";
       $data['author'] = $this->author;
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;

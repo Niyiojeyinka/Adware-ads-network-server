@@ -109,7 +109,7 @@ public function get_advertiser_by_its_id($id)
   return $query->row_array();
 }
 
-public function get_system_variable($varianle_name)
+public function get_system_variable($variable_name)
 {
 
   $query = $this->db->get_where("system_var",array("variable_name" => $variable_name));
