@@ -32,4 +32,5 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codei
 --Multicurrency and Multi-Country support<br>
 ---for any information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com
 
-And Admin Section to manage Ads ,Approve Pending Publishers,Manage and Process withdrawal ,Manage all users and more
+Since  this software was not orignally created to be open source so some function are not dynamic but hard coded
+will be working on modifying it suit the new purpose and also make it easy to install
