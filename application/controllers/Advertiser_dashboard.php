@@ -28,11 +28,11 @@ public function __construct()
         show_page('page/logout');
       }
       //get details from db later (The web details)
-      $this->siteName = "Ad Network";
-      $this->author = "The author";
-      $this->keywords = "The keywords here";
-      $this->description= "the description";
-      $this->user =  $this->advertiser_model->get_advertiser_by_id();
+    
+      $this->siteName = $this->advertiser_model->get_system_variable("site_name");
+      $this->author = $this->advertiser_model->get_system_variable("author");
+      $this->keywords = $this->advertiser_model->get_system_variable("keywords");
+      $this->description= $this->advertiser_model->get_system_variable("description");
       $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
 
 }
