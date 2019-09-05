@@ -53,11 +53,11 @@ public function index()
 {
 
 
-      $data['title'] = "AdNetwork | Publisher Dashboard";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." | Publisher Dashboard";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 
 
 $data['user'] = $this->publisher_model->get_publisher_by_id();
@@ -88,11 +88,11 @@ public function settings()
 
 
 
-      $data['title'] = "AdNetwork | Publisher Settings";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." |  Publisher Settings";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
@@ -120,11 +120,11 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
    {
 
 
-      $data['title'] = "AdNetwork | Publisher Settings";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." |  Publisher Settings";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
@@ -204,11 +204,11 @@ $this->publisher_model->update_payment_details();
 
 
 
-      $data['title'] = "AdNetwork | Publisher Payment Settings";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." |  Publisher Payment Settings";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
@@ -328,11 +328,11 @@ public function view_details($ref_id)
 
 
 
-      $data['title'] = "AdNetwork | Publisher Space Reporting";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." |  Publisher Space Reporting";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 $data['item'] = $this->publisher_model->get_space_by_id($ref_id);
@@ -367,11 +367,11 @@ public function affilate()
 
 
 
-      $data['title'] = "AdNetwork | Publisher Affilate";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." |  Publisher Affilate";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
@@ -422,11 +422,11 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
        $this->pagination->initialize($config);
   $data['pagination'] = $this->pagination->create_links();
-      $data['title'] = "AdNetwork | Publisher Campaign";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." |  Publisher Campaign";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
@@ -452,11 +452,11 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
    {
 
 
-      $data['title'] = "AdNetwork | Add ADs Space";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $data['title'] = $this->siteName." |  Add ADs Space";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 $data["code"] = $this->publisher_model->get_space($ref_id)['code'];
@@ -488,11 +488,11 @@ $this->publisher_model->insert_space($ref_id);
     $this->form_validation->set_rules("confirm_email","Confirm New Email","trim|required|matches[new_email]");
     if ($this->form_validation->run() ==  FALSE)
    {
-     $data['title'] = "AdNetwork | Publisher Settings";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
-      $data["noindex"] ='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+     $data['title'] = $this->siteName." |  Publisher Settings";
+            $data['author'] = $this->author;
+      $data['keywords'] = $this->keywords;
+      $data['description'] = $this->description;
+      $data["noindex"] = $this->noindex;
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
