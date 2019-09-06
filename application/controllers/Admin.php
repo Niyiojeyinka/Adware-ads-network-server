@@ -869,7 +869,7 @@ if($account_type == "advertiser")
 
 $_SESSION["id"] = $id;
  $_SESSION["accounttype"] ="Advertiser";
- $_SESSION['account_status'] =$this->user_model->get_user_by_its_id($id,"publishers")['account_status'];
+ $_SESSION['account_status'] = $this->user_model->get_user_by_its_id($id,"publishers")['account_status'];
 $_SESSION["logged_in"] = true;
 
 show_page("advertiser_dashboard");
@@ -878,6 +878,8 @@ show_page("advertiser_dashboard");
 
 $_SESSION["id"] = $id;
  $_SESSION["accounttype"] ="Publisher";
+  $_SESSION['account_status'] = $this->user_model->get_user_by_its_id($id,"advertisers")['account_status'];
+
 $_SESSION["logged_in"] = true;
 
 show_page("publisher_dashboard");
