@@ -24,6 +24,13 @@ public function __construct()
      $this->load->helper(array('url','form','blog_helper'));
          $this->load->library(array('form_validation','user_agent'));
 
+           $this->siteName = $this->advertiser_model->get_system_variable("site_name");
+      $this->author = $this->advertiser_model->get_system_variable("author");
+      $this->keywords = $this->advertiser_model->get_system_variable("keywords");
+      $this->description= $this->advertiser_model->get_system_variable("description");
+      $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $this->user =  $this->advertiser_model->get_advertiser_by_id();
+
 }
 
 	public function index($offset = 0)
@@ -64,12 +71,11 @@ $config['display_pages'] = false;
 $data['pagination'] = $this->pagination->create_links();
 
 
-      $data['title'] = "AdNetwork's Official Blog | AdNetwork.com";
-      $data['author'] = "Olaniyi Ojeyinka";
-      $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
-      $data['description'] = "The online Mobile Advertising Platform for africa.";
 
-	
+	    $data['title'] = $this->siteName." | Official Blog";
+      $data['author'] =  $this->author;
+      $data['keywords'] =  $this->keywords;
+      $data['description'] =  $this->description;
     $this->load->view('/common/header_view',$data);
 $this->load->view('/common/public_header_plate_view',$data);
   $this->load->view('public/bloglist_view',$data);
