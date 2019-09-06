@@ -25,11 +25,7 @@ public function __construct()
      $this->load->helper(array('url','form','page_helper'));
    
 }
-public function index()
-{
-echo get_client_ip();
 
-}
 public function delivery()
 {
   
