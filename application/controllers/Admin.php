@@ -610,69 +610,6 @@ $this->session->mark_as_flash('action_status_report');
 
 }
 
-public function send_msg($user_type,$id = NULL)
-{
-
-$data['title'] =$this->siteName." | Send Messsage to user";
-$data['description'] ="Admin Dashboard";
-
-$data["noindex"] = $this->noindex;
-//$limit = NULL;
-
-
-$this->form_validation->set_rules('title','
-  Message Title', 'required');
-
-$this->form_validation->set_rules('contents','
-  Message Contents', 'required');
-
-
-
-
-
-if(!$this->form_validation->run())
-{
-  $this->load->view('/admin/header_view',$data);
-
-  $this->load->view('admin/sidebar_view',$data);
-
-  $this->load->view('admin/send_msg_view',$data);
-  $this->load->view('admin/footer_view');
-}else{
-
-  //db
-
-$msg = array(
-
-'receiver_id' => $this->uri->segment(3),
-'receiver_type' => $user_type,
-'title' => $this->input->post('title'),
-'message' => $this->input->post('contents'),
-'type' => $this->input->post('type'),
-'status' => 'unread',
-'time' => time()
-
-);
-$this->admin_model->save_message($msg);
-
-  //sucesspage
-    $_SESSION['action_status_report'] ='<span class="w3-text-green">The
-     Message  has been sent successfully</span>';
-    $this->session->mark_as_flash('action_status_report');
-    show_page("admin/send_msg/".$this->uri->segment(3));
-
-
-
-
-
-
-
-}
-
-
-
-}
-
 
 public function email($table_type,$id = NULL)
 {
