@@ -25,7 +25,7 @@ public function __construct()
      $this->load->helper(array('url','form','page_helper'));
    
 }
-
+/*
 public function delivery()
 {
   
@@ -36,7 +36,7 @@ echo json_encode(array(
 
   
 }
-
+*/
 public function deliver_text_js($space_id = NULL)
 {
 $space = $this->campaign_model->get_space_by_ref_id($space_id);
