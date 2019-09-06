@@ -54,7 +54,7 @@ echo "<span class='w3-small'>Last Seen:";
 echo " ".date( "F j, Y, g:i a",$item["lastlog"]);
 echo "</span><br>";
 
-echo "<div class='w3-text-blue'><a href='".site_url('admin/send_msg/publisher/'.$item['id'])."'>Send A Message</a>    <a href='".site_url('admin/email/publishers/'.$item['id'])."'>Email</a> ";
+echo "<div class='w3-text-blue'>   <a href='".site_url('admin/email/publishers/'.$item['id'])."'>Email</a> ";
 if($item['account_status'] =="active")
 {
 echo "  <a href='".site_url('admin/suspend/publishers/'.$item['id'])."'>Suspend User</a></div>";

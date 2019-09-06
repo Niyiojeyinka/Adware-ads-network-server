@@ -37,7 +37,7 @@ echo "</a>";
 echo "<span class='w3-small'>Last Seen:";
 echo " ".date( "F j, Y, g:i a",$item["lastlog"]);
 echo "</span><br>";
-echo "<div class='w3-text-blue'><a href='".site_url('admin/send_msg/'.$item['id'])."'>Send A Message</a>    <a href='".site_url('admin/email/'.$item['id'])."'>Email</a>   <a href='".site_url('admin/suspend/'.$item['id'])."'>Suspend User</a></div>";
+echo "<div class='w3-text-blue'>  <a href='".site_url('admin/email/'.$item['id'])."'>Email</a>   <a href='".site_url('admin/suspend/'.$item['id'])."'>Suspend User</a></div>";
 if(empty($color))
 {
 
