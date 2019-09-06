@@ -27,7 +27,6 @@ public function __construct()
       {
         show_page('page/logout');
       }
-      //get details from db later (The web details)
     
       $this->siteName = $this->advertiser_model->get_system_variable("site_name");
       $this->author = $this->advertiser_model->get_system_variable("author");

@@ -1095,8 +1095,6 @@ $data["noindex"] = $this->noindex;
 
 public function spaces($offset=0)
 {
-
-  //    $limit = 10;
       $limit = 8;
 
 
@@ -1218,8 +1216,6 @@ $data['title'] =$this->siteName." | Site Settings";
 $data['description'] ="Admin Dashboard";
 
 $data["noindex"] = $this->noindex;
-$limit = NULL;
-$data['user'] = $this->user_model->get_user_by_its_id($id,"publishers");
 
 
   $this->load->view('/admin/header_view',$data);
