@@ -1210,6 +1210,28 @@ $data["noindex"] = $this->noindex;
 
 
   }
+  public function site_settings(){
+
+
+
+$data['title'] =$this->siteName." | Site Settings";
+$data['description'] ="Admin Dashboard";
+
+$data["noindex"] = $this->noindex;
+$limit = NULL;
+$data['user'] = $this->user_model->get_user_by_its_id($id,"publishers");
+
+
+  $this->load->view('/admin/header_view',$data);
+
+  $this->load->view('admin/sidebar_view',$data);
+
+  $this->load->view('admin/site_settings_view',$data);
+  $this->load->view('admin/footer_view');
+
+
+
+  }
 
 
   public function view_message($id = null)

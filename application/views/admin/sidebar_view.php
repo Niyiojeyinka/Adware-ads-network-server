@@ -26,10 +26,6 @@
 <a class="w3-text-white w3-padding w3-hover-white" href="<?php echo site_url("/admin_blog/add_page");?>">Create New Page</a><br><br>
 
 
-<a class="w3-text-white w3-padding w3-hover-white"  href="<?php echo site_url("/admin/send_msg/");?>">Send Message (comming soon)</a><br><br>
-<!--
-<a class="w3-text-white w3-padding w3-hover-white"  href="<?php echo site_url("/admin/Campaigns/");?>">Campaigns</a><br><br>-->
-
 
 <a class="w3-text-white w3-padding w3-hover-white"  href="<?php echo site_url("/admin/email/");?>">Send Email (comming soon)</a><br><br>
 
@@ -39,6 +35,9 @@
 
 
 <a class="w3-text-white w3-padding w3-hover-white"  href="<?php echo site_url("/admin/withdrawal");?>">Withdrawals</a><br><br>
+
+<a class="w3-text-white w3-padding w3-hover-white"  href="<?php echo site_url("/admin/withdrawal");?>">Withdrawals</a><br><br>
+<a class="w3-text-white w3-padding w3-hover-white"  href="<?php echo site_url("/admin/site_settings");?>">Site Settings</a><br><br>
 
 
 </div>
