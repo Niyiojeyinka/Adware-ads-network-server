@@ -735,9 +735,6 @@ $this->advertiser_model->insert_campaign_step_three($ref_id,$data['user']);
        $this->pagination->initialize($config);
   $data['pagination'] = $this->pagination->create_links();
 
-
-
-
       $data['title'] = $this->siteName." | Advertiser Campaign";
       $data['author'] =  $this->author;
       $data['keywords'] =  $this->keywords;
@@ -1016,16 +1013,7 @@ $field_values = $this->input->post('fieldselectitem');
 
     if(!empty($field_names))
 {
-  /*
-echo "<br>Field Types <br>";
-var_dump($field_types);
 
-echo "<br>Field Names <br>";
-var_dump($field_names);
-
-
-echo "<br>Field Values <br>";
-var_dump($fieldvalues);*/
 $no_expected_field = count($field_types);
 $form_makeup_data = [];
 for ($i=0; $i < $no_expected_field  ; $i++) {
