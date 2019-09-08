@@ -12,11 +12,7 @@ public function __construct()
      session_start();
      if ((!isset($this->session->admin_name)) ||(!isset($this->session->admin_logged_in)))
  {
-
-
     header('Location: '.site_url('ch_admin'));
-
-
 
  }
 }
@@ -164,21 +160,12 @@ $data['pagination'] = $this->pagination->create_links();
 
 			//check login for admin here later
 
-		$this->load->view('/admin/header_view',$data);
-
+		$this->load->view('admin/header_view',$data);
 		$this->load->view('admin/sidebar_view',$data);
-
-						$this->load->view('admin/add_image_view',$data);
+		$this->load->view('admin/add_image_view',$data);
 		$this->load->view('admin/footer_view');
 
-
-
-
-
-
 	}
-
-
 
 
 

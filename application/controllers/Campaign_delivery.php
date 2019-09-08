@@ -4,15 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /***
  * Name:      AdNetwork
- * Package:     advertiser_dashboard.php
- * About:        A controller that handles advertiser operation
+ * Package:   Campaign_delivery.php
+ * About:    A controller that handles campaign delivery api operation
  * Copyright:  (C) 2018,
  * Author:     Ojeyinka Philip Olaniyi
  * License:    closed /propietry
  ***/
-
-
-
 
 
 class Campaign_delivery extends CI_Controller {

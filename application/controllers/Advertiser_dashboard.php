@@ -22,12 +22,12 @@ public function __construct()
      $this->load->model(array('blog_model','advertiser_model','campaign_model','publisher_model'));
     $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper','blog_helper'));
-    
+
      if($_SESSION["accounttype"] != "Advertiser")
       {
         show_page('page/logout');
       }
-    
+
       $this->siteName = $this->advertiser_model->get_system_variable("site_name");
       $this->author = $this->advertiser_model->get_system_variable("author");
       $this->keywords = $this->advertiser_model->get_system_variable("keywords");
@@ -202,7 +202,7 @@ if(($this->advertiser_model->get_campaign_ref_id($ref_id)['balance'] > 1) && ($c
     $this->campaign_model->edit_campaign(array('status' => "active"),$ref_id);
 
 
-    
+
 $_SESSION['action_status_report'] ="<span class='w3-text-green'>Campaign ".$action." successfully</span>";
 $this->session->mark_as_flash("action_status_report");
 show_page('advertiser_dashboard/view_details/'.$ref_id);
@@ -210,7 +210,7 @@ show_page('advertiser_dashboard/view_details/'.$ref_id);
 }elseif($campaign['approval'] != 'true'){
 
 
-    
+
 $_SESSION['action_status_report'] ="<span class='w3-text-red'>Campaign is still pending;You cannot start a pending Campaign</span>";
 $this->session->mark_as_flash("action_status_report");
 show_page('advertiser_dashboard/view_details/'.$ref_id);
@@ -239,7 +239,7 @@ show_page('advertiser_dashboard/view_details/'.$ref_id);
    {
 
 
-         
+
 
       $data['title'] = $this->siteName." | Advertiser Settings";
       $data['author'] =  $this->author;
@@ -350,12 +350,11 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
     $this->load->view('/common/advertiser_header_view',$data);
       $this->load->view('/common/advertiser_top_tiles',$data);
-
     $this->load->view('/user/advertiser/choose_campaign_type_view',$data);
      $this->load->view('/common/users_footer_view',$data);
 
-
 }
+
 public function add_banner_campaign($cpa_ref_id = NULL)
  {
 
@@ -367,7 +366,7 @@ $this->form_validation->set_rules('destination_link','Destination Link','require
   $config['upload_path'] = "assets/campaigns";
   $config['allowed_types'] = 'gif|jpg|png|jpeg';
  $config['max_size'] = '1500';
-   
+
  $this->load->library('upload', $config);
  $this->upload->do_upload('banner');
 if(!$this->form_validation->run())
@@ -481,7 +480,7 @@ $this->form_validation->set_rules('campaign_type','Campaign Type','required',arr
   $config['upload_path'] = "assets/campaigns";
   $config['allowed_types'] = 'gif|jpg|png|jpeg';
  $config['max_size'] = '1500';
-   
+
  $this->load->library('upload', $config);
  $this->upload->do_upload('banner');
 if(!$this->form_validation->run())
@@ -544,7 +543,7 @@ $this->form_validation->set_rules('campaign_type','Campaign Type','required',arr
   $config['upload_path'] = "assets/campaigns";
   $config['allowed_types'] = 'gif|jpg|png|jpeg';
  $config['max_size'] = '1500';
-   
+
  $this->load->library('upload', $config);
  $this->upload->do_upload('banner');
 if(!$this->form_validation->run())
@@ -669,7 +668,7 @@ if(!$this->form_validation->run())
 $data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
 $data['general_details'] = $this->advertiser_model->get_general_details();
 
- 
+
 
 $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns();
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
@@ -697,7 +696,7 @@ $data['cpa_form_data'] =NULL;
 
 
 $this->advertiser_model->insert_campaign_step_three($ref_id,$data['user']);
-  
+
 }
 }
  public function campaign($offset = 0)
@@ -789,7 +788,7 @@ $data['user'] =$this->user;
 $data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
 $data['general_details'] = $this->advertiser_model->get_general_details();
 
- 
+
 
 $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns();
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
@@ -882,7 +881,7 @@ $data['user'] =$this->user;
 $data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
 $data['general_details'] = $this->advertiser_model->get_general_details();
 
- 
+
 
 $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns();
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
@@ -898,7 +897,7 @@ $data['currency_code'] = $this->input->post('currency');
 
 
 }
-    
+
 
 
 }
@@ -911,7 +910,7 @@ public function confirm_pay_payment()
 
   if(!isset($_SESSION['hold']['ref']))
   {
-           
+
 $_SESSION['action_status_report'] ="<span class='w3-text-red'>Unknown Error Occurred</span>";
 $this->session->mark_as_flash('action_status_report');
 show_page("advertiser_dashboard/payment");
@@ -920,7 +919,7 @@ show_page("advertiser_dashboard/payment");
     if (isset($_SESSION['hold']['ref'])) {
         $ref = $_SESSION['hold']['ref'];
         $amount = $_SESSION['hold']['amount']; //Correct Amount from Server
-        $currency = $_SESSION['hold']['currency_code']; 
+        $currency = $_SESSION['hold']['currency_code'];
         //Correct Currency from Server
 
         $query = array(
@@ -933,11 +932,11 @@ show_page("advertiser_dashboard/payment");
         );//test*/
 
         $data_string = json_encode($query);
-                
-         $ch = curl_init('https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/verify ');        
-        /*$ch = curl_init("https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/v2/verify"); test */                                 
+
+         $ch = curl_init('https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/verify ');
+        /*$ch = curl_init("https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/v2/verify"); test */
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                              
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
@@ -960,7 +959,7 @@ show_page("advertiser_dashboard/payment");
         if (($chargeResponsecode == "00" || $chargeResponsecode == "0") && ($chargeAmount == $amount)  && ($chargeCurrency == $currency)) {
           //Give Value and return to Success page
 //get exchange rate by currency code returned
-//divided the returned amount by the xchange rate 
+//divided the returned amount by the xchange rate
 //unset ref,$_SESSION['ref']
           //redirect to home
           //later send email
@@ -1029,7 +1028,7 @@ echo "<br>Field Values <br>";
 var_dump($fieldvalues);*/
 $no_expected_field = count($field_types);
 $form_makeup_data = [];
-for ($i=0; $i < $no_expected_field  ; $i++) { 
+for ($i=0; $i < $no_expected_field  ; $i++) {
 if(!empty($field_names[$i]))
 {
 $form_makeup_data[$i] = array('field_type' => $field_types[$i],'field_names' => $field_names[$i],'field_values' => $field_values[$i] );
@@ -1079,7 +1078,7 @@ $data["cpas"] = $this->advertiser_model->count_advertisers_cpas();
 $data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
 $data['general_details'] = $this->advertiser_model->get_general_details();
 
- 
+
 
 
 
@@ -1111,14 +1110,14 @@ echo "<br>Field Values <br>";
 var_dump($fieldvalues);*/
 $no_expected_field = count($field_types);
 $form_makeup_data = [];
-for ($i=0; $i < $no_expected_field  ; $i++) { 
+for ($i=0; $i < $no_expected_field  ; $i++) {
 
 if(!empty($field_names[$i]))
 {
 $form_makeup_data[$i] = array('field_type' => $field_types[$i],'field_names' => $field_names[$i],'field_values' => $field_values[$i] );
 }
 }
-//add time field here 
+//add time field here
 array_push($form_makeup_data, array('field_type' => 'inbuilt','field_names' => 'time','field_values' => '' ));
 
 $ref_id = substr(md5(time()), 12);
@@ -1147,7 +1146,7 @@ $data['form'] = $this->advertiser_model->get_cpa_form_by_ref_id($ref_id);
 $data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
 $data['general_details'] = $this->advertiser_model->get_general_details();
 
- 
+
 
 
 
@@ -1185,7 +1184,7 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
      $this->load->view('/common/users_footer_view',$data);
 
 }else{
-//move to next page 
+//move to next page
 $this->advertiser_model->insert_addon_details($ref_id);
 if ($_POST['usage'] == 'cpa') {
 show_page('advertiser_dashboard/add_campaign/'.$ref_id);
@@ -1221,7 +1220,7 @@ $data['cpa_elements'] =  $this->advertiser_model->get_cpa_form_by_ref_id($ref_id
      $this->load->view('/common/users_footer_view',$data);
 
 }else{
-//move to next page 
+//move to next page
 $this->advertiser_model->insert_addon_details($ref_id);
 $_SESSION['action_status_report'] = "<span class='w3-text-green'>Details Updated Successfully</span>";
 $this->session->mark_as_flash('action_status_report');
@@ -1240,7 +1239,7 @@ public function cpa_forms_list($offset = 0)
         $data['items'] =  $this->advertiser_model->get_advertisers_cpa("cpa_forms",$offset,$limit);
     $config['base_url'] = site_url("advertiser_dashboard/cpa_forms_list");
   $config['total_rows'] = count($this->advertiser_model->get_advertisers_cpa("cpa_forms",null,null));
-  
+
     $config['per_page'] = $limit;
 
    //$config['uri_segment'] = 4;
@@ -1267,7 +1266,7 @@ public function cpa_forms_list($offset = 0)
 
 
 
- 
+
   $data['title'] = $this->siteName." | Forms CPA";
       $data['author'] =  $this->author;
       $data['keywords'] =  $this->keywords;
@@ -1289,14 +1288,14 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 public function edit_form_field($ref_id){
 
-if(array_key_exists('delete', $_POST)) {    
+if(array_key_exists('delete', $_POST)) {
   $old_form_makeup_data_array =json_decode($this->advertiser_model->get_cpa_form_by_ref_id($ref_id)['form_makeup_data'],true);
  $field_to_delete =[];
 for ($i=0; $i <$_POST['no_field'] ; $i++) {
- 
+
 if(array_key_exists($i, $_POST)) {
 array_push($field_to_delete, $i);
- } 
+ }
 }
 for ($p = 0; $p < count($field_to_delete) ;$p++) {
   unset($old_form_makeup_data_array[$field_to_delete[$p]]);
@@ -1350,7 +1349,7 @@ $data_list= json_decode($data['cpa']['form_data'],true);
     $data['data_list'] =  array_slice($data_list, $offset,$limit);
     $config['base_url'] = site_url("advertiser_dashboard/view_data_list/".$ref_id);
   $config['total_rows'] = count($data_list);
-  
+
     $config['per_page'] = $limit;
 
    //$config['uri_segment'] = 4;

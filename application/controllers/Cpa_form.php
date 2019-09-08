@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /***
- * Name:      Custch
+ * Name:     Adnetwork
  * Package:  form.php
  * About:        A controller that handles advertiser operation
  * Copyright:  (C) 2018,
