@@ -6,7 +6,7 @@ class Media extends CI_Controller {
 public function __construct()
 {
      parent::__construct();
-     $this->load->model(array('user_model','blog_model','media_model'));
+     $this->load->model(array('user_model','blog_model','media_model','advertiser_model'));
      $this->load->helper(array('url','form','blog_helper','time_helper','page_helper'));
      $this->load->library(array('form_validation','session'));
   //   session_start();
@@ -15,6 +15,9 @@ public function __construct()
     header('Location: '.site_url('ch_admin'));
 
  }
+ $this->siteName = $this->advertiser_model->get_system_variable("site_name");
+ $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+
 }
 
 
@@ -54,6 +57,11 @@ $data['pagination'] = $this->pagination->create_links();
 
 			//check login for admin here later
 
+
+      $data['title'] =$this->siteName." | Media";
+      $data['description'] ="Admin Dashboard";
+
+      $data["noindex"] = $this->noindex;
 		$this->load->view('/admin/header_view',$data);
 
 		$this->load->view('admin/sidebar_view',$data);
@@ -126,6 +134,11 @@ $data['pagination'] = $this->pagination->create_links();
 	{
 			//check login for admin here later
 
+
+      $data['title'] =$this->siteName." | Add Image To Media";
+      $data['description'] ="Admin Dashboard";
+
+      $data["noindex"] = $this->noindex;
 		$this->load->view('admin/header_view',$data);
 		$this->load->view('admin/sidebar_view',$data);
 		$this->load->view('admin/add_image_view',$data);
