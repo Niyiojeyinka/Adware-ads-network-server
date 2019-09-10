@@ -30,7 +30,7 @@
 <textarea placeholder="Descriptions here" cols="10" rows="10">
 	<?= $site_descriptions?></textarea>
 
-<input type="submit" class="w3-button w3-blue w3-margin" value="Change Site Details"/>
+<input type="submit" class="w3-button w3-blue w3-margin w3-padding" value="Change Site Details"/>
 
 </div>
 
