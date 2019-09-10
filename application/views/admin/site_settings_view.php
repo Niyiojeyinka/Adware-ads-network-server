@@ -28,7 +28,7 @@
 <span
 <span class="w3-label w3-large">Site Descriptions: </span><br>
 <textarea placeholder="Descriptions here" cols="20" rows="10">
-	<?= $site_descriptions?></textarea>
+	<?= $site_descriptions?></textarea><br>
 
 <input type="submit" class="w3-button w3-blue w3-margin w3-padding" value="Change Site Details"/>
 
