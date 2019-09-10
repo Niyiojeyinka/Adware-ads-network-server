@@ -1,5 +1,5 @@
 # PHP-AdNetworkServer
-A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codeigniter3 and NewBiz templates
+A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codeigniter3 and NewBiz and summernote Editor templates
 ------------------------------------------------------- Features------------------------------------------------------------------
 
 
