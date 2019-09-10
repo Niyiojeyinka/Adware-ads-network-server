@@ -7,10 +7,11 @@ public function __construct()
 {
     parent::__construct();
 
-    $this->load->model(array('admin_model','blog_model','publisher_model','campaign_model','advertiser_model','pages_model','user_model'));
+    $this->load->model(array('admin_model','blog_model','publisher_model',
+    'campaign_model','advertiser_model','pages_model','user_model'));
     $this->load->helper(array('url','form_helper','blog_helper','page_helper'));
     $this->load->library(array('form_validation','session'));
-  
+
  if ((!isset($this->session->admin_name)) ||(!isset($this->session->admin_logged_in)))
  {
    show_page("ch_admin");
@@ -20,6 +21,7 @@ public function __construct()
       $this->keywords = $this->advertiser_model->get_system_variable("keywords");
       $this->description= $this->advertiser_model->get_system_variable("description");
       $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+      $this->tagLine =$this->advertiser_model->get_system_variable("tagline");
 
 }
 
@@ -119,14 +121,14 @@ public function view_accounting_details_by_country()
 {
 
   if (isset($_POST['submit'])) {
-  
+
 //users earning
 $pending_array = $this->admin_model->get_users_earning('publisher',$this->input->post('country'));
 $data['pending_earning'] = 0;
 $data['country_details'] = $this->admin_model->get_country_details_by_select_value($this->input->post('country'));
 
 
-for ($i=0; $i < count($pending_array) ; $i++) { 
+for ($i=0; $i < count($pending_array) ; $i++) {
 
 $data['pending_earning'] = $data['pending_earning'] + $pending_array[$i]['pending_bal'];
 
@@ -141,7 +143,7 @@ $bal_array = $this->admin_model->get_users_earning('publisher',$this->input->pos
 $data['bal_earning'] = 0;
 
 
-for ($i=0; $i < count($bal_array) ; $i++) { 
+for ($i=0; $i < count($bal_array) ; $i++) {
 
 $data['bal_earning'] = $data['bal_earning'] + $bal_array[$i]['account_bal'];
 
@@ -151,7 +153,7 @@ $bal_array = $this->admin_model->get_users_earning('advertiser',$this->input->po
 $data['adv_bal_earning'] = 0;
 
 
-for ($i=0; $i < count($bal_array) ; $i++) { 
+for ($i=0; $i < count($bal_array) ; $i++) {
 
 $data['adv_bal_earning'] = $data['adv_bal_earning'] + $bal_array[$i]['account_bal'];
 
@@ -584,7 +586,7 @@ $this->user_model->edit_user_details(array(
 ),$user_id,'publishers');
 
 
-//change withdrawal status to proccessed 
+//change withdrawal status to proccessed
 
 $this->admin_model->edit_withdrawal_single(array(
 
@@ -832,7 +834,7 @@ public function suspend($table_type = NULL,$id = NULL)
 $new_user_details = array('account_status' => "suspended" );
 
 $this->admin_model->update_user($table_type,$new_user_details,$id);
-$_SESSION['action_status_report'] = "<span class='w3-text-green'>ACcount 
+$_SESSION['action_status_report'] = "<span class='w3-text-green'>ACcount
 Suspended successfully</span>";
 $this->session->mark_as_flash('action_status_report');
 
@@ -856,7 +858,7 @@ public function resume($table_type = NULL,$id = NULL)
 $new_user_details = array('account_status' => "active" );
 
 $this->admin_model->update_user($table_type,$new_user_details,$id);
-$_SESSION['action_status_report'] = "<span class='w3-text-green'>ACcount 
+$_SESSION['action_status_report'] = "<span class='w3-text-green'>ACcount
 Resumed/Reactivated successfully</span>";
 $this->session->mark_as_flash('action_status_report');
 
@@ -1156,11 +1158,13 @@ $data['description'] ="Admin Dashboard";
 
 $data["noindex"] = $this->noindex;
 
-
+$data['site_name']= $this->siteName;
+$data['site_keywords']=$this->keywords;
+$data['site_author']=$this->author;
+$data['site_tagline']=$this->tagLine;
+$data['site_descriptions']= $this->description;
   $this->load->view('/admin/header_view',$data);
-
   $this->load->view('admin/sidebar_view',$data);
-
   $this->load->view('admin/site_settings_view',$data);
   $this->load->view('admin/footer_view');
 
