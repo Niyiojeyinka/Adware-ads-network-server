@@ -8,7 +8,7 @@ public function __construct()
      parent::__construct();
 
      $this->load->model(array('pages_model','admin_blog_model','admin_model','user_model',
-     'blog_model'));
+     'blog_model','advertiser_model'));
      $this->load->helper(array('url','form_helper','blog_helper','page_helper'));
      $this->load->library(array('form_validation','session'));
 
