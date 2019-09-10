@@ -9,7 +9,7 @@ public function __construct()
      $this->load->model(array('user_model','blog_model','media_model'));
      $this->load->helper(array('url','form','blog_helper','time_helper','page_helper'));
      $this->load->library(array('form_validation','session'));
-     session_start();
+  //   session_start();
      if ((!isset($this->session->admin_name)) ||(!isset($this->session->admin_logged_in)))
  {
     header('Location: '.site_url('ch_admin'));
@@ -26,19 +26,8 @@ public function __construct()
 	//	$err = $this->uri->segment(3, 0);
 	$limit = 4;
 		$this->load->library('pagination');
-
-
-
-
       $data['items'] = $this->media_model->get_media_img($offset,$limit);
-
-
-
-
-	$config['base_url'] = site_url("media/index");
-
-
-
+    	$config['base_url'] = site_url("media/index");
 //$config['total_rows'] = count($this->pages_model->get_pagelist(null,null));
 
 $config['total_rows'] = $this->db->count_all('media');
@@ -51,9 +40,6 @@ $config['first_tag_close'] = '</span>';
 $config['last_tag_open'] = '<br><span class="w3-btn w3-blue w3-text-white">';
 $config['last_tag_close'] = '</span>';
 $config['first_link'] = 'First';
-
-
-
 $config['prev_link'] = 'Prev';
 $config['next_link'] = 'Next';
 $config['next_tag_open'] = '<span style="margin-left:20%" class="w3-btn w3-blue w3-text-white">';
@@ -66,12 +52,6 @@ $config['display_pages'] = false;
 	   $this->pagination->initialize($config);
 $data['pagination'] = $this->pagination->create_links();
 
-
-
-
-
-
-
 			//check login for admin here later
 
 		$this->load->view('/admin/header_view',$data);
@@ -81,10 +61,6 @@ $data['pagination'] = $this->pagination->create_links();
 						$this->load->view('admin/media_view',$data);
 		$this->load->view('admin/footer_view');
 
-
-
-
-
 	}
 
 
@@ -93,7 +69,7 @@ $data['pagination'] = $this->pagination->create_links();
 	public function upload_image()
 	{
 
- 
+
 
 	$config['upload_path'] = './assets/media/images';
    $config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -139,14 +115,8 @@ $data['pagination'] = $this->pagination->create_links();
 
 		$this->load->view('admin/sidebar_view',$data);
 
-						$this->load->view('admin/add_image_view',$data);
+		$this->load->view('admin/add_image_view',$data);
 		$this->load->view('admin/footer_view');
-
-
-
-
-
-
 
  }
 
@@ -154,10 +124,6 @@ $data['pagination'] = $this->pagination->create_links();
 
 	public function add_image()
 	{
-
-
-
-
 			//check login for admin here later
 
 		$this->load->view('admin/header_view',$data);
