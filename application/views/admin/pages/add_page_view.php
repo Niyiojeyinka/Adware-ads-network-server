@@ -26,14 +26,42 @@ if(isset($err_reports))
 
 
 
-<script type="text/javascript" src="<?= base_url('assets/js/nicEdit.js') ?>"></script>
-<script type="text/javascript">
-bkLib.onDomLoaded(function() {
-	
-	new nicEditor({iconsPath : '/nicEditorIcons.gif'}).panelInstance('contents');
-	
+<script>
+    $(document).ready(function() {
+       $('#contents').summernote({
+    height: ($(window).height() - 300),
+    callbacks: {
+        onImageUpload: function(image) {
+            uploadImage(image[0]);
+        }
+    }
 });
+
+function uploadImage(image) {
+    var data = new FormData();
+    data.append("image", image);
+    $.ajax({
+        url: '<?=site_url("gettew_webfunction/upload_image") ?>',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: data,
+        type: "post",
+        success: function(url) {
+            var image = $('<img>').attr('src', /*'http://' + */url);
+            $('#contents').summernote("insertNode", image[0]);
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+}});
+
+
 </script>
+
+
+
 
 <center>
 <span class="w3-label">Contents:</span><br>
