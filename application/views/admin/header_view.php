@@ -30,7 +30,8 @@ echo base_url('assets/media/images/pricetagfav.ico');
 
 <meta name="author" content="<?php //echo $author;?>">
 
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet"  href="<?php echo base_url('assets/cj/fontawesome-4.6.3.min.css'); ?>"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="<?php echo base_url('assets/cj/fontawesome-4.6.3.min.css'); ?>"/>
 
 <link rel="stylesheet"  href="<?php echo base_url('assets/cj/w3mobile.css'); ?>"/>
 
@@ -40,8 +41,21 @@ echo base_url('assets/media/images/pricetagfav.ico');
 <!--<link rel="stylesheet"  href="<?php echo base_url('assets/cj/w3mobile.css'); ?>">-->
 
 
+		<!---editor dependency plus jquery-->
+  <link rel="stylesheet"  href="<?php echo base_url('assets/bootstrap3.3.5/css/bootstrap.css'); ?>">
+  <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js'); ?>">
+		</script>
+  <script type="text/javascript" src="<?php echo base_url('assets/bootstrap3.3.5/js/bootstrap.js'); ?>">
+		</script>
+<link rel="stylesheet"  href="<?php echo base_url('assets/dist/summernote.css'); ?>">
+<script type="text/javascript" src="<?php echo base_url('assets/dist/summernote.js'); ?>">
+
+</script>
 
 <style>
+a {
+  text-decoration: none !important;
+}
 
 @media screen and (min-width:400px){
 #menuc {
