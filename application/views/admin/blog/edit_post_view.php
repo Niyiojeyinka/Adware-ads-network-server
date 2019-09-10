@@ -3,7 +3,7 @@
 
 <div class="w3-center">
 <b class="w3-xlarge w3-text-blue-grey">Edit Article:</b><br>
-<?= form_open_multipart('admin_blog/edit_post/'.$this->uri->segment(3))?> 
+<?= form_open_multipart('admin_blog/edit_post/'.$this->uri->segment(3))?>
 <span class="w3-text-red"><?php
 if(isset($_SESSION['err_reports']))
 {
@@ -20,14 +20,42 @@ echo validation_errors(); ?>
 <input type="hidden" name="idkey" value="<?php echo $this->uri->segment(3); ?>"></input>
 
 
-<script type="text/javascript" src="<?= base_url('assets/js/nicEdit.js') ?>"></script>
-<script type="text/javascript">
-bkLib.onDomLoaded(function() {
-	
-	new nicEditor({iconsPath : '/nicEditorIcons.gif'}).panelInstance('contents');
-	
+<script>
+    $(document).ready(function() {
+       $('#contents').summernote({
+    height: ($(window).height() - 300),
+    callbacks: {
+        onImageUpload: function(image) {
+            uploadImage(image[0]);
+        }
+    }
 });
+
+function uploadImage(image) {
+    var data = new FormData();
+    data.append("image", image);
+    $.ajax({
+        url: '<?=site_url("gettew_webfunction/upload_image") ?>',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: data,
+        type: "post",
+        success: function(url) {
+            var image = $('<img>').attr('src', /*'http://' + */url);
+            $('#contents').summernote("insertNode", image[0]);
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+}});
+
+
 </script>
+
+
+
 
 
 
