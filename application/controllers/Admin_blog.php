@@ -11,17 +11,19 @@ public function __construct()
      'blog_model'));
      $this->load->helper(array('url','form_helper','blog_helper','page_helper'));
      $this->load->library(array('form_validation','session'));
-     
+
   if (!isset($this->session->admin_name) || !isset($this->session->admin_logged_in))
  {
        show_page("ch_admin");
  }
-//get details from db later (The web details)
-      $this->siteName = "Ad Network";
-      $this->author = "The author";
-      $this->keywords = "The keywords here";
-      $this->description= "the description";
-      $this->noindex =  $this->noindex;
+
+  $this->siteName = $this->advertiser_model->get_system_variable("site_name");
+   $this->author = $this->advertiser_model->get_system_variable("author");
+   $this->keywords = $this->advertiser_model->get_system_variable("keywords");
+   $this->description= $this->advertiser_model->get_system_variable("description");
+   $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+   $this->tagLine =$this->advertiser_model->get_system_variable("tagline");
+
 
 
 }
