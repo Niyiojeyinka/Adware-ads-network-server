@@ -36,3 +36,16 @@ Since  this software was not orignally created to be open source so some functio
 will be working on modifying it suit the new purpose and also make it easy to install
 
 App live on www.custch.com
+
+## Installation
+<ul>
+	<li>Copy the files to your root directory</li>
+	<li>Change database connection details at application/config/database.php</li>
+	<li>then go to your_url/index.php/install to prepare the database for the web app</li>
+
+</ul>
+
+<br>
+
+## Requirement
+PHP 5.6+,MSQL 5+ 
