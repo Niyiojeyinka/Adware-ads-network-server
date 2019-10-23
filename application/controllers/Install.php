@@ -9,7 +9,7 @@
  ***/
 
 
-class Initial extends CI_Controller {
+class Install extends CI_Controller {
     function index()
     {
 
