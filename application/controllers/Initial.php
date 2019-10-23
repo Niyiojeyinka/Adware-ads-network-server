@@ -14,8 +14,9 @@ class Initial extends CI_Controller {
     {
 
     $this->load->database();
-  
-    $sql1 = "CREATE TABLE blog (
+
+    $queries= array(
+      "CREATE TABLE blog (
         id int(11) NOT NULL AUTO_INCREMENT,
         title varchar(128) NOT NULL,
         slug varchar(128),
@@ -30,13 +31,8 @@ class Initial extends CI_Controller {
         category varchar(225),
         text text NOT NULL,
         PRIMARY KEY (id)
-);";
-
-//status:pending,draft,published
-
-
-
-    $sql2 = "CREATE TABLE payments (
+);",
+"CREATE TABLE payments (
         id int(11) NOT NULL AUTO_INCREMENT,
         user_id varchar(128) NOT NULL,
         user_type varchar(128) NOT NULL,
@@ -50,11 +46,8 @@ class Initial extends CI_Controller {
         time_of_completion varchar(128),
         ldetails text,
         PRIMARY KEY (id)
-);";
-//status:completed,pending; payment_type:deposit,payout,refund
-
-
-    $sql3 = "CREATE TABLE team (
+);",
+"CREATE TABLE team (
         id int(11) NOT NULL AUTO_INCREMENT,
         firstname varchar(128),
         lastname varchar(128),
@@ -64,8 +57,9 @@ class Initial extends CI_Controller {
         time varchar(128),
         password varchar(128),
         PRIMARY KEY (id)
-);";
-    $sql4 = "CREATE TABLE pages (
+);"
+   ,
+   "CREATE TABLE pages (
         id int(11) NOT NULL AUTO_INCREMENT,
         title varchar(128) NOT NULL,
         slug varchar(128) NOT NULL,
@@ -77,11 +71,9 @@ class Initial extends CI_Controller {
         status varchar(225),
         text text NOT NULL,
        PRIMARY KEY (id)
-);";
+);",
 
-
-
-     $sql5 = "CREATE TABLE cmessages (
+"CREATE TABLE cmessages (
         id int(11) NOT NULL AUTO_INCREMENT,
         phone int(128),
         email varchar(128),
@@ -92,22 +84,16 @@ class Initial extends CI_Controller {
         solved varchar(128),
        time varchar(128),
         PRIMARY KEY (id)
-);";
-
-
-
-
-     $sql6 = "CREATE TABLE newsletter (
+);",
+"CREATE TABLE newsletter (
         id int(11) NOT NULL AUTO_INCREMENT,
         email varchar(128),
         name varchar(128),
         status varchar(128),
         PRIMARY KEY (id)
-);";
+);",
 
-
-
-     $sql7 = "CREATE TABLE media (
+ "CREATE TABLE media (
         id int(11) NOT NULL AUTO_INCREMENT,
         name varchar(128),
         time varchar(128),
@@ -115,11 +101,8 @@ class Initial extends CI_Controller {
         link varchar(128),
         type varchar(128),
         PRIMARY KEY (id)
-);";
-
-
-
-     $sql8 = "CREATE TABLE notifications (
+);",
+"CREATE TABLE notifications (
         id int(11) NOT NULL AUTO_INCREMENT,
         sender_id varchar(128),
         receiver_id varchar(128),
@@ -129,16 +112,8 @@ class Initial extends CI_Controller {
         status varchar(128),
         time varchar(128),
           PRIMARY KEY (id)
-);";
-
-
-
-
-
-//click general will be  used for advertiser
-//story publisher id here doesn't means  story author
-
-     $sql9 = "CREATE TABLE clicks (
+);",
+"CREATE TABLE clicks (
         id int(11) NOT NULL AUTO_INCREMENT,
         time int(100),
         story_pid varchar(100),
@@ -153,10 +128,8 @@ class Initial extends CI_Controller {
         is_mobile varchar(128),
         country varchar(128),
         PRIMARY KEY (id)
-);";
-//status options:valid,invalid
-
-     $sql10 = "CREATE TABLE views (
+);",
+"CREATE TABLE views (
         id int(11) NOT NULL AUTO_INCREMENT,
         time int(100),
         story_pid varchar(100),
@@ -170,11 +143,8 @@ class Initial extends CI_Controller {
         is_mobile varchar(128),
         country varchar(128),
         PRIMARY KEY (id)
-);";
-
-      //other related value  here are for targeting
-     
-     $sql11 = "CREATE TABLE adv_story (
+);",
+"CREATE TABLE adv_story (
       id int(11) NOT NULL AUTO_INCREMENT,
       time int(100),
       user_id int(100),
@@ -214,14 +184,16 @@ class Initial extends CI_Controller {
       action_price DECIMAL(19,4),
       action_type varchar(128),
         PRIMARY KEY (id)
-);";
+);",
         //cr_level options 1,2,3 show completion status of ceating ads
         //status includes incomplete,pending,active,inactive,
         //approval includes incomplete,pending,true,false of type string
 //for admin interface:once dissaproved status must change to inactive andd refund
 
       //other related value  here are for targeting
-     $sql12 = "CREATE TABLE pub_story (
+
+
+"CREATE TABLE pub_story (
         id int(11) NOT NULL AUTO_INCREMENT,
         time int(100),
         user_id int(100) NOT NULL,
@@ -242,12 +214,9 @@ class Initial extends CI_Controller {
       os varchar(128),
       browser varchar(128),
         PRIMARY KEY (id)
-);";
+);",
 
-
-
-
-     $sql13 = "CREATE TABLE history (
+ "CREATE TABLE history (
         id int(11) NOT NULL AUTO_INCREMENT,
         user_email varchar(128),
          details varchar(128),
@@ -255,11 +224,8 @@ class Initial extends CI_Controller {
          time int(100),
         account_type varchar(128),
         PRIMARY KEY (id)
-);";
-
-
-
-     $sql14 = "CREATE TABLE projects (
+);",
+"CREATE TABLE projects (
         id int(11) NOT NULL AUTO_INCREMENT,
         user_id varchar(128),
         category varchar(128),
@@ -268,10 +234,9 @@ class Initial extends CI_Controller {
         link varchar(128),
         type varchar(128),
         PRIMARY KEY (id)
-);";
+);",
 //approval option: true,false of type string
-
-        $sql15 = "CREATE TABLE advertisers (
+"CREATE TABLE advertisers (
             id int(11) NOT NULL AUTO_INCREMENT,
             firstname varchar(128),
             lastname varchar(128),
@@ -291,10 +256,8 @@ class Initial extends CI_Controller {
             lastlog varchar(128),
             time int(100),
             PRIMARY KEY (id)
-    );";
-
-
-        $sql16 = "CREATE TABLE publishers (
+    );",
+    "CREATE TABLE publishers (
             id int(11) NOT NULL AUTO_INCREMENT,
             firstname varchar(128),
             lastname varchar(128),
@@ -320,40 +283,21 @@ class Initial extends CI_Controller {
             referral_id varchar(128),
             time int(100),
             PRIMARY KEY (id)
-    );";
-
-
-
- $sql17 = "CREATE TABLE system_var (
+    );",
+    "CREATE TABLE system_var (
     id int(11) NOT NULL AUTO_INCREMENT,
     variable_name varchar(128),
     variable_value varchar(128),
     long_value text,
     PRIMARY KEY (id)
-);";
-/*
-default data
-variable_name variable_value  long_value
-site_name      Ad Network Name    __
-author         maybe AdNetwork name
-tagline               __     Your tagline
-keywords           __          SEO keywords
-description      ___          Seo description
-
-
-
-*/
-
-
- $sql18 = "CREATE TABLE affilate_clicks (
+);",
+"CREATE TABLE affilate_clicks (
     id int(11) NOT NULL AUTO_INCREMENT,
     referral_id varchar(128),
     account_type varchar(128),
     time int(100),
   PRIMARY KEY (id)
-);";
-
-
+);",
 
     $sql19 = "CREATE TABLE withdrawal (
         id int(11) NOT NULL AUTO_INCREMENT,
@@ -368,10 +312,8 @@ description      ___          Seo description
         time int(100),
         details text,
         PRIMARY KEY (id)
-);";
-
-
-     $sql20 = "CREATE TABLE messages (
+);",
+"CREATE TABLE messages (
         id int(11) NOT NULL AUTO_INCREMENT,
         receiver_id varchar(128),
         receiver_type varchar(128),
@@ -382,8 +324,7 @@ description      ___          Seo description
         platform_type varchar(128),
         time varchar(128),
         PRIMARY KEY (id)
-);";
-//work here later
+);",
 
      $sql21 = "CREATE TABLE admin_earning (
         id int(11) NOT NULL AUTO_INCREMENT,
@@ -395,9 +336,8 @@ description      ___          Seo description
         amount DECIMAL(19,4) NOT NULL,
         time varchar(128),
           PRIMARY KEY (id)
-);";
-
-     $sql22 = "CREATE TABLE cpa_forms (
+);",
+"CREATE TABLE cpa_forms (
         id int(11) NOT NULL AUTO_INCREMENT,
         advertisers_id varchar(128),
         name varchar(128),
@@ -413,11 +353,8 @@ description      ___          Seo description
         form_slug  varchar(128),
         time varchar(128),
           PRIMARY KEY (id)
-);";
-//extra_data_position values pre_form 
-//post_form
-
-$sql23 = "CREATE TABLE countries (
+);",
+"CREATE TABLE countries (
         id int(11) NOT NULL AUTO_INCREMENT,
         name varchar(128),
         select_value varchar(128),
@@ -435,23 +372,18 @@ $sql23 = "CREATE TABLE countries (
         flag_slug  varchar(128),
         time varchar(128),
           PRIMARY KEY (id)
-);";
-
-
-/*
-insert the default data above into the db system_var
-*/
-$sql24 = "INSERT INTO system_var (variable_name, variable_value, long_value)
+);",
+"INSERT INTO system_var (variable_name, variable_value, long_value)
  VALUES ('site_name','Adnetwork','' ),
  ('author','Adnetwork Inc','' ),
  ('tagline','','Your Network tagline' ),
  ('keywords','','Your site SEO keywords separed by comma' ),
- ('description','','Your Site SEO keywords' );";
+ ('description','','Your Site SEO keywords' );"
+ );
+  
 
 
- $tables = array($sql1,$sql2,$sql3,$sql4,$sql5,$sql6,$sql7,$sql8,$sql9,$sql10,$sql11,$sql12,$sql13,$sql14,$sql15,$sql16,$sql17,$sql18,$sql19,$sql20,$sql21,$sql22,$sql23,$sql24);
-
- foreach($tables as $table)
+ foreach($queries as $table)
  {
   if ($this->db->query($table))
   {
