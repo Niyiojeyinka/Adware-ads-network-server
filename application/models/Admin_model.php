@@ -463,7 +463,7 @@ public function edit_site_details()
 
         $this->db->update("system_var",array("long_value"=> $this->input->post("site_descriptions")),array("variable_name"=> "description"));
 
-
+return TRUE;
 
  }
 
