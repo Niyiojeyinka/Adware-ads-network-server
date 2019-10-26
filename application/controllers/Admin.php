@@ -1169,7 +1169,15 @@ $data['site_descriptions']= $this->description;
   $this->load->view('admin/footer_view');
 }else{
 //submit btn is clicked
+    if ($this->admin_model->edit_site_details()){
+      
 
+
+    }else{
+    $_SESSION['action_status_report']="<span class='w3-text-red'>Unknown Error Occurred</span>";
+    $this->session->mark_as_flash("action_status_report");
+
+    }
 
 
 }
