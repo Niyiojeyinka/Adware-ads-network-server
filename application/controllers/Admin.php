@@ -1181,7 +1181,7 @@ $_SESSION['action_status_report']="<span class='w3-text-green'>Changes Saved</sp
 
     }
 
-
+    show_page("admin/site_settings");
 }
 
 
