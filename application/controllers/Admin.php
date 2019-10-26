@@ -1151,8 +1151,8 @@ $data["noindex"] = $this->noindex;
   }
   public function site_settings(){
 
-
-
+if (!isset($_POST['submit'])) {
+ 
 $data['title'] =$this->siteName." | Site Settings";
 $data['description'] ="Admin Dashboard";
 
@@ -1167,7 +1167,12 @@ $data['site_descriptions']= $this->description;
   $this->load->view('admin/sidebar_view',$data);
   $this->load->view('admin/site_settings_view',$data);
   $this->load->view('admin/footer_view');
+}else{
+//submit btn is clicked
 
+
+
+}
 
 
   }
