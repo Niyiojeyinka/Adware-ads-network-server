@@ -1,2 +1,0 @@
-Every quiz will have a unique id (expiry:session)
-check for unique id when getting from db
