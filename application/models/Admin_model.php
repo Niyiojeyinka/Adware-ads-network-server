@@ -459,6 +459,8 @@ public function edit_site_details()
 
     $this->db->update("system_var",array("long_value"=> $this->input->post("site_tagline")),array("variable_name"=> "tagline"));
 
+    $this->db->update("system_var",array("long_value"=> $this->input->post("site_keywords")),array("variable_name"=> "keywords"));
+
 
  }
 
