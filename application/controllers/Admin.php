@@ -1171,6 +1171,8 @@ $data['site_descriptions']= $this->description;
 //submit btn is clicked
     if ($this->admin_model->edit_site_details()){
       
+$_SESSION['action_status_report']="<span class='w3-text-green'>Changes Saved</span>";
+    $this->session->mark_as_flash("action_status_report");
 
 
     }else{
