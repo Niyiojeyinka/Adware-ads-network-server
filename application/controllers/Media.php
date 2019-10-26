@@ -26,14 +26,11 @@ public function __construct()
 	{
 
 
-	//	$err = $this->uri->segment(3, 0);
-	$limit = 4;
-		$this->load->library('pagination');
-      $data['items'] = $this->media_model->get_media_img($offset,$limit);
-    	$config['base_url'] = site_url("media/index");
-//$config['total_rows'] = count($this->pages_model->get_pagelist(null,null));
-
-$config['total_rows'] = $this->db->count_all('media');
+	 $limit = 4;
+	 $this->load->library('pagination');
+     $data['items'] = $this->media_model->get_media_img($offset,$limit);
+     $config['base_url'] = site_url("media/index");
+     $config['total_rows'] = $this->db->count_all('media');
 
 	$config['per_page'] = $limit;
 
