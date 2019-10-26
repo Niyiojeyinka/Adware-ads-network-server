@@ -454,6 +454,7 @@ return $query->result_array();
 public function edit_site_details()
 {
     $this->db->update("system_var",array("variable_value"=> $this->input->post("site_name")),array("variable_name"=> "site_name"));
+    $this->db->update("system_var",array("variable_value"=> $this->input->post("site_author")),array("variable_name"=> "author"));
  }
 
 }
