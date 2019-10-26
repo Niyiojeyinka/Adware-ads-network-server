@@ -7,6 +7,7 @@
 <?= form_open("admin/site_settings") ?>
 
 <?=isset($_SESSION['action_status_report'])?$_SESSION['action_status_report']:"" ?>
+<br>
 <span class="w3-label w3-large">Site Name: </span><br>
 <input type="text" placeholder="Site Name" class="w3-padding w3-margin" name="site_name"
  value="<?=$site_name ?>"/>
