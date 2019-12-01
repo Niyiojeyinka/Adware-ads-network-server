@@ -5,32 +5,37 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codei
 
 
 <br><br>
+## Network Admin Features-
+<ul>
+	<li>Monitor campaign and ads spaces</li>
+<li>Manage Advertisers & Publishers</li>
+<li>Approve Publisher account</li>
+<li>PRocess withdrawal<li>
 
------------------------------------------------------Network or Admin Features----------------------------------------------------------
---Monitor campaign and ads spaces
---Manage Advertisers & Publishers
---Approve Publisher account
---PRocess withdrawal
-
-
-
------------------------------------------------------Publisher Account----------------------------------------------------------
---Withdrawal Request<br>
---Account Settings<br>
---Integration Code Generator<br>
----Manage Ads Spaces<br>
+</ul>
 
 
------------------------------------------------------Advertiser Account----------------------------------------------------------
---Deposit<br>
---Account Settings<br>
---Ad Creator<br>
---Form builder : Create and Manage Forms <br>
---Manage Ads<br>
---Ads Performance Report <br>
---Integration with Flutterwave Payment Gateway<br>
---Multicurrency and Multi-Country support<br>
----for any information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com
+## Publisher Account----------------------------------------------------------
+
+<ul>
+	<li>Withdrawal Request</li>
+<li>Integration Code Generator</li>
+<li>Manage Ads Spaces</li>
+
+</ul>
+
+## Advertiser Account-
+<ul>
+
+<li>Account Settings</li>
+<li>Ad Creator</li>
+<li>Form builder : Create and Manage Forms </li>
+<li>Manage Ads</li>
+<li>Ads Performance Report </li>
+<li>Integration with Flutterwave Payment Gateway</li>
+<li>Multicurrency and Multi-Country support</li>
+<li>for any information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com</li>
+</ul>
 
 Since  this software was not orignally created to be open source so some function are not dynamic but hard coded
 will be working on modifying it suit the new purpose and also make it easy to install
