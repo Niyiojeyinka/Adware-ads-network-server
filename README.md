@@ -60,4 +60,5 @@ PHP 5.6+,MSQL 5+
 ## Todo
 --Add Editor to Homepage OR mnake it theme based
 -- add installler
-
+--Paypal integration
+--ability for admin to choose out of available payment gateway
