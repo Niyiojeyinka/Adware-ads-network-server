@@ -55,3 +55,9 @@ App live on www.custch.com
 
 ## Requirement
 PHP 5.6+,MSQL 5+ 
+
+
+## Todo
+--Add Editor to Homepage OR mnake it theme based
+-- add installler
+
