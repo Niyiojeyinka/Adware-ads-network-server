@@ -62,3 +62,4 @@ PHP 5.6+,MSQL 5+
 -- add auto installler<br>
 --Paypal integration<br>
 --ability for admin to choose out of available featured payment gateway
+--upgrade blog functionality
