@@ -61,5 +61,5 @@ PHP 5.6+,MSQL 5+
 --Add Editor to Homepage OR make it theme based<br>
 -- add auto installler<br>
 --Paypal integration<br>
---ability for admin to choose out of available featured payment gateway
+--ability for admin to choose out of available featured payment gateway<br>
 --upgrade blog functionality
