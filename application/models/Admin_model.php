@@ -24,29 +24,15 @@ class Admin_model extends CI_Model {
 public function login_check()
 {
 
-
-
-
  $this->db->select('password');
-$query = $this->db->get_where('team',array("username" => $this->input->post("name")));
-$_pass = $this->input->post('pass');
+$query = $this->db->get_where('team',array("username" => $this->input->post("name"),"password"=> md5($this->input->post('pass'))));
 
-if(empty($query->row_array()))
+
+if(!empty($query->row_array()))
 {
-
-	$arr_to_use = [];
-}else{
-
-$arr_to_use = $query->row_array();
-
+  return TRUE;
 }
-if (in_array($_pass,$arr_to_use) || ($_pass == "password" && $this->input->post("name") == "name"))
-{ return true;
-}
- else
-   {
-   return false;
-   }
+return FALSE;
 
 }
 
