@@ -1,9 +1,9 @@
 <?php
 /***
  * Name:       Adnetwork server
- * Package:     Initail.php
+ * Package:     Install.php
  * About:        A controller that handle auto table creation operation operation
- * Copyright:  (C) 2018,
+ * Copyright:  (C) 2018,2019,2020
  * Author:     Ojeyinka Philip Olaniyi
  * License:    closed /propietry
  ***/
@@ -16,7 +16,7 @@ class Install extends CI_Controller {
     $this->load->database();
 
     $queries= array(
-      "CREATE TABLE blog (
+      "CREATE TABLE IF NOT EXISTS blog (
         id int(11) NOT NULL AUTO_INCREMENT,
         title varchar(128) NOT NULL,
         slug varchar(128),
@@ -32,7 +32,7 @@ class Install extends CI_Controller {
         text text NOT NULL,
         PRIMARY KEY (id)
 );",
-"CREATE TABLE payments (
+"CREATE TABLE IF NOT EXISTS payments (
         id int(11) NOT NULL AUTO_INCREMENT,
         user_id varchar(128) NOT NULL,
         user_type varchar(128) NOT NULL,
@@ -47,7 +47,7 @@ class Install extends CI_Controller {
         ldetails text,
         PRIMARY KEY (id)
 );",
-"CREATE TABLE team (
+"CREATE TABLE IF NOT EXISTS team (
         id int(11) NOT NULL AUTO_INCREMENT,
         firstname varchar(128),
         lastname varchar(128),
@@ -59,7 +59,7 @@ class Install extends CI_Controller {
         PRIMARY KEY (id)
 );"
    ,
-   "CREATE TABLE pages (
+   "CREATE TABLE IF NOT EXISTS pages (
         id int(11) NOT NULL AUTO_INCREMENT,
         title varchar(128) NOT NULL,
         slug varchar(128) NOT NULL,
@@ -73,7 +73,7 @@ class Install extends CI_Controller {
        PRIMARY KEY (id)
 );",
 
-"CREATE TABLE cmessages (
+"CREATE TABLE IF NOT EXISTS cmessages (
         id int(11) NOT NULL AUTO_INCREMENT,
         phone int(128),
         email varchar(128),
@@ -85,7 +85,7 @@ class Install extends CI_Controller {
        time varchar(128),
         PRIMARY KEY (id)
 );",
-"CREATE TABLE newsletter (
+"CREATE TABLE IF NOT EXISTS newsletter (
         id int(11) NOT NULL AUTO_INCREMENT,
         email varchar(128),
         name varchar(128),
@@ -93,7 +93,7 @@ class Install extends CI_Controller {
         PRIMARY KEY (id)
 );",
 
- "CREATE TABLE media (
+ "CREATE TABLE IF NOT EXISTS media (
         id int(11) NOT NULL AUTO_INCREMENT,
         name varchar(128),
         time varchar(128),
@@ -102,7 +102,7 @@ class Install extends CI_Controller {
         type varchar(128),
         PRIMARY KEY (id)
 );",
-"CREATE TABLE notifications (
+"CREATE TABLE IF NOT EXISTS notifications (
         id int(11) NOT NULL AUTO_INCREMENT,
         sender_id varchar(128),
         receiver_id varchar(128),
@@ -113,7 +113,7 @@ class Install extends CI_Controller {
         time varchar(128),
           PRIMARY KEY (id)
 );",
-"CREATE TABLE clicks (
+"CREATE TABLE IF NOT EXISTS clicks (
         id int(11) NOT NULL AUTO_INCREMENT,
         time int(100),
         story_pid varchar(100),
@@ -129,7 +129,7 @@ class Install extends CI_Controller {
         country varchar(128),
         PRIMARY KEY (id)
 );",
-"CREATE TABLE views (
+"CREATE TABLE IF NOT EXISTS views (
         id int(11) NOT NULL AUTO_INCREMENT,
         time int(100),
         story_pid varchar(100),
@@ -144,7 +144,7 @@ class Install extends CI_Controller {
         country varchar(128),
         PRIMARY KEY (id)
 );",
-"CREATE TABLE adv_story (
+"CREATE TABLE IF NOT EXISTS adv_story (
       id int(11) NOT NULL AUTO_INCREMENT,
       time int(100),
       user_id int(100),
@@ -193,7 +193,7 @@ class Install extends CI_Controller {
       //other related value  here are for targeting
 
 
-"CREATE TABLE pub_story (
+"CREATE TABLE IF NOT EXISTS pub_story (
         id int(11) NOT NULL AUTO_INCREMENT,
         time int(100),
         user_id int(100) NOT NULL,
@@ -216,7 +216,7 @@ class Install extends CI_Controller {
         PRIMARY KEY (id)
 );",
 
- "CREATE TABLE history (
+ "CREATE TABLE IF NOT EXISTS history (
         id int(11) NOT NULL AUTO_INCREMENT,
         user_email varchar(128),
          details varchar(128),
@@ -225,7 +225,7 @@ class Install extends CI_Controller {
         account_type varchar(128),
         PRIMARY KEY (id)
 );",
-"CREATE TABLE projects (
+"CREATE TABLE IF NOT EXISTS projects (
         id int(11) NOT NULL AUTO_INCREMENT,
         user_id varchar(128),
         category varchar(128),
@@ -236,7 +236,7 @@ class Install extends CI_Controller {
         PRIMARY KEY (id)
 );",
 //approval option: true,false of type string
-"CREATE TABLE advertisers (
+"CREATE TABLE IF NOT EXISTS advertisers (
             id int(11) NOT NULL AUTO_INCREMENT,
             firstname varchar(128),
             lastname varchar(128),
@@ -257,7 +257,7 @@ class Install extends CI_Controller {
             time int(100),
             PRIMARY KEY (id)
     );",
-    "CREATE TABLE publishers (
+    "CREATE TABLE IF NOT EXISTS publishers (
             id int(11) NOT NULL AUTO_INCREMENT,
             firstname varchar(128),
             lastname varchar(128),
@@ -284,14 +284,14 @@ class Install extends CI_Controller {
             time int(100),
             PRIMARY KEY (id)
     );",
-    "CREATE TABLE system_var (
+    "CREATE TABLE IF NOT EXISTS system_var (
     id int(11) NOT NULL AUTO_INCREMENT,
     variable_name varchar(128),
     variable_value varchar(128),
     long_value text,
     PRIMARY KEY (id)
 );",
-"CREATE TABLE affilate_clicks (
+"CREATE TABLE IF NOT EXISTS affilate_clicks (
     id int(11) NOT NULL AUTO_INCREMENT,
     referral_id varchar(128),
     account_type varchar(128),
@@ -299,7 +299,7 @@ class Install extends CI_Controller {
   PRIMARY KEY (id)
 );",
 
-    $sql19 = "CREATE TABLE withdrawal (
+    $sql19 = "CREATE TABLE IF NOT EXISTS withdrawal (
         id int(11) NOT NULL AUTO_INCREMENT,
         user_id varchar(128) NOT NULL,
         ref varchar(128) NOT NULL,
@@ -313,7 +313,7 @@ class Install extends CI_Controller {
         details text,
         PRIMARY KEY (id)
 );",
-"CREATE TABLE messages (
+"CREATE TABLE IF NOT EXISTS messages (
         id int(11) NOT NULL AUTO_INCREMENT,
         receiver_id varchar(128),
         receiver_type varchar(128),
@@ -326,7 +326,7 @@ class Install extends CI_Controller {
         PRIMARY KEY (id)
 );",
 
-     $sql21 = "CREATE TABLE admin_earning (
+     $sql21 = "CREATE TABLE IF NOT EXISTS admin_earning (
         id int(11) NOT NULL AUTO_INCREMENT,
         month varchar(128),
         year varchar(10),
@@ -337,7 +337,7 @@ class Install extends CI_Controller {
         time varchar(128),
           PRIMARY KEY (id)
 );",
-"CREATE TABLE cpa_forms (
+"CREATE TABLE IF NOT EXISTS cpa_forms (
         id int(11) NOT NULL AUTO_INCREMENT,
         advertisers_id varchar(128),
         name varchar(128),
@@ -354,7 +354,7 @@ class Install extends CI_Controller {
         time varchar(128),
           PRIMARY KEY (id)
 );",
-"CREATE TABLE countries (
+"CREATE TABLE IF NOT EXISTS countries (
         id int(11) NOT NULL AUTO_INCREMENT,
         name varchar(128),
         select_value varchar(128),
