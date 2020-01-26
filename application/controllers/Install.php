@@ -10,11 +10,33 @@
 
 
 class Install extends CI_Controller {
-    function index()
+
+
+      public function __construct()
+      {
+        parent::__construct();
+
+        //$this->load->model(array(''));
+        $this->load->helper(array('url','form_helper'));
+        $this->load->library(array('form_validation','session'));
+        $this->load->database();
+
+
+      }
+
+   public function index()
+   {
+         
+       $data=[];
+
+
+     $this->load->view('installer/index_view',$data);
+   }
+
+  public function next()
     {
 
-    $this->load->database();
-
+   
     $queries= array(
       "CREATE TABLE IF NOT EXISTS blog (
         id int(11) NOT NULL AUTO_INCREMENT,
