@@ -28,6 +28,9 @@ input {
 
 
 }
+.text-red {
+  color: red;
+}
 .button:hover{
     padding: 16px 12px;
 
@@ -59,6 +62,8 @@ width: 50%;
 <strong class="word"><?=$appName ?>  Installation</strong>
 <br>
   <form action="./index" method="POST">
+
+    <span class="text-red"><?= validation_errors()?></span>
     
 <div class="left ">
 <div>

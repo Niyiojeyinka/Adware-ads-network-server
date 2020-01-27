@@ -440,7 +440,6 @@ if ($data['settings']['status']!="pre") {
     $this->form_validation->set_rules("url","Link to your root/Domain","required");
 
    if (!$this->form_validation->run()) {
-     # code...
    
   $this->load->view('installer/index_view',$data);
 }else{
