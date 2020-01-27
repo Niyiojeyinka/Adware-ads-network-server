@@ -399,13 +399,13 @@ class Install extends CI_Controller {
 
  foreach($queries as $table)
  {
-  if ($this->db->query($table))
+  if (!$this->db->query($table))
   {
-
-  echo "Action taken Successfully"."<br>";
+   die("Error in your Queries");
 
   }
   }
+  echo "Installation Complete <br> go  <a href='".INSTALLER_SETTING['base_url']".'>Home</a>";
 }
    
   
