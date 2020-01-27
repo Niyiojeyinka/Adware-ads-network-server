@@ -19,7 +19,6 @@ class Install extends CI_Controller {
         //$this->load->model(array(''));
         $this->load->helper(array('url','form_helper'));
         $this->load->library(array('form_validation','session'));
-        $this->load->database();
 
 
       }
@@ -27,6 +26,7 @@ class Install extends CI_Controller {
 
   public function next()
     {
+        $this->load->database();
 
    
     $queries= array(
@@ -408,24 +408,21 @@ class Install extends CI_Controller {
   }
 }
    
-   public function getSettings()
+  
+   public function insertSetting($setting_array)
    {
      $file=__DIR__."/installer.json";
-     $myfile = fopen( $file, "r") or die("Unable to open file!");
-     $fileContent =fread($myfile,filesize($file));
-     fclose($myfile);
-     return json_decode($fileContent,true);
+    return file_put_contents($file,json_encode($setting_array));
    }
-
    public function index()
    {
          
-  $data['appName']="Ads Network Server";
+  $data['appName']="Ads Network Server by <a href='https://www.twitter.com/niyiojeyinka'>Niyiojeyinka</a>";
  /* 
 $dirs = explode(DIRECTORY_SEPARATOR, __DIR__);
 var_dump($dirs);
 return 0;*/
-$data['settings'] =$this->getSettings();
+$data['settings'] =INSTALLER_SETTING;
 
 if ($data['settings']['status']!="pre") {
   
@@ -444,8 +441,16 @@ if ($data['settings']['status']!="pre") {
   $this->load->view('installer/index_view',$data);
 }else{
 
-    
+    $data['settings']['status'] = "post";
+    $data['settings']['base_url'] = $this->input->post('url');
+    $data['settings']['password'] = $this->input->post('database_password');
+    $data['settings']['hostname'] = $this->input->post('database_host');
+    $data['settings']['username'] = $this->input->post('database_username');
+    $data['settings']['database'] = $this->input->post('database_name');
 
+
+     $this->insertSetting($data['settings']);
+    redirect('/Install/next');
 }
 
    }
