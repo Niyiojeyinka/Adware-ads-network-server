@@ -27,9 +27,13 @@ class Install extends CI_Controller {
    public function index()
    {
          
-  $data=[];/*
+  $data['appName']="Ads Network Server";
+  /*
 $dirs = explode(DIRECTORY_SEPARATOR, __DIR__);
 var_dump($dirs);*/
+
+
+
      $this->load->view('installer/index_view',$data);
    }
 

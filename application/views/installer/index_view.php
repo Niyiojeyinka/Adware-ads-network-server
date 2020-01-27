@@ -56,7 +56,7 @@ width: 50%;
 <body>
   <div class="container">
 
-<strong class="word">Installation</strong>
+<strong class="word"><?=$appName ?>  Installation</strong>
 <br>
   <form>
     
