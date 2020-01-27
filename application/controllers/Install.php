@@ -427,10 +427,10 @@ var_dump($dirs);
 return 0;*/
 
 
-$settings =$this->getSettings();
+$data['settings'] =$this->getSettings();
 
   $this->form_validation->set_rules("database_name","Database Name","required");
-    $this->form_validation->set_rules("database_password","Database Password","required");
+    //$this->form_validation->set_rules("database_password","Database Password","required");
   $this->form_validation->set_rules("database_host","Database Host","required");
   $this->form_validation->set_rules("database_username","Database UserName","required");
     $this->form_validation->set_rules("url","Link to your root/Domain","required");
@@ -441,8 +441,8 @@ $settings =$this->getSettings();
   $this->load->view('installer/index_view',$data);
 }else{
 
+    
 
-  
 }
 
    }

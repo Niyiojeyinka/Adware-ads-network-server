@@ -62,32 +62,32 @@ width: 50%;
     
 <div class="left ">
 <div>
-  <label for="database_name"></label>
-  <input type="text" name="database_name" placeholder="Database Name" />
+  <label for="database_name">Database Name</label>
+  <input type="text" name="database_name" placeholder="Database Name" value="<?=$settings['database']?>"  />
 
 </div>
 
 <div>
-  <label for="database_password"></label>
-  <input type="" name="database_password" placeholder="Database Password" />
+  <label for="database_password">Password</label>
+  <input type="" name="database_password" placeholder="Database Password" value="<?=$settings['password']?>" />
 
 </div>
 
 <div>
-  <label for="database_host"></label>
-  <input type="text" name="database_host" placeholder="Database Host"/>
+  <label for="database_host">HostName</label>
+  <input type="text" name="database_host" placeholder="Database Host" value="<?=$settings['hostname']?>"/>
 
 </div>
 </div>
 <div class="right">
 <div>
-  <label for="database_username"></label>
-  <input type="text" name="database_username" placeholder="Database Username"/>
+  <label for="database_username">Username</label>
+  <input type="text" name="database_username" placeholder="Database Username" value="<?=$settings['username']?>"/>
 
 </div>
  <div>
-  <label for="url"></label>
-  <input type="text" name="url" placeholder="Site URL e.g https://world.com"/>
+  <label for="url">Site URL</label>
+  <input type="text" name="url" placeholder="Site URL e.g https://world.com" value="<?=$settings['base_url']?>"/>
 
 </div>
 
