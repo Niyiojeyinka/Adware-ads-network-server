@@ -425,9 +425,13 @@ class Install extends CI_Controller {
 $dirs = explode(DIRECTORY_SEPARATOR, __DIR__);
 var_dump($dirs);
 return 0;*/
-
-
 $data['settings'] =$this->getSettings();
+
+if ($data['settings']['status']!="pre") {
+  
+  redirect('/');
+}
+
 
   $this->form_validation->set_rules("database_name","Database Name","required");
     //$this->form_validation->set_rules("database_password","Database Password","required");
