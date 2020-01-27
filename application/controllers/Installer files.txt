@@ -3,5 +3,4 @@ Installer files
 ---view/installer installer view directory
 ---database.php
 ---config.php
-
-
+---CONSTANTS.PHP
