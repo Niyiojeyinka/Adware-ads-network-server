@@ -83,3 +83,21 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+/*---- CI INSTALLER CONSTANT----*/
+/*-----CI installer-------*/
+function getInstallerSettings(){
+  	$dirArray= explode(DIRECTORY_SEPARATOR, __DIR__);
+     unset($dirArray[count($dirArray)-1]);
+     $dir = implode(DIRECTORY_SEPARATOR, $dirArray);
+     $file=$dir."/controllers/installer.json";
+     $myfile = fopen( $file, "r") or die("Unable to open file!");
+     $fileContent =fread($myfile,filesize($file));
+     fclose($myfile);
+    return json_decode($fileContent,true);
+}
+   
+define('INSTALLER_SETTING', getInstallerSettings());
+
+/*-----CI installer-------*/

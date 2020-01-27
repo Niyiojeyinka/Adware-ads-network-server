@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://127.0.0.1/ads';
+$config['base_url'] = INSTALLER_SETTING['base_url'];
 
 //$config['base_url'] = 'http://gettew.dev/ads';
 //$config['base_url'] = 'http://192.168.43.96/ads';
