@@ -46,8 +46,7 @@ App live on www.custch.com
 ## Installation
 <ul>
 	<li>Copy the files to your root directory</li>
-	<li>Change database connection details at application/config/database.php</li>
-	<li>then go to your_url/index.php/install to prepare the database for the web app</li>
+	<li>visit youraddress/index.php/install/index  and fill in the input ,then click on install now button</li>
 
 </ul>
 
@@ -59,7 +58,6 @@ PHP 5.6+,MSQL 5+
 
 ## Todo
 --Add Editor to Homepage OR make it theme based<br>
--- add auto installler<br>
 --Paypal,flutterwave ,paypal integration<br>
 --to be changed back to one central currency<br>
 --more beautiful admin dashboard<br>
