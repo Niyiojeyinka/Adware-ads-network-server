@@ -69,7 +69,7 @@ width: 50%;
 
 <div>
   <label for="database_password">Password</label>
-  <input type="" name="database_password" placeholder="Database Password" value="<?=$settings['password']?>" />
+  <input type="password" name="database_password" placeholder="Database Password" value="<?=$settings['password']?>" />
 
 </div>
 
