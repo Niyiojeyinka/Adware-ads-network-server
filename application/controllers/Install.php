@@ -405,7 +405,7 @@ class Install extends CI_Controller {
 
   }
   }
-  echo "Installation Complete <br> go  <a href='".INSTALLER_SETTING['base_url']".'>Home</a>";
+  echo "Installation Complete <br> go  <a href='".INSTALLER_SETTING['base_url']."'>Home</a>";
 }
    
   
