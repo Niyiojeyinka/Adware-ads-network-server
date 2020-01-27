@@ -58,7 +58,7 @@ width: 50%;
 
 <strong class="word"><?=$appName ?>  Installation</strong>
 <br>
-  <form>
+  <form action="./index" method="POST">
     
 <div class="left ">
 <div>

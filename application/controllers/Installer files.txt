@@ -1,3 +1,7 @@
 Installer files
 ---install.php controller
 ---view/installer installer view directory
+---database.php
+---config.php
+
+

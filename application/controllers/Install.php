@@ -24,18 +24,6 @@ class Install extends CI_Controller {
 
       }
 
-   public function index()
-   {
-         
-  $data['appName']="Ads Network Server";
-  /*
-$dirs = explode(DIRECTORY_SEPARATOR, __DIR__);
-var_dump($dirs);*/
-
-
-
-     $this->load->view('installer/index_view',$data);
-   }
 
   public function next()
     {
@@ -419,6 +407,43 @@ var_dump($dirs);*/
   }
   }
 }
+   
+   public function getSettings()
+   {
+     $file=__DIR__."/installer.json";
+     $myfile = fopen( $file, "r") or die("Unable to open file!");
+     $fileContent =fread($myfile,filesize($file));
+     fclose($myfile);
+     return json_decode($fileContent,true);
+   }
+
+   public function index()
+   {
+         
+  $data['appName']="Ads Network Server";
+ /* 
+$dirs = explode(DIRECTORY_SEPARATOR, __DIR__);
+var_dump($dirs);
+return 0;*/
 
 
+$settings =$this->getSettings();
+
+  $this->form_validation->set_rules("database_name","Database Name","required");
+    $this->form_validation->set_rules("database_password","Database Password","required");
+  $this->form_validation->set_rules("database_host","Database Host","required");
+  $this->form_validation->set_rules("database_username","Database UserName","required");
+    $this->form_validation->set_rules("url","Link to your root/Domain","required");
+
+   if (!$this->form_validation->run()) {
+     # code...
+   
+  $this->load->view('installer/index_view',$data);
+}else{
+
+
+  
+}
+
+   }
 }
