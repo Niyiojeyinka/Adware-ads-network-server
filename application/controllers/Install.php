@@ -441,7 +441,24 @@ if ($data['settings']['status']!="pre") {
   $this->load->view('installer/index_view',$data);
 }else{
 
-    $data['settings']['status'] = "post";
+
+$servername = $this->input->post('database_host');
+$username = $this->input->post('database_username');
+$password = $this->input->post('database_password');
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Create database
+$sql = "CREATE DATABASE IF NOT EXISTS ".$this->input->post('database_name');
+if ($conn->query($sql) === TRUE) {
+    //echo "Database created successfully";
+
+       $data['settings']['status'] = "post";
     $data['settings']['base_url'] = $this->input->post('url');
     $data['settings']['password'] = $this->input->post('database_password');
     $data['settings']['hostname'] = $this->input->post('database_host');
@@ -449,8 +466,18 @@ if ($data['settings']['status']!="pre") {
     $data['settings']['database'] = $this->input->post('database_name');
 
 
-     $this->insertSetting($data['settings']);
+    $this->insertSetting($data['settings']);
     redirect('/Install/next');
+} else {
+    echo "Error creating database: " . $conn->error;
+}
+
+$conn->close();
+
+
+
+
+   
 }
 
    }
