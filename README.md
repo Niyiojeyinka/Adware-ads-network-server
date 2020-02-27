@@ -12,6 +12,7 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codei
 <li>Manage Advertisers & Publishers</li>
 <li>Approve Publisher account</li>
 <li>PRocess withdrawal<li>
+<li>Business Settings like  Minimum CPC,CPM,CPA</li>
 
 </ul>
 

@@ -19,7 +19,7 @@ class Publisher_dashboard extends CI_Controller {
 public function __construct()
 {
      parent::__construct();
-     $this->load->model(array('blog_model','publisher_model','advertiser_model','user_model'));
+     $this->load->model(array('blog_model','publisher_model','advertiser_model','user_model','admin_model'));
     $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper','blog_helper'));
 
@@ -63,8 +63,7 @@ public function index()
 
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 
-$data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
-$data['general_details'] = $this->advertiser_model->get_general_details();
+$data['general_details']= $this->admin_model->get_business_settings();
 
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 $data["pending_campaigns"] = $this->publisher_model->count_publisher_pending_spaces();

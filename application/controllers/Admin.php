@@ -1187,6 +1187,40 @@ $_SESSION['action_status_report']="<span class='w3-text-green'>Changes Saved</sp
 
   }
 
+public function business_settings(){
+
+if (!isset($_POST['submit'])) {
+ 
+$data['title'] =$this->siteName." | Site Settings";
+$data['description'] ="Admin Dashboard";
+
+$data["noindex"] = $this->noindex;
+  $data['settings'] = $this->admin_model->get_business_settings();
+
+  $this->load->view('/admin/header_view',$data);
+  $this->load->view('admin/sidebar_view',$data);
+  $this->load->view('admin/business_settings_view',$data);
+  $this->load->view('admin/footer_view');
+}else{
+//submit btn is clicked
+    if ($this->admin_model->set_business_settings()){
+      
+$_SESSION['action_status_report']="<span class='w3-text-green'>Changes Saved</span>";
+    $this->session->mark_as_flash("action_status_report");
+
+
+    }else{
+    $_SESSION['action_status_report']="<span class='w3-text-red'>Unknown Error Occurred</span>";
+    $this->session->mark_as_flash("action_status_report");
+
+    }
+
+    show_page("admin/business_settings");
+}
+
+
+  }
+
 
   public function view_message($id = null)
   {

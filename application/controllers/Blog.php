@@ -20,7 +20,7 @@ class Blog extends CI_Controller {
 public function __construct()
 {
      parent::__construct();
-     $this->load->model('blog_model');
+     $this->load->model(['blog_model','advertiser_model']);
      $this->load->helper(array('url','form','blog_helper'));
          $this->load->library(array('form_validation','user_agent'));
 

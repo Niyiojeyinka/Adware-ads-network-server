@@ -4,7 +4,7 @@ class Admin_model extends CI_Model {
 
 
 /***
- * Name:      Custch
+ * Name:      Adnetwork
  * Package:    Admin_model.php
  * About:        A model class that handle BankAlert  model operation
  * Copyright:  (C) 2018,
@@ -451,6 +451,38 @@ public function edit_site_details()
 
 return TRUE;
 
+ }
+
+
+ /*
+
+business settings here means settings of cpc,cpa ,withdrawal limit etc 
+
+ */
+
+public function set_business_settings()
+ {
+   $settings =[];
+   $settings['currency_code']= $this->input->post('currency_code');
+   $settings['minimum_cpc']= $this->input->post('minimum_cpc');
+   $settings['minimum_cpa']= $this->input->post('minimum_cpa');
+   $settings['minimum_paid_cpa']= $this->input->post('minimum_paid_cpa');
+   $settings['minimum_cpm']= $this->input->post('minimum_cpm');
+   $settings['minimum_budget']= $this->input->post('minimum_budget');
+   $settings['minimum_deposit']= $this->input->post('minimum_deposit');
+      $settings['minimum_payout']= $this->input->post('minimum_payout');
+    $this->db->update("system_var",['long_value'=>json_encode($settings)],['variable_name'=>'business_settings']);
+   return TRUE;
+  
+ }
+
+
+
+ public function get_business_settings()
+ {
+  
+  $query= $this->db->get_where("system_var",['variable_name'=>'business_settings']);
+  return  json_decode($query->row_array()['long_value'],TRUE);
  }
 
 }
