@@ -34,7 +34,7 @@
         <h4>Affilate</h4>
       </div></a>-->
     </div>
-    <div class="w3-quarter"><a href="<?= site_url("advertiser_dashboard/payment") ?>">
+    <div class="w3-quarter"><a href="<?= site_url("advertiser/payment") ?>">
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
         <div class="w3-right">
