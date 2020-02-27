@@ -17,7 +17,7 @@ class Campaign_delivery extends CI_Controller {
 public function __construct()
 {
      parent::__construct();
-     $this->load->model(array('blog_model','campaign_model','advertiser_model','publisher_model','user_model'));
+     $this->load->model(array('blog_model','campaign_model','advertiser_model','publisher_model','user_model','admin_model'));
     $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper'));
    
