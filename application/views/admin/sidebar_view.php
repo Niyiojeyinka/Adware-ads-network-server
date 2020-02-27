@@ -4,6 +4,8 @@
     <br>
     <a class="w3-text-white w3-padding w3-hover-white" href="<?php echo site_url("/admin");?>">Admin Home</a><br><br>
 
+<a class="w3-text-white w3-padding w3-hover-white"  href="<?php echo site_url("/admin/business_settings");?>">Ad Business Settings</a><br><br>
+
 <a class="w3-text-white w3-padding w3-hover-white" href="<?php echo site_url("/admin/publishers_list");?>">Publishers</a><br><br>
 
 <a class="w3-text-white w3-padding w3-hover-white" href="<?php echo site_url("/admin/pending_publishers_list");?>">Pending Publishers</a><br><br>
