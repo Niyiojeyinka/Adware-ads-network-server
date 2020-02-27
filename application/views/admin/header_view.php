@@ -97,8 +97,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 
-<span class="w3-border w3-border-white w3-padding">
-Admin Dashboard<br><br>
+<span class="w3-large w3-padding"><b>
+Admin Dashboard</b><br><br>
 </span>
 
 </div>
