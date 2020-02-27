@@ -8,7 +8,7 @@ if(isset($_SESSION['action_status_report']))
 }
 
 ?>
-<?= form_open('advertiser_dashboard/payment') ?>
+<?= form_open('advertiser/payment') ?>
 <br>
 <span>Amount in </span><br>
 <input type="number" name="amount" min="<?=$general_details['minimum_deposit'] ?>" class="w3-padding"/>

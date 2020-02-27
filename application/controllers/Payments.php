@@ -110,7 +110,7 @@ public function confirm_pay_payment()
 
 $_SESSION['action_status_report'] ="<span class='w3-text-red'>Unknown Error Occurred</span>";
 $this->session->mark_as_flash('action_status_report');
-show_page("advertiser_dashboard/payment");
+show_page("advertiser/payment");
   }
 
     if (isset($_SESSION['hold']['ref'])) {
@@ -175,12 +175,12 @@ unset($ref);
 unset($_SESSION['hold']);
 $_SESSION['action_status_report'] ="<span class='w3-text-green'>Payment Successfully Processed</span>";
 $this->session->mark_as_flash('action_status_report');
-show_page("advertiser_dashboard/payment");
+show_page("advertiser/payment");
         } else {
             //Dont Give Value and return to Failure page
           $_SESSION['action_status_report'] ="<span class='w3-text-red'>Payment Failed</span>";
 $this->session->mark_as_flash('action_status_report');
-show_page("advertiser_dashboard/payment");
+show_page("advertiser/payment");
         }
     }
 
