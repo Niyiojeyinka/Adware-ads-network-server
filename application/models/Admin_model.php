@@ -472,7 +472,7 @@ public function set_business_settings()
    $settings['minimum_deposit']= $this->input->post('minimum_deposit');
       $settings['minimum_payout']= $this->input->post('minimum_payout');
     $this->db->update("system_var",['long_value'=>json_encode($settings)],['variable_name'=>'business_settings']);
-
+   return TRUE;
   
  }
 
