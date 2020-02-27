@@ -4,7 +4,7 @@
    Business Settings
 	</span>
 <div class="w3-padding w3-row">
-<?= form_open("admin/site_settings") ?>
+<?= form_open("admin/business_settings") ?>
 
 <?=isset($_SESSION['action_status_report'])?$_SESSION['action_status_report']:"" ?>
 <br>
