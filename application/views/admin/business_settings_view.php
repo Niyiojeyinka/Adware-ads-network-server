@@ -15,15 +15,15 @@
  value="<?=$settings['currency_code'] ?>"/>
 <br>
 <span class="w3-label w3-large">Minimum CPC: </span><br>
-<input type="number" placeholder="Minimum CPC eg 0.98" class="w3-padding w3-margin" name="minimum_cpc"
+<input type="decimal" placeholder="Minimum CPC eg 0.98" class="w3-padding w3-margin" name="minimum_cpc"
  value="<?=$settings['minimum_cpc'] ?>"/>
 <br>
 <span class="w3-label w3-large">Minimum CPA: </span><br>
-<input type="number" placeholder="Minimum CPA eg 5.78" class="w3-padding w3-margin" name="minimum_cpa"
+<input type="decimal" placeholder="Minimum CPA eg 5.78" class="w3-padding w3-margin" name="minimum_cpa"
  value="<?=$settings['minimum_cpa'] ?>"/>
 <br>
 <span class="w3-label w3-large">Minimum Paid CPA: </span><br>
-<input type="number" placeholder="Minimum Paid CPA eg 50.00" class="w3-padding w3-margin" name="minimum_paid_cpa"
+<input type="decimal" placeholder="Minimum Paid CPA eg 50.00" class="w3-padding w3-margin" name="minimum_paid_cpa"
  value="<?=$settings['minimum_paid_cpa'] ?>"/>
 <br>
 
@@ -31,19 +31,19 @@
 
 <div class="w3-container w3-half">
 	<span class="w3-label w3-large">Minimum CPM: </span><br>
-<input type="number" placeholder="Minimum CPM eg 0.003" class="w3-padding w3-margin" name="minimum_cpm"
+<input type="decimal" placeholder="Minimum CPM eg 0.003" class="w3-padding w3-margin" name="minimum_cpm"
  value="<?=$settings['minimum_cpm'] ?>"/>
 <br>
 <span class="w3-label w3-large">Minimum Budget: </span><br>
-<input type="number" placeholder="Minimum Budget eg 50000.00" class="w3-padding w3-margin" name="minimum_budget"
+<input type="decimal" placeholder="Minimum Budget eg 50000.00" class="w3-padding w3-margin" name="minimum_budget"
  value="<?=$settings['minimum_budget'] ?>"/>
 <br>
 
 <span class="w3-label w3-large">Minimum Deposit: </span><br>
-<input type="number" placeholder="Minimum Deposit eg 50000.00" class="w3-padding w3-margin" name="minimum_deposit"
+<input type="decimal" placeholder="Minimum Deposit eg 50000.00" class="w3-padding w3-margin" name="minimum_deposit"
  value="<?=$settings['minimum_deposit'] ?>"/>
 <br><span class="w3-label w3-large">Minimum Withdrawal: </span><br>
-<input type="number" placeholder="Minimum Withdrawal eg 50000.00" class="w3-padding w3-margin" name="minimum_payout"
+<input type="decimal" placeholder="Minimum Withdrawal eg 50000.00" class="w3-padding w3-margin" name="minimum_payout"
  value="<?=$settings['minimum_payout'] ?>"/>
 <br>
 

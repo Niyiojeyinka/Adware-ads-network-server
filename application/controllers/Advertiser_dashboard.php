@@ -19,7 +19,7 @@ class Advertiser_dashboard extends CI_Controller {
 public function __construct()
 {
      parent::__construct();
-     $this->load->model(array('blog_model','advertiser_model','campaign_model','publisher_model'));
+     $this->load->model(array('blog_model','advertiser_model','campaign_model','publisher_model','admin_model'));
     $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper','blog_helper'));
 
@@ -57,11 +57,8 @@ $data['no_clicks'] = $this->advertiser_model->get_no_affilate_clicks("advertiser
 $data['no_reg'] = $this->advertiser_model->get_no_affilate_reg("advertiser");
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
-//get country details by user's country
 
-$data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
-$data['general_details'] = $this->advertiser_model->get_general_details();
-
+$data['general_details']= $this->admin_model->get_business_settings();
     $this->load->view('/common/advertiser_header_view',$data);
       $this->load->view('/common/advertiser_top_tiles',$data);
     $this->load->view('/user/advertiser/dashboard_view',$data);
