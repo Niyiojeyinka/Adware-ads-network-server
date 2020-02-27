@@ -60,6 +60,7 @@ $route['Publishers/(:any)'] = 'page/publishers/$1';
 
 $route['advertiser'] = 'page/advertisers';
 $route['publisher'] = 'page/publishers';
+$route['advertiser/payment'] = 'payments/payment';
 $route['advertisers'] = 'page/advertisers';
 $route['publishers'] = 'page/publishers';
 $route['Advertisers'] = 'page/advertisers';
