@@ -660,11 +660,7 @@ if(!$this->form_validation->run())
       $data['description'] =  $this->description;
       $data["noindex"] =  $this->noindex;
 
-//get country details by user's country
-
-$data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
-$data['general_details'] = $this->advertiser_model->get_general_details();
-
+$data['general_details']= $this->admin_model->get_business_settings();
 
 
 $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns();
