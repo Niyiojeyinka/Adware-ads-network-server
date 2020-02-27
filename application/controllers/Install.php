@@ -368,25 +368,6 @@ class Install extends CI_Controller {
         time varchar(128),
           PRIMARY KEY (id)
 );",
-"CREATE TABLE IF NOT EXISTS countries (
-        id int(11) NOT NULL AUTO_INCREMENT,
-        name varchar(128),
-        select_value varchar(128),
-        language varchar(128),
-        currency_code varchar(128),
-        currency_name varchar(128),       
-        xchange_rate DECIMAL(19,4) NOT NULL,
-        minimum_cpc  DECIMAL(19,4) NOT NULL,
-        minimum_cpa  DECIMAL(19,4) NOT NULL,
-        minimum_paid_cpa  DECIMAL(19,4) NOT NULL,
-        minimum_cpm  DECIMAL(19,4) NOT NULL,
-        minimum_budget  DECIMAL(19,4) NOT NULL,
-        minimum_deposit  DECIMAL(19,4) NOT NULL,
-        minimum_payout  DECIMAL(19,4) NOT NULL,     
-        flag_slug  varchar(128),
-        time varchar(128),
-          PRIMARY KEY (id)
-);",
 "INSERT INTO system_var (variable_name, variable_value, long_value)
  VALUES ('site_name','Adnetwork','' ),
  ('author','Adnetwork Inc','' ),
