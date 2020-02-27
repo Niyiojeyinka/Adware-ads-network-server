@@ -10,10 +10,10 @@ if(isset($_SESSION['action_status_report']))
 ?>
 <?= form_open('advertiser_dashboard/payment') ?>
 <br>
-<span>Amount in Chosen Currency</span><br>
+<span>Amount in </span><br>
 <input type="number" name="amount" min="<?=$general_details['minimum_deposit'] ?>" class="w3-padding"/>
 <br>
 <input type="submit" name="submit" class="w3-btn w3-indigo w3-margin" value="Next" />
 <br>
-<span class="w3-small">Please if your currency is not in the Dropdown choose US Dollar</span>
+
 </div>
