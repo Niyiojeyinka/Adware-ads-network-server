@@ -53,7 +53,7 @@
 
 
 
-<input type="submit" class="w3-button w3-blue w3-margin w3-padding" name="submit" value="Change Site Details"/>
+<input type="submit" class="w3-button w3-blue w3-margin w3-padding" name="submit" value="Update Settings"/>
 
 </div>
 
