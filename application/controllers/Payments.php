@@ -19,7 +19,7 @@ class Payments extends CI_Controller {
 public function __construct()
 {
      parent::__construct();
-     $this->load->model(array('advertiser_model','campaign_model'));
+     $this->load->model(array('advertiser_model','campaign_model','admin_model'));
     $this->load->library(array('session','form_validation','user_agent'));
      $this->load->helper(array('url','form','page_helper'));
 
