@@ -453,6 +453,13 @@ return TRUE;
 
  }
 
+
+ /*
+
+business settings here means settings of cpc,cpa ,withdrawal limit etc 
+
+ */
+
 public function set_business_settings()
  {
    $settings =[];
