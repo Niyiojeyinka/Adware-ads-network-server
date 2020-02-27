@@ -98,7 +98,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 
 <span class="w3-border w3-border-white w3-padding">
-Custch Advertisment<br><br>
+Admin Dashboard<br><br>
 </span>
 
 </div>
