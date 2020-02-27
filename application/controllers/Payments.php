@@ -40,7 +40,7 @@ public function __construct()
 
 public function payment()
 {
-
+$data['general_details']= $this->admin_model->get_business_settings();
 
 $this->form_validation->set_rules('amount','Amount','required');
 if(!$this->form_validation->run())
@@ -51,8 +51,7 @@ if(!$this->form_validation->run())
       $data['description'] =  $this->description;
       $data["noindex"] =  $this->noindex;
 $data['user'] =$this->user;
-$data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
-$data['general_details'] = $this->advertiser_model->get_general_details();
+
 
 $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns();
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
@@ -72,11 +71,6 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
       $data['description'] =  $this->description;
       $data["noindex"] =  $this->noindex;
 $data['user'] =$this->user;
-
-//get country details by user's country
-
-$data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
-$data['general_details'] = $this->advertiser_model->get_general_details();
 
 
 
