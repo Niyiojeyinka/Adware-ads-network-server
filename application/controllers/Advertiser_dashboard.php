@@ -906,13 +906,7 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 $data["cpas"] = $this->advertiser_model->count_advertisers_cpas();
 
 
-//get country details by user's country
-
-$data['country_details'] = $this->advertiser_model->get_country_details($data['user']['country']);
-$data['general_details'] = $this->advertiser_model->get_general_details();
-
-
-
+$data['general_details']= $this->admin_model->get_business_settings();
 
 
     $this->load->view('/common/advertiser_header_view',$data);
