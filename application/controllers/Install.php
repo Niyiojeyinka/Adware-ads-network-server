@@ -373,7 +373,8 @@ class Install extends CI_Controller {
  ('author','Adnetwork Inc','' ),
  ('tagline','','Your Network tagline' ),
  ('keywords','','Your site SEO keywords separed by comma' ),
- ('description','','Your Site SEO keywords' );"
+ ('description','','Your Site SEO keywords' ),
+ ('business_settings','','[]' );"
  );
   
 
