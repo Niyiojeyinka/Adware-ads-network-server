@@ -60,7 +60,6 @@ PHP 5.6+,MSQL 5+
 ## Todo
 --Add Editor to Homepage OR make it theme based<br>
 --Paypal,flutterwave ,paypal integration<br>
---to be changed back to one central currency<br>
 --more beautiful admin dashboard<br>
 --ability for admin to choose out of available featured payment gateway from the admin dashboard<br>
 --upgrade blog functionality
