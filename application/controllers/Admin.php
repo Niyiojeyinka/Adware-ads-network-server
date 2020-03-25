@@ -87,7 +87,7 @@ $data['pending_campaigns'] = $this->admin_model->get_pending_campaigns();
 $data['no_publishers'] = count($this->publisher_model->get_publishers());
 	$data['no_advertisers'] = count($this->advertiser_model->get_advertisers());
 
-$data['countries'] = $this->admin_model->get_supported_countries();
+//$data['countries'] = $this->admin_model->get_supported_countries();
   $this->load->view('/admin/header_view',$data);
 	$this->load->view('admin/sidebar_view',$data);
 	$this->load->view('admin/first_view',$data);
