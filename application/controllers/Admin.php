@@ -117,68 +117,7 @@ $data['user'] = $this->user_model->get_user_by_its_id($id,"publishers");
   $this->load->view('admin/footer_view');
 
 }
-public function view_accounting_details_by_country()
-{
 
-  if (isset($_POST['submit'])) {
-
-//users earning
-$pending_array = $this->admin_model->get_users_earning('publisher',$this->input->post('country'));
-$data['pending_earning'] = 0;
-$data['country_details'] = $this->admin_model->get_country_details_by_select_value($this->input->post('country'));
-
-
-for ($i=0; $i < count($pending_array) ; $i++) {
-
-$data['pending_earning'] = $data['pending_earning'] + $pending_array[$i]['pending_bal'];
-
-
-}
-
-
-
-
-//users earning
-$bal_array = $this->admin_model->get_users_earning('publisher',$this->input->post('country'));
-$data['bal_earning'] = 0;
-
-
-for ($i=0; $i < count($bal_array) ; $i++) {
-
-$data['bal_earning'] = $data['bal_earning'] + $bal_array[$i]['account_bal'];
-
-}
-//users earning
-$bal_array = $this->admin_model->get_users_earning('advertiser',$this->input->post('country'));
-$data['adv_bal_earning'] = 0;
-
-
-for ($i=0; $i < count($bal_array) ; $i++) {
-
-$data['adv_bal_earning'] = $data['adv_bal_earning'] + $bal_array[$i]['account_bal'];
-
-
-}
-
-
-$data['title'] =$this->siteName." | Accounting By Countries";
-$data['description'] ="Admin Dashboard";
-
-$data["noindex"] = $this->noindex;
-
-
-  $this->load->view('/admin/header_view',$data);
-
-  $this->load->view('admin/sidebar_view',$data);
-
-  $this->load->view('admin/view_accounting_details_view',$data);
-  $this->load->view('admin/footer_view');
-
-
-}
-
-
-}
 public function pending_publishers_list($offset = 0)
 {
 

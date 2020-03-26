@@ -132,28 +132,6 @@ echo "</a>";
 //echo $pagination;
 ?><br><br>
 
-<!-- View accounting details by country form-->
-<?= form_open('admin/view_accounting_details_by_country') ?>
-
-<select name="country" class="w3-padding">
-
-<?php
-foreach ($countries as $country){
-?>	
-<option value="<?=$country['select_value'] ?>"><?=$country['name'] ?></option>
-<?php
-}
-?>
-</select>
-<br>
-<input type="submit" name="submit" class="w3-button w3-indigo w3-round-jumbo w3-margin" value="View"/>
-
-
-  </form>
-
-<!--ends here-->
-
-
 <br>
 <br>
 
