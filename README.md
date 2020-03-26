@@ -45,6 +45,8 @@ will be working on modifying it suit the new purpose and also make it easy to in
 App live on www.custch.com
 
 ## Installation
+
+### Automatic installation
 <ul>
 	<li>Copy the files to your root directory</li>
 	<li>visit youraddress/index.php/install/index  and fill in the input ,then click on install now button</li>
@@ -53,12 +55,21 @@ App live on www.custch.com
 
 <br>
 
+### Manual installation
+<ul>
+	<li>Comming soon....</li>
+	
+
+</ul>
+
+<br>
 ## Requirement
 PHP 5.6+,MSQL 5+ 
 
 
 ## Todo
 --Add Editor to Homepage OR make it theme based<br>
+--Ability to change branding colors<br>
 --Paypal,flutterwave ,paypal integration<br>
 --more beautiful admin dashboard<br>
 --ability for admin to choose out of available featured payment gateway from the admin dashboard<br>
