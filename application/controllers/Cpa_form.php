@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+//front
 /***
  * Name:     Adnetwork
  * Package:  form.php
