@@ -3,7 +3,7 @@
 	<div class="w3-margin-top w3-padding-jumbo">
 		<span class="w3-xxlarge w3-serif"><b>High Quality Campaign for all</b></span><br>
 
-<span class=""><b>get started now</b></span>
+<span class="w3-small w3-text-gray"><b>get started now</b></span>
 
 	</div>
 <div>
