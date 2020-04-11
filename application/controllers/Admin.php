@@ -513,11 +513,11 @@ public function process_withdrawal($id = NULL,$user_id)
 $user = $this->user_model->get_user_by_its_id($user_id,"publishers");
 //add to total withdrawn
 
-$new_e_bal = $user['total_earning'] + $user['pending_bal'];
+$new_e_bal = $user['total_earned'] + $user['pending_bal'];
 
 $this->user_model->edit_user_details(array(
 
-"total_earning" => $new_e_bal,
+"total_earned" => $new_e_bal,
 "pending_bal" => 0.00
 
 ),$user_id,'publishers');
@@ -533,7 +533,7 @@ $this->admin_model->edit_withdrawal_single(array(
   //update neccessary details including history
 
   $this->admin_model->insert_new_history(array(
-"user_id" => $user_id,
+"user_email" => $user['email'],
 "action" => "w_process",
 'time' => time(),
 "details" => "Your Withdrawal Request Had been Processed",
