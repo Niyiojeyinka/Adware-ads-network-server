@@ -1,5 +1,5 @@
 # PHP-AdNetworkServer
-A PHP web App for Serving Text Ads,Image Ads and Article like Ads 
+A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther website think of Google adsense
 <br>
 ------------------------------------------------------- Features------------------------------------------------------------------
 
@@ -8,11 +8,13 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads
 <br><br>
 ## Network Admin Features-
 <ul>
-	<li>Monitor campaign and ads spaces</li>
+<li>Monitor/Manage campaign and ads spaces</li>
 <li>Manage Advertisers & Publishers</li>
-<li>Approve Publisher account</li>
-<li>PRocess withdrawal<li>
-<li>Business Settings like  Minimum CPC,CPM,CPA</li>
+<li>Approve/Disapprove Publisher account</li>
+<li>Process Publisher withdrawal <li>
+<li>Business Settings like Setting of Minimum CPC,CPM,CPA</li>
+<li>Credit/Debit Users' Account</li>
+<li>Set site meta/seo details </li>
 
 </ul>
 
@@ -64,12 +66,13 @@ App live on www.custch.com
 
 <br>
 ## Requirement
-PHP 5.6+,MSQL 5+ 
+PHP 5.6+,MYSQL 5+ 
 
 
 ## Todo
 --Add Editor to Homepage OR make it theme based<br>
---Ability to change branding colors<br>
+--Ability to change branding element like colors,logos etc<br>
+--edit of email and its admin section
 --Paypal,flutterwave ,paypal integration<br>
 --more beautiful admin dashboard<br>
 --ability for admin to choose out of available featured payment gateway from the admin dashboard<br>
