@@ -31,6 +31,9 @@ a {
 #menu-text {
   letter-spacing:0.2em;
 }
+#displayText {
+  letter-spacing:0.2em;
+}
 @media screen and (min-width:400px){
 
 #halfdiv {

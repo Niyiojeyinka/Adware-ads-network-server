@@ -4,4 +4,7 @@
 	<div class="" id="hold_screen">
 
 	</div>
+
+	<div id="displayText" menu-text class="w3-medium w3-serif">
+</div>
 </div>
