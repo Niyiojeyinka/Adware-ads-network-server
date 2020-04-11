@@ -58,10 +58,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
    $this->load->view('/user/advertiser/payment_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 }else{
 
@@ -80,10 +80,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 $data['amount'] = $this->input->post('amount');
 $data['currency_code'] = $this->input->post('currency');
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
    $this->load->view('/user/advertiser/pre_pay_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
