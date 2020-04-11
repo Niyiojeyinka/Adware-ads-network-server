@@ -1,4 +1,6 @@
- <div id="reg" class="w3-padding-jumbo w3-center">
+<div id="halfdiv" class="righthalf w3-half w3-padding-jumbo">
+
+<div id="reg" class="w3-padding-jumbo w3-center">
 
     <form class='w3-center' method='POST' action='<?php echo
     site_url('page/first_next'); ?>'>
@@ -96,7 +98,7 @@ else
 
 
   
-  <input class='w3-center w3-button w3-blue w3-margin-top w3-margin-bottom w3-hover-white w3-hover-text-blue w3-border w3-border-blue'
+  <input class='w3-center w3-btn w3-blue w3-margin-top w3-margin-bottom w3-hover-white w3-hover-text-blue w3-border w3-border-blue'
   type='submit' name='submit' value='Next'/>
  
 
@@ -108,4 +110,4 @@ Already have Account? <span class="w3-text-blue"><?php
     echo site_url('login');
     echo "'>Login Here</a>";
 
-         ?></span></div>
+         ?></span></div></div></section>
