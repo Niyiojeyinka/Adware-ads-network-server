@@ -36,10 +36,10 @@ public function __construct()
 
 
   
-    $this->load->view('/common/header_view',$data);
-$this->load->view('/common/public_header_plate_view',$data);
+    $this->load->view('public/common/header_view',$data);
+//$this->load->view('/common/public_header_plate_view',$data);
   $this->load->view('public/advertisers_view',$data);
-    $this->load->view('common/footer_view');
+  //  $this->load->view('common/footer_view');
  }
   
   
