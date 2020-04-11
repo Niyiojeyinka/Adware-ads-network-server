@@ -50,53 +50,7 @@ float:center;
 display: none;
 
 }
-
-
-#cinput {
-width:50%;/*
-height:50%;*/
-
-
-
 }
-.flinklist {
-display:inline;
-margin-left:2%;
-
-}
-
-#shop_image {
-height:8%;
-width:60%;
-align:center;
-}
-
-#long_div,#short_div {
-width:100%;
-align:center;
-}
-
-
-#price_id{
-float:center;
-
-
-}
-#slider_image{
-width:70%;
-height:70%;
-
-
-}
-
-#shop_price{
-margin-left:20%;
-
-
-}
-
-}
-
 
 
 
@@ -113,23 +67,7 @@ float:right;
 display: none;
 }
 
-.flinklist {
-display:block;
-text-decoration:none;
 }
-#shop_image {
-height:8%;
-width:60%;
-align:center;
-}
-
-
-}
-
-
-
-
-
 
 
 a {
