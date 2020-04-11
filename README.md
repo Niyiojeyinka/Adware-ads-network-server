@@ -1,5 +1,5 @@
 # PHP-AdNetworkServer
-A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codeigniter3 and NewBiz and summernote Editor templates
+A PHP web App for Serving Text Ads,Image Ads and Article like Ads 
 <br>
 ------------------------------------------------------- Features------------------------------------------------------------------
 
@@ -73,4 +73,4 @@ PHP 5.6+,MSQL 5+
 --Paypal,flutterwave ,paypal integration<br>
 --more beautiful admin dashboard<br>
 --ability for admin to choose out of available featured payment gateway from the admin dashboard<br>
---upgrade blog functionality
+--upgrade blog functionality or remove completely
