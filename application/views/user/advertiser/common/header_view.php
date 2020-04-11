@@ -27,12 +27,12 @@ base_url('assets/media/images/faviconsocial.png');
 <meta name="author" content="<?php echo $author;?>">
 
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="stylesheet"  href="<?php echo base_url('assets/cj/fontawesome-4.6.3.min.css'); ?>">
+<link rel="stylesheet"  href="<?php echo base_url('assets/css/fontawesome-4.6.3.min.css'); ?>">
 
-<link rel="stylesheet"  href="<?php echo base_url('assets/cj/w3mobile.css'); ?>">
+<link rel="stylesheet"  href="<?php echo base_url('assets/css/w3mobile.css'); ?>">
 
 
-<link rel="stylesheet"  href="<?php echo base_url('assets/cj/w3.css'); ?>">
+<link rel="stylesheet"  href="<?php echo base_url('assets/css/w3.css'); ?>">
 
 
 <style>
