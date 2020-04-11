@@ -27,3 +27,15 @@ echo base_url('assets/media/images/faviconsocial.png');
 </style>
 
 <body>
+<section>
+    <header class="w3-row w3-bar w3-padding-large w3-card">
+  <img src="<?=base_url('assets/media/images/logo.png') ?>" class="w3-small" 
+   style="max-width:100px;"
+  />
+
+
+</header>
+
+
+
+</section>
