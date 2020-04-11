@@ -1,6 +1,6 @@
 <div id="halfdiv" class="righthalf w3-half w3-padding-jumbo">
 
-  <div class="w3-padding-jumbo">
+  <div class="">
 
     <form class='w3-center' method='POST' action='<?php echo
     site_url('next_reg'); ?>'>

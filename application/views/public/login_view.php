@@ -1,6 +1,6 @@
 <div id="halfdiv" class="righthalf w3-half w3-padding-jumbo">
 
-  <div  id="login" class="w3-margin-top w3-padding-jumbo">
+  <div class="w3-margin-top">
 
     <form class='w3-center w3-margin-top' method='POST' action='<?php echo site_url('login'); ?>'>
  <h4 class='w3-text-blue'><b>Sign In</b></h4>

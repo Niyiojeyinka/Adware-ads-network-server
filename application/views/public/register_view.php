@@ -1,6 +1,6 @@
 <div id="halfdiv" class="righthalf w3-half w3-padding-jumbo">
 
-<div id="reg" class="w3-padding-jumbo w3-center">
+<div class="w3-center">
 
     <form class='w3-center' method='POST' action='<?php echo
     site_url('page/first_next'); ?>'>
@@ -17,7 +17,7 @@
 
 <div class="w3-row">
    <div class='w3-half'>
-       <i  style='margin-right:3%' class="fa fa-user
+       <i   class="fa fa-user
         w3-large w3-text-blue w3-center"></i>
         <input class='w3-center w3-padding' type='text' name='firstname'
         value='<?= set_value('firstname') ?>' placeholder='First Name'/>
@@ -25,7 +25,7 @@
 
 
    <div class='w3-half'>
-       <i  style='margin-right:3%' class="fa fa-user
+       <i   class="fa fa-user
         w3-large w3-text-blue w3-center"></i>
         <input class='w3-center w3-padding' type='text' name='lastname'
           value='<?= set_value('lastname') ?>'  placeholder='Last Name'/>
@@ -38,7 +38,7 @@
 
 <div class="w3-row">
  <div class='w3-half'>
-     <i  style='margin-right:3%' class="fa fa-envelope
+     <i   class="fa fa-envelope
       w3-large w3-text-blue w3-center"></i>
       <input class='w3-center w3-padding' type='email' name='email'
         value='<?= set_value('email') ?>'  placeholder='Email Address'/>
@@ -46,7 +46,7 @@
 
 
  <div class='w3-half'>
-     <i  style='margin-right:3%' class="fa fa-phone
+     <i   class="fa fa-phone
       w3-large w3-text-blue w3-center"></i>
       <input class='w3-center w3-padding' type='tel' name='phone'
        value='<?= set_value('phone') ?>' placeholder='Phone Number'/>
@@ -55,7 +55,7 @@
  <br>
 <div class="w3-row">
  <div class='w3-half'>
-     <i  style='margin-right:3%' class="fa fa-unlock-alt
+     <i   class="fa fa-unlock-alt
       w3-large w3-text-blue w3-center"></i>
       <input id="password_box" class='w3-center w3-padding' type='password' name='password'
         value='<?= set_value('password') ?>'  placeholder='Password'/>
@@ -63,7 +63,7 @@
 
 
  <div class='w3-half'>
-     <i  style='margin-right:3%' class="fa fa-unlock-alt
+     <i   class="fa fa-unlock-alt
       w3-large w3-text-blue w3-center"></i>
       <input id="password_box" class='w3-center w3-padding' type='password' name='cpassword'
         value='<?= set_value('cpassword') ?>' placeholder='Confirm Password'/>
