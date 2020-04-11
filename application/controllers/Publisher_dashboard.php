@@ -239,12 +239,12 @@ $data['user'] = $this->publisher_model->get_publisher_by_id();
     }
 
 
-$data['general_details'] = $this->advertiser_model->get_general_details();
+$data['settings'] = $this->admin_model->get_business_settings();
 
 
 //check if balance is ok
    
-    if($data['user']['account_bal'] >= $data['general_details']['minimum_payout'])
+    if($data['user']['account_bal'] >=$data['settings']['minimum_payout'])
     {
 
 //check if there is previous pending balance
@@ -291,7 +291,7 @@ $details = "You make a withdrawal Request of
       $h_dat =  array(
         'details' => $details,
         'action' => 'w_request' ,
-        'user_id' => $_SESSION['id'],
+        'user_email' => $data['user']['email'],
         'account_type' => "publisher",
         'time' => time()
          );

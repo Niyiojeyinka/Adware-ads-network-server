@@ -7,7 +7,7 @@ Withdrawal Requests</span>
 if(!empty($items))
 {
 foreach ($items as $item) {
-$user_details  = $this->users_model->get_user_by_its_id($item['user_id'],"publishers");
+$user_details  = $this->user_model->get_user_by_its_id($item['user_id'],"publishers");
 
 
 $wlink = site_url('admin/process_withdrawal/'.$item['id']).'/'.$user_details['id'];
