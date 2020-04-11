@@ -29,7 +29,6 @@ public function __construct()
       $this->keywords = $this->advertiser_model->get_system_variable("keywords");
       $this->description= $this->advertiser_model->get_system_variable("description");
       $this->noindex = '<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
-      $this->user =  $this->advertiser_model->get_advertiser_by_id();
 
 }
 
@@ -76,10 +75,10 @@ $data['pagination'] = $this->pagination->create_links();
       $data['author'] =  $this->author;
       $data['keywords'] =  $this->keywords;
       $data['description'] =  $this->description;
-    $this->load->view('/common/header_view',$data);
-$this->load->view('/common/public_header_plate_view',$data);
-  $this->load->view('public/bloglist_view',$data);
-    $this->load->view('common/footer_view');	
+   
+      $this->load->view('public/common/header_view',$data);
+      $this->load->view('public/bloglist_view');
+      $this->load->view('public/common/footer_view');
 		
 	}
 

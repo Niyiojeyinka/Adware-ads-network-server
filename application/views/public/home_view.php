@@ -1,7 +1,7 @@
 
 <div id="halfdiv" class="righthalf w3-half w3-padding-jumbo">
 	<div class="w3-margin-top w3-padding-jumbo">
-		<span class="w3-xxlarge w3-serif"><b>High Quality Campaign for all</b></span><br>
+		<span class="w3-xxlarge w3-serif"><b>High Quality Advertisement for all</b></span><br>
 
 <span class="w3-small w3-text-gray"><b>get started now</b></span>
 
