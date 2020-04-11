@@ -37,6 +37,7 @@ public function __construct()
 
   
     $this->load->view('public/common/header_view',$data);
+    $this->load->view('public/common/left_half_view',$data);
     $this->load->view('public/home_view',$data);
     $this->load->view('public/common/footer_view');
  }
