@@ -56,13 +56,11 @@ $data["inactive_campaigns"] = $this->advertiser_model->count_advertiser_inactive
 $data['no_clicks'] = $this->advertiser_model->get_no_affilate_clicks("advertiser");
 $data['no_reg'] = $this->advertiser_model->get_no_affilate_reg("advertiser");
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
-
-
 $data['general_details']= $this->admin_model->get_business_settings();
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/dashboard_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 }
@@ -83,11 +81,11 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
 
     $this->load->view('/user/advertiser/settings_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -114,10 +112,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/settings_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -249,10 +247,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/settings_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 }else{
@@ -321,10 +319,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
    $this->load->view('/user/advertiser/affilate_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -345,10 +343,10 @@ $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns(
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/choose_campaign_type_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 }
 
@@ -390,10 +388,10 @@ $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns(
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/add_banner_campaign_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -442,10 +440,10 @@ $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns(
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/add_text_campaign_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -504,10 +502,10 @@ $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns(
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/add_recommendation_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -567,10 +565,10 @@ $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns(
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
     $this->load->view('/user/advertiser/add_campaign_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -603,11 +601,11 @@ $data["count_campaigns"] = $this->advertiser_model->count_advertisers_campaigns(
 $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
 
     $this->load->view('/user/advertiser/campaign_target_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 }
@@ -675,8 +673,8 @@ $data['cpa_form_data'] =NULL;
 }
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-    $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
 
     $this->load->view('/user/advertiser/campaign_budget_view',$data);
     $this->load->view('/common/users_footer_view',$data);
@@ -740,11 +738,11 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
 
     $this->load->view('/user/advertiser/campaigns_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
  }
@@ -801,11 +799,11 @@ $data['four_days_ago_clicks'] = $this->advertiser_model->get_campaign_at_time_cl
 $data['campaign_item']['clicks'] = $this->advertiser_model->get_campaign_at_all_time_clicks($ref_id);
 $data['campaign_item']['views'] = $this->advertiser_model->get_campaign_at_all_time_views($ref_id);
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
 
     $this->load->view('/user/advertiser/details_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -909,11 +907,11 @@ $data["cpas"] = $this->advertiser_model->count_advertisers_cpas();
 $data['general_details']= $this->admin_model->get_business_settings();
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
 
     $this->load->view('/user/advertiser/cpa_form_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -975,11 +973,11 @@ $data['general_details']= $this->admin_model->get_business_settings();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
 
     $this->load->view('/user/advertiser/edit_cpa_form_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -1002,10 +1000,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
    $this->load->view('/user/advertiser/post_form_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 }else{
 //move to next page
@@ -1038,10 +1036,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 $data['cpa_elements'] =  $this->advertiser_model->get_cpa_form_by_ref_id($ref_id);
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
    $this->load->view('/user/advertiser/edit_post_form_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 }else{
 //move to next page
@@ -1102,10 +1100,10 @@ $data["count_cpa"] = $this->advertiser_model->count_advertisers_cpa();
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
    $this->load->view('/user/advertiser/cpa_list_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 }
@@ -1201,10 +1199,10 @@ $data_list= json_decode($data['cpa']['form_data'],true);
 
 
 
-    $this->load->view('/common/advertiser_header_view',$data);
-      $this->load->view('/common/advertiser_top_tiles',$data);
+    $this->load->view('/user/advertiser/common/header_view',$data);
+    $this->load->view('/user/advertiser/common/top_tiles',$data);
    $this->load->view('/user/advertiser/data_list_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 

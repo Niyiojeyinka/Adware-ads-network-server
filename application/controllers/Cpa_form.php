@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+//front
 /***
  * Name:     Adnetwork
  * Package:  form.php
@@ -37,7 +37,7 @@ public function __construct()
 public function index($slug,$advert_id=NULL,$space_id=NULL)
 {
       $data['cpa_form'] = $this->advertiser_model->get_cpa_form_by_slug($slug);
-      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName
+      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName;
       $data['author'] = $this->author;
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;
@@ -64,7 +64,7 @@ public function submit_form($slug,$advert_id=NULL,$space_id=NULL)
   if (isset($_POST['submit'])){
    
      $data['cpa_form'] = $this->advertiser_model->get_cpa_form_by_slug($slug);
-      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName
+      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName;
       $data['author'] = $this->author;
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;
@@ -141,7 +141,7 @@ $this->load->view('/common/footer_view',$data);
 public function submitted_already($slug)
 {
      $data['cpa_form'] = $this->advertiser_model->get_cpa_form_by_slug($slug);
-      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName
+      $data['title'] = $data['cpa_form']['name']." powered by ".$this->siteName;
       $data['author'] = $this->author;
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;

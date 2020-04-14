@@ -86,8 +86,6 @@ $data['num_total_views'] = count($this->admin_model->count_total_views());
 $data['pending_campaigns'] = $this->admin_model->get_pending_campaigns();
 $data['no_publishers'] = count($this->publisher_model->get_publishers());
 	$data['no_advertisers'] = count($this->advertiser_model->get_advertisers());
-
-//$data['countries'] = $this->admin_model->get_supported_countries();
   $this->load->view('/admin/header_view',$data);
 	$this->load->view('admin/sidebar_view',$data);
 	$this->load->view('admin/first_view',$data);
@@ -117,68 +115,7 @@ $data['user'] = $this->user_model->get_user_by_its_id($id,"publishers");
   $this->load->view('admin/footer_view');
 
 }
-public function view_accounting_details_by_country()
-{
 
-  if (isset($_POST['submit'])) {
-
-//users earning
-$pending_array = $this->admin_model->get_users_earning('publisher',$this->input->post('country'));
-$data['pending_earning'] = 0;
-$data['country_details'] = $this->admin_model->get_country_details_by_select_value($this->input->post('country'));
-
-
-for ($i=0; $i < count($pending_array) ; $i++) {
-
-$data['pending_earning'] = $data['pending_earning'] + $pending_array[$i]['pending_bal'];
-
-
-}
-
-
-
-
-//users earning
-$bal_array = $this->admin_model->get_users_earning('publisher',$this->input->post('country'));
-$data['bal_earning'] = 0;
-
-
-for ($i=0; $i < count($bal_array) ; $i++) {
-
-$data['bal_earning'] = $data['bal_earning'] + $bal_array[$i]['account_bal'];
-
-}
-//users earning
-$bal_array = $this->admin_model->get_users_earning('advertiser',$this->input->post('country'));
-$data['adv_bal_earning'] = 0;
-
-
-for ($i=0; $i < count($bal_array) ; $i++) {
-
-$data['adv_bal_earning'] = $data['adv_bal_earning'] + $bal_array[$i]['account_bal'];
-
-
-}
-
-
-$data['title'] =$this->siteName." | Accounting By Countries";
-$data['description'] ="Admin Dashboard";
-
-$data["noindex"] = $this->noindex;
-
-
-  $this->load->view('/admin/header_view',$data);
-
-  $this->load->view('admin/sidebar_view',$data);
-
-  $this->load->view('admin/view_accounting_details_view',$data);
-  $this->load->view('admin/footer_view');
-
-
-}
-
-
-}
 public function pending_publishers_list($offset = 0)
 {
 
@@ -576,11 +513,11 @@ public function process_withdrawal($id = NULL,$user_id)
 $user = $this->user_model->get_user_by_its_id($user_id,"publishers");
 //add to total withdrawn
 
-$new_e_bal = $user['total_earning'] + $user['pending_bal'];
+$new_e_bal = $user['total_earned'] + $user['pending_bal'];
 
 $this->user_model->edit_user_details(array(
 
-"total_earning" => $new_e_bal,
+"total_earned" => $new_e_bal,
 "pending_bal" => 0.00
 
 ),$user_id,'publishers');
@@ -596,7 +533,7 @@ $this->admin_model->edit_withdrawal_single(array(
   //update neccessary details including history
 
   $this->admin_model->insert_new_history(array(
-"user_id" => $user_id,
+"user_email" => $user['email'],
 "action" => "w_process",
 'time' => time(),
 "details" => "Your Withdrawal Request Had been Processed",

@@ -1,5 +1,6 @@
+<div id="halfdiv" class="righthalf w3-half w3-padding-jumbo">
 
-  <div class="w3-padding-jumbo">
+  <div class="">
 
     <form class='w3-center' method='POST' action='<?php echo
     site_url('next_reg'); ?>'>
@@ -40,7 +41,7 @@
 <?=$terms ?>
  </textarea><br>
  <!-- <?= var_dump($_SESSION['first_details']) ?>-->
-  <input class='w3-center w3-button w3-blue w3-margin-top w3-margin-bottom w3-hover-white w3-hover-text-blue w3-border w3-border-blue'
+  <input class='w3-center w3-btn w3-blue w3-margin-top w3-margin-bottom w3-hover-white w3-hover-text-blue w3-border w3-border-blue'
   type='submit' name='submit' value='Register'/>
  
 
@@ -57,6 +58,6 @@
 
          ?></span></div>
     </center>
-
+</div></section>
 
  

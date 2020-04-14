@@ -1,5 +1,5 @@
 # PHP-AdNetworkServer
-A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codeigniter3 and NewBiz and summernote Editor templates
+A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther website think of Google adsense
 <br>
 ------------------------------------------------------- Features------------------------------------------------------------------
 
@@ -8,11 +8,13 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads based on Codei
 <br><br>
 ## Network Admin Features-
 <ul>
-	<li>Monitor campaign and ads spaces</li>
+<li>Monitor/Manage campaign and ads spaces</li>
 <li>Manage Advertisers & Publishers</li>
-<li>Approve Publisher account</li>
-<li>PRocess withdrawal<li>
-<li>Business Settings like  Minimum CPC,CPM,CPA</li>
+<li>Approve/Disapprove Publisher account</li>
+<li>Process Publisher withdrawal <li>
+<li>Business Settings like Setting of Minimum CPC,CPM,CPA</li>
+<li>Credit/Debit Users' Account</li>
+<li>Set site meta/seo details </li>
 
 </ul>
 
@@ -45,6 +47,8 @@ will be working on modifying it suit the new purpose and also make it easy to in
 App live on www.custch.com
 
 ## Installation
+
+### Automatic installation
 <ul>
 	<li>Copy the files to your root directory</li>
 	<li>visit youraddress/index.php/install/index  and fill in the input ,then click on install now button</li>
@@ -53,13 +57,23 @@ App live on www.custch.com
 
 <br>
 
+### Manual installation
+<ul>
+	<li>Comming soon....</li>
+	
+
+</ul>
+
+<br>
 ## Requirement
-PHP 5.6+,MSQL 5+ 
+PHP 5.6+,MYSQL 5+ 
 
 
 ## Todo
 --Add Editor to Homepage OR make it theme based<br>
+--Ability to change branding element like colors,logos etc<br>
+--edit of email and its admin section
 --Paypal,flutterwave ,paypal integration<br>
 --more beautiful admin dashboard<br>
 --ability for admin to choose out of available featured payment gateway from the admin dashboard<br>
---upgrade blog functionality
+--upgrade blog functionality or remove completely

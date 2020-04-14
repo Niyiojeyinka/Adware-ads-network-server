@@ -36,10 +36,10 @@ public function __construct()
 
 
   
-    $this->load->view('/common/header_view',$data);
-$this->load->view('/common/public_header_plate_view',$data);
-  $this->load->view('public/advertisers_view',$data);
-    $this->load->view('common/footer_view');
+    $this->load->view('public/common/header_view',$data);
+    $this->load->view('public/common/left_half_view',$data);
+    $this->load->view('public/home_view',$data);
+    $this->load->view('public/common/footer_view');
  }
   
   
@@ -268,13 +268,11 @@ public function register()
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;
 
-    $this->load->view('/common/header_view',$data);
-
    
-    $this->load->view('/common/header_view',$data);
-$this->load->view('/common/public_header_plate_view',$data);
-  $this->load->view('public/first_reg_page_view',$data);
-    $this->load->view('common/footer_view');
+      $this->load->view('public/common/header_view',$data);
+      $this->load->view('public/common/left_half_view',$data);
+      $this->load->view('public/register_view',$data);
+      $this->load->view('public/common/footer_view');
 
 }else{
 $_SESSION['reg_account_type'] = $this->input->post('accounttype');
@@ -316,11 +314,11 @@ if (!isset($_SESSION['reg_account_type']))
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;
     
-    $this->load->view('/common/header_view',$data);
-$this->load->view('/common/public_header_plate_view',$data);
-  $this->load->view('public/register_view',$data);
-    $this->load->view('common/footer_view');
-
+    
+      $this->load->view('public/common/header_view',$data);
+      $this->load->view('public/common/left_half_view',$data);
+      $this->load->view('public/register_view',$data);
+      $this->load->view('public/common/footer_view');
     }
     else
     {
@@ -382,10 +380,11 @@ $data['contents'] = $this->pages_model->get_how_it_works() ;
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;
 $data['terms'] = $this->pages_model->get_terms() ;
-    $this->load->view('/common/header_view',$data);
-    $this->load->view('/common/public_header_plate_view',$data);
-    $this->load->view('/public/next_reg_view',$data);
-    $this->load->view('/common/footer_view',$data);
+    
+$this->load->view('public/common/header_view',$data);
+$this->load->view('public/common/left_half_view',$data);
+$this->load->view('public/next_reg_view',$data);
+$this->load->view('public/common/footer_view');
   }else
     {
 
@@ -455,14 +454,11 @@ if (!$this->form_validation->run())
       $data['author'] = $this->author;
       $data['keywords'] = $this->keywords;
       $data['description'] = $this->description;
-    $this->load->view('/common/header_view',$data);
-
-    
-  
-    $this->load->view('/common/header_view',$data);
-$this->load->view('/common/public_header_plate_view',$data);
-  $this->load->view('public/login_view',$data);
-    $this->load->view('common/footer_view');
+ 
+    $this->load->view('public/common/header_view',$data);
+    $this->load->view('public/common/left_half_view',$data);
+    $this->load->view('public/login_view',$data);
+    $this->load->view('public/common/footer_view');
  }else{
         if(!$this->user_model->login_check())
         {
@@ -516,10 +512,11 @@ if(!$this->form_validation->run())
       $data['author'] = "Olaniyi Ojeyinka";
       $data['keywords'] = "Nigeria,africa,Advertising,advert,story,post,AdNetwork";
       $data['description'] = "The online Mobile Advertising Platform.";
-      $this->load->view('/common/header_view',$data);
-$this->load->view('/common/public_header_plate_view',$data);
-  $this->load->view('public/contact_us_view',$data);
-    $this->load->view('common/footer_view');
+     
+    $this->load->view('public/common/header_view',$data);
+    $this->load->view('public/common/left_half_view',$data);
+    $this->load->view('public/contact_us_view',$data);
+    $this->load->view('public/common/footer_view');
 }else{
 
   //send the message to admin

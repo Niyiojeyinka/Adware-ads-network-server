@@ -74,11 +74,11 @@ $data['no_clicks'] = $this->publisher_model->get_no_affilate_clicks("publisher")
 $data['no_reg'] = $this->publisher_model->get_no_affilate_reg("publisher");
 
 
-    $this->load->view('/common/publisher_header_view',$data);
-      $this->load->view('/common/publisher_top_tiles',$data);
+    $this->load->view('/user/publisher/common/header_view',$data);
+      $this->load->view('/user/publisher/common/top_tiles',$data);
 
     $this->load->view('/user/publisher/dashboard_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 }
@@ -96,11 +96,11 @@ public function settings()
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
-    $this->load->view('/common/publisher_header_view',$data);
-      $this->load->view('/common/publisher_top_tiles',$data);
+    $this->load->view('/user/publisher/common/header_view',$data);
+      $this->load->view('/user/publisher/common/top_tiles',$data);
 
     $this->load->view('/user/publisher/settings_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -128,10 +128,10 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
-    $this->load->view('/common/publisher_header_view',$data);
-      $this->load->view('/common/publisher_top_tiles',$data);
+    $this->load->view('/user/publisher/common/header_view',$data);
+      $this->load->view('/user/publisher/common/top_tiles',$data);
     $this->load->view('/user/publisher/settings_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -215,7 +215,7 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
     $this->load->view('/common/publisher_header_view',$data);
     $this->load->view('/common/publisher_top_tiles',$data);
     $this->load->view('/user/publisher/payment_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 }
@@ -239,12 +239,12 @@ $data['user'] = $this->publisher_model->get_publisher_by_id();
     }
 
 
-$data['general_details'] = $this->advertiser_model->get_general_details();
+$data['settings'] = $this->admin_model->get_business_settings();
 
 
 //check if balance is ok
    
-    if($data['user']['account_bal'] >= $data['general_details']['minimum_payout'])
+    if($data['user']['account_bal'] >=$data['settings']['minimum_payout'])
     {
 
 //check if there is previous pending balance
@@ -291,7 +291,7 @@ $details = "You make a withdrawal Request of
       $h_dat =  array(
         'details' => $details,
         'action' => 'w_request' ,
-        'user_id' => $_SESSION['id'],
+        'user_email' => $data['user']['email'],
         'account_type' => "publisher",
         'time' => time()
          );
@@ -357,7 +357,7 @@ $data['today_clicks'] = $this->publisher_model->get_campaign_clicks($ref_id,strt
     $this->load->view('/common/publisher_header_view',$data);
     $this->load->view('/common/publisher_top_tiles',$data);
     $this->load->view('/user/publisher/details_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -376,10 +376,10 @@ $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
 
-    $this->load->view('/common/publisher_header_view',$data);
-      $this->load->view('/common/publisher_top_tiles',$data);
+    $this->load->view('/user/publisher/common/header_view',$data);
+      $this->load->view('/user/publisher/common/top_tiles',$data);
    $this->load->view('/user/publisher/affilate_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -435,7 +435,7 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
     $this->load->view('/common/publisher_header_view',$data);
     $this->load->view('/common/publisher_top_tiles',$data);
     $this->load->view('/user/publisher/spaces_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
  }
@@ -460,10 +460,10 @@ $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 $data["code"] = $this->publisher_model->get_space($ref_id)['code'];
-    $this->load->view('/common/publisher_header_view',$data);
-      $this->load->view('/common/publisher_top_tiles',$data);
+    $this->load->view('/user/publisher/common/header_view',$data);
+      $this->load->view('/user/publisher/common/top_tiles',$data);
     $this->load->view('/user/publisher/add_space_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 
 
 
@@ -496,10 +496,10 @@ $this->publisher_model->insert_space($ref_id);
 $data['user'] = $this->publisher_model->get_publisher_by_id();
 $data["count_spaces"] = $this->publisher_model->count_publishers_spaces();
 
-    $this->load->view('/common/publisher_header_view',$data);
-      $this->load->view('/common/publisher_top_tiles',$data);
+    $this->load->view('/user/publisher/common/header_view',$data);
+      $this->load->view('/user/publisher/common/top_tiles',$data);
     $this->load->view('/user/publisher/settings_view',$data);
-     $this->load->view('/common/users_footer_view',$data);
+     $this->load->view('/user/footer_view',$data);
 }else{
 
 //change here
