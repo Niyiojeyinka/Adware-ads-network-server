@@ -23,7 +23,7 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther web
 
 
 <br><br>
-<div class="admin">
+<div id="admin">
 
 ## Network Admin Features-
 <ul>
@@ -69,7 +69,7 @@ App live on www.custch.com
 ## Installation
 
 ### Automatic installation
-<ul class="auto">
+<ul id="auto">
 	<li>Copy the files to your root directory</li>
 	<li>visit youraddress/index.php/install/index  and fill in the input ,then click on install now button</li>
 
@@ -78,7 +78,7 @@ App live on www.custch.com
 <br>
 
 ### Manual installation
-<ul class="manual">
+<ul id="manual">
 	<li>Download the zip file of this repo and extract</li>
 	<li>edit the <code>application/controllers/installer.json</code>  </li>
 	<li>and input as follows:</li>
@@ -95,13 +95,13 @@ App live on www.custch.com
 </ul>
 
 <br>
-<div class="req">
+<div id="req">
 ## Requirement
 PHP 5.6+,MYSQL 5+ 
 
 </div>
 ## Todo
-<div class="todo">
+<div id="todo">
 --Add Editor to Homepage OR make it theme based<br>
 --Ability to change branding element like colors,logos etc<br>
 --edit of email and its admin section
