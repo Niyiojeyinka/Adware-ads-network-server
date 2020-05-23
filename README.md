@@ -95,12 +95,17 @@ App live on www.custch.com
 </ul>
 
 <br>
-<div id="req">
+
 ## Requirement
+
+<div id="req">
+
 PHP 5.6+,MYSQL 5+ 
 
 </div>
+
 ## Todo
+
 <div id="todo">
 --Add Editor to Homepage OR make it theme based<br>
 --Ability to change branding element like colors,logos etc<br>
