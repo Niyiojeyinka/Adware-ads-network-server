@@ -107,6 +107,10 @@ PHP 5.6+,MYSQL 5+
 ## Todo
 
 <div id="todo">
+--Change Framework from Codeigniter to Laravel
+<br>
+<img src="https://laravel.com/img/logotype.min.svg" width="200"/>
+ <br> 
 --Add Editor to Homepage OR make it theme based<br>
 --Ability to change branding element like colors,logos etc<br>
 --edit of email and its admin section
