@@ -1,11 +1,13 @@
 # Adware
 
+<center>
+<span>
 <img src="https://img.shields.io/badge/Development-active-green">
-<img src="https://img.shields.io/badge/stars-10%2B-orange">
+<img src="https://img.shields.io/badge/stars-10%2B-orange"></span>
 
 <br>
 <img align="center" src="https://res.cloudinary.com/open-source/image/upload/v1594050769/Adware/adware_tyd3b0.png" >
-
+</center>
 ### Contents
 
 <ul>
