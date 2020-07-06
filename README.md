@@ -1,6 +1,13 @@
-# PHP-AdNetworkServer
+# Adware
+
+<img src="https://img.shields.io/badge/Development-active-green">
+<img src="https://img.shields.io/badge/stars-10%2B-orange">
+
+<br>
+<img align="center" src="https://res.cloudinary.com/open-source/image/upload/v1594050769/Adware/adware_tyd3b0.png" >
 
 ### Contents
+
 <ul>
 <li><a href="#req">Requirements</a></li>
 <li><a href="#pub">Publisher's Features</a></li>
@@ -10,22 +17,18 @@
 <li><a href="#manual">Manual Installation</a></li>
 <li><a href="#todo">Todo(s)</a></li>
 
-
 </ul>
-
-
-
 
 A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther website think of Google adsense
 <br>
 ------------------------------------------------------- Features------------------------------------------------------------------
 
-
-
 <br><br>
+
 <div id="admin">
 
 ## Network Admin Features-
+
 <ul>
 <li>Monitor/Manage campaign and ads spaces</li>
 <li>Manage Advertisers & Publishers</li>
@@ -38,7 +41,6 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther web
 </ul>
 </div>
 
-
 ## Publisher Account-
 
 <ul id="pub">
@@ -49,6 +51,7 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther web
 </ul>
 
 ## Advertiser Account-
+
 <ul id="adv">
 
 <li>Account Settings</li>
@@ -61,7 +64,7 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther web
 <li>for any information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com</li>
 </ul>
 
-Since  this software was not orignally created to be open source so some function are not dynamic but hard coded
+Since this software was not orignally created to be open source so some function are not dynamic but hard coded
 will be working on modifying it suit the new purpose and also make it easy to install
 
 App live on www.custch.com
@@ -69,6 +72,7 @@ App live on www.custch.com
 ## Installation
 
 ### Automatic installation
+
 <ul id="auto">
 	<li>Copy the files to your root directory</li>
 	<li>visit youraddress/index.php/install/index  and fill in the input ,then click on install now button</li>
@@ -78,6 +82,7 @@ App live on www.custch.com
 <br>
 
 ### Manual installation
+
 <ul id="manual">
 	<li>Download the zip file of this repo and extract</li>
 	<li>edit the <code>application/controllers/installer.json</code>  </li>
@@ -100,7 +105,7 @@ App live on www.custch.com
 
 <div id="req">
 
-PHP 5.6+,MYSQL 5+ 
+PHP 5.6+,MYSQL 5+
 
 </div>
 
