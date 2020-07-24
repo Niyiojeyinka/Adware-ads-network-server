@@ -1,78 +1,129 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Adware
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<center>
+<span>
+<img src="https://img.shields.io/badge/Development-active-green">
+<img src="https://img.shields.io/badge/stars-10%2B-orange"></span>
 
-## About Laravel
+<br>
+<img align="center" src="https://res.cloudinary.com/open-source/image/upload/v1594050769/Adware/adware_tyd3b0.png" >
+</center>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Contents
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<ul>
+<li><a href="#req">Requirements</a></li>
+<li><a href="#pub">Publisher's Features</a></li>
+<li><a href="#adv">Advertiser's Features</a></li>
+<li><a href="#admin">Admin's Features</a></li>
+<li><a href="#auto">Auto Installation</a></li>
+<li><a href="#manual">Manual Installation</a></li>
+<li><a href="#todo">Todo(s)</a></li>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</ul>
 
-## Learning Laravel
+A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther website think of Google adsense
+<br>
+------------------------------------------------------- Features------------------------------------------------------------------
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<br><br>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<div id="admin">
 
-## Laravel Sponsors
+## Network Admin Features-
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<ul>
+<li>Monitor/Manage campaign and ads spaces</li>
+<li>Manage Advertisers & Publishers</li>
+<li>Approve/Disapprove Publisher account</li>
+<li>Process Publisher withdrawal <li>
+<li>Business Settings like Setting of Minimum CPC,CPM,CPA</li>
+<li>Credit/Debit Users' Account</li>
+<li>Set site meta/seo details </li>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+</ul>
+</div>
 
-## Contributing
+## Publisher Account-
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<ul id="pub">
+	<li>Withdrawal Request</li>
+<li>Integration Code Generator</li>
+<li>Manage Ads Spaces</li>
 
-## Code of Conduct
+</ul>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Advertiser Account-
 
-## Security Vulnerabilities
+<ul id="adv">
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<li>Account Settings</li>
+<li>Ad Creator</li>
+<li>Form builder : Create and Manage Forms </li>
+<li>Manage Ads</li>
+<li>Ads Performance Report </li>
+<li>Integration with Flutterwave Payment Gateway</li>
+<li>Multicurrency and Multi-Country support</li>
+<li>for any information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com</li>
+</ul>
 
-## License
+Since this software was not orignally created to be open source so some function are not dynamic but hard coded
+will be working on modifying it suit the new purpose and also make it easy to install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+App live on www.custch.com
+
+## Installation
+
+### Automatic installation
+
+<ul id="auto">
+	<li>Copy the files to your root directory</li>
+	<li>visit youraddress/index.php/install/index  and fill in the input ,then click on install now button</li>
+
+</ul>
+
+<br>
+
+### Manual installation
+
+<ul id="manual">
+	<li>Download the zip file of this repo and extract</li>
+	<li>edit the <code>application/controllers/installer.json</code>  </li>
+	<li>and input as follows:</li>
+	<li><ul>
+<li>change the hostname's value to your database url/ip</li>
+<li>change the username's value to your database username</li>
+<li>change the password's value to your database password</li>
+<li>change the database's value to your database name</li>
+
+<li>change the base_url's value to your home url e.g yourdomain.com</li>
+	</ul>
+	</li>
+
+</ul>
+
+<br>
+
+## Requirement
+
+<div id="req">
+
+PHP 5.6+,MYSQL 5+
+
+</div>
+
+## Todo
+
+<div id="todo">
+--Change Framework from Codeigniter to Laravel
+<br>
+<img src="https://laravel.com/img/logotype.min.svg" width="200"/>
+ <br> 
+--Add Editor to Homepage OR make it theme based<br>
+--Ability to change branding element like colors,logos etc<br>
+--edit of email and its admin section
+--Paypal,flutterwave ,paypal integration<br>
+--more beautiful admin dashboard<br>
+--ability for admin to choose out of available featured payment gateway from the admin dashboard<br>
+--upgrade blog functionality or remove completely
+</div>
