@@ -11,7 +11,6 @@
 
 ### Contents
 
-
 This is in development.
 The previous codeigniter version is ready for use and sourcode available on <a href="https://github.com/Niyiojeyinka/Adware/tree/withCI">WithCI Branch</a>
 
@@ -51,9 +50,10 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther web
 ## Publisher Account-
 
 <ul id="pub">
-	<li>Withdrawal Request</li>
-<li>Integration Code Generator</li>
+<li>Create Ads Spaces</li>
 <li>Manage Ads Spaces</li>
+<li>Withdrawal Request</li>
+<li>Integration Code Generator</li>
 
 </ul>
 
@@ -63,27 +63,17 @@ A PHP web App for Serving Text Ads,Image Ads and Article like Ads on anpther web
 
 <li>Account Settings</li>
 <li>Ad Creator</li>
-<li>Form builder : Create and Manage Forms </li>
 <li>Manage Ads</li>
 <li>Ads Performance Report </li>
-<li>Integration with Flutterwave Payment Gateway</li>
-<li>Multicurrency and Multi-Country support</li>
 <li>for any information contact me on twitter @niyiojeyinka or olaniyiojeyinka@gmail.com</li>
 </ul>
-
-Since this software was not orignally created to be open source so some function are not dynamic but hard coded
-will be working on modifying it suit the new purpose and also make it easy to install
-
-App live on www.custch.com
 
 ## Installation
 
 ### Automatic installation
 
 <ul id="auto">
-	<li>Copy the files to your root directory</li>
-	<li>visit youraddress/index.php/install/index  and fill in the input ,then click on install now button</li>
-
+	coming soon...
 </ul>
 
 <br>
@@ -91,18 +81,7 @@ App live on www.custch.com
 ### Manual installation
 
 <ul id="manual">
-	<li>Download the zip file of this repo and extract</li>
-	<li>edit the <code>application/controllers/installer.json</code>  </li>
-	<li>and input as follows:</li>
-	<li><ul>
-<li>change the hostname's value to your database url/ip</li>
-<li>change the username's value to your database username</li>
-<li>change the password's value to your database password</li>
-<li>change the database's value to your database name</li>
-
-<li>change the base_url's value to your home url e.g yourdomain.com</li>
-	</ul>
-	</li>
+	coming soon...
 
 </ul>
 
@@ -112,22 +91,17 @@ App live on www.custch.com
 
 <div id="req">
 
-PHP 5.6+,MYSQL 5+
+PHP 7+ ,Mysql 5+
 
 </div>
 
 ## Todo
 
 <div id="todo">
---Change Framework from Codeigniter to Laravel
-<br>
-<img src="https://laravel.com/img/logotype.min.svg" width="200"/>
- <br> 
---Add Editor to Homepage OR make it theme based<br>
---Ability to change branding element like colors,logos etc<br>
---edit of email and its admin section
---Paypal,flutterwave ,paypal integration<br>
---more beautiful admin dashboard<br>
---ability for admin to choose out of available featured payment gateway from the admin dashboard<br>
---upgrade blog functionality or remove completely
+<ul>
+<li>API Documentation for backend services</li>
+<li>Core Features (Excluding Form builder)</li>
+<li>multiple payment gateway support</li>
+</ul>
+
 </div>
