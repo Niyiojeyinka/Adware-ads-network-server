@@ -11,6 +11,9 @@
 
 ### Contents
 
+This is in development.
+The previous codeigniter version is ready for use and sourcode available on <a href="https://github.com/Niyiojeyinka/Adware/tree/withCI">WithCI Branch</a>
+
 <ul>
 <li><a href="#req">Requirements</a></li>
 <li><a href="#pub">Publisher's Features</a></li>
