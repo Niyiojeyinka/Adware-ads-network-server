@@ -15,6 +15,22 @@ class CreatePublishersTable extends Migration
     {
         Schema::create('publishers', function (Blueprint $table) {
             $table->id();
+            $table
+                ->integer('user_id')
+                ->references('id')
+                ->on('users');
+            $table->decimal('account_bal', 12, 2)->default(0.0);
+            $table->decimal('pending_bal', 12, 2)->default(0.0);
+            $table->decimal('total_earned', 12, 2)->default(0.0);
+            $table->string('url')->nullable();
+            $table
+                ->enum('status', [
+                    'pending',
+                    'approved',
+                    'disapproved',
+                    'deactivated',
+                ])
+                ->default('pending');
             $table->timestamps();
         });
     }

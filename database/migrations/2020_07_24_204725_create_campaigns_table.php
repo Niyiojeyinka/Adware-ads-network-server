@@ -15,6 +15,27 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('type', ['text', 'banner']);
+            $table->decimal('amount_per_view', 12, 2);
+            $table->decimal('amount_per_click', 12, 2);
+            $table
+                ->enum('pay_model', ['cpc', 'cpm', 'cpc_cpm'])
+                ->default('cpc_cpm');
+            $table
+                ->enum('status', ['active', 'inactive', 'suspended'])
+                ->default('inactive');
+            $table
+                ->enum('approval_status', [
+                    'approved',
+                    'pending',
+                    'disapproved',
+                ])
+                ->default('inactive');
+            $table->decimal('budget', 12, 2)->default(0.0);
+            $table->decimal('balance', 12, 2)->default(0.0);
+            $table->string('start_at');
+            $table->string('expire_at');
             $table->timestamps();
         });
     }

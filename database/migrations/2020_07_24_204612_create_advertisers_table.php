@@ -15,6 +15,19 @@ class CreateAdvertisersTable extends Migration
     {
         Schema::create('advertisers', function (Blueprint $table) {
             $table->id();
+            $table
+                ->integer('user_id')
+                ->references('id')
+                ->on('users');
+            $table->decimal('account_bal', 12, 2)->default(0.0);
+            $table
+                ->enum('status', [
+                    'pending',
+                    'approved',
+                    'disapproved',
+                    'deactivated',
+                ])
+                ->default('approved');
             $table->timestamps();
         });
     }
