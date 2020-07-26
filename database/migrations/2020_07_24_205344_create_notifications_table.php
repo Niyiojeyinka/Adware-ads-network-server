@@ -15,6 +15,13 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
+            $table
+                ->integer('user_id')
+                ->references('id')
+                ->on('users');
+            $table->string('payload');
+            $table->string('slug');
+            $table->enum('account_type', ['advertiser', 'publisher']);
             $table->timestamps();
         });
     }
