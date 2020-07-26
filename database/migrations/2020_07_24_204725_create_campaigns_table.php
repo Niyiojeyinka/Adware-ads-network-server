@@ -16,6 +16,10 @@ class CreateCampaignsTable extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table
+                ->integer('user_id')
+                ->references('id')
+                ->on('users'); //owner
             $table->enum('type', ['text', 'banner']);
             $table->decimal('amount_per_view', 12, 2);
             $table->decimal('amount_per_click', 12, 2);
@@ -31,9 +35,10 @@ class CreateCampaignsTable extends Migration
                     'pending',
                     'disapproved',
                 ])
-                ->default('inactive');
+                ->default('pending');
             $table->decimal('budget', 12, 2)->default(0.0);
             $table->decimal('balance', 12, 2)->default(0.0);
+            $table->string('ref');
             $table->string('start_at');
             $table->string('expire_at');
             $table->timestamps();
