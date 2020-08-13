@@ -15,6 +15,9 @@ class CreateTextCampaignsTable extends Migration
     {
         Schema::create('text_campaigns', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('content');
+            $table->text('display_url');
             $table->timestamps();
         });
     }
