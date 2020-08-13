@@ -21,9 +21,9 @@ class CreateAdSpacesTable extends Migration
                 ->on('campaigns');
             $table->string('name');
             $table
-                ->integer('user_id')
+                ->integer('publisher_id')
                 ->references('id')
-                ->on('users');
+                ->on('publishers');
             $table->string('ref');
             $table
                 ->integer('inventory_id')

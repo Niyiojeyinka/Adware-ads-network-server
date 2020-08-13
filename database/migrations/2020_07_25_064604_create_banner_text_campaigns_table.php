@@ -15,6 +15,14 @@ class CreateBannerTextCampaignsTable extends Migration
     {
         Schema::create('banner_text_campaigns', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
+            $table->text('display_url')->nullable();
+            $table
+                ->integer('banner_id')
+                ->references('id')
+                ->on('media');
+            $table->enum('banner_size', ['300X200']);
             $table->timestamps();
         });
     }

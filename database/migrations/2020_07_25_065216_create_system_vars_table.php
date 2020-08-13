@@ -15,6 +15,9 @@ class CreateSystemVarsTable extends Migration
     {
         Schema::create('system_vars', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('value');
+            $table->text('long_value'); //for a very long value
             $table->timestamps();
         });
     }

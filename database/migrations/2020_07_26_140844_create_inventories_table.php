@@ -15,6 +15,13 @@ class CreateInventoriesTable extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('url');
+            $table
+                ->integer('publisher_id')
+                ->references('id')
+                ->on('publishers');
+            $table->enum('status', ['approved', 'disapproved', 'pending']);
             $table->timestamps();
         });
     }

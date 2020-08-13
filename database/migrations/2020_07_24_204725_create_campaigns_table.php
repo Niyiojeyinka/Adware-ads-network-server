@@ -17,9 +17,9 @@ class CreateCampaignsTable extends Migration
             $table->id();
             $table->string('name');
             $table
-                ->integer('user_id')
+                ->integer('advertiser_id')
                 ->references('id')
-                ->on('users'); //owner
+                ->on('advertisers'); //owner
             $table->enum('type', ['text', 'banner']);
             $table->string('landing_url');
             $table->decimal('amount_per_view', 12, 2);
@@ -39,6 +39,10 @@ class CreateCampaignsTable extends Migration
                 ->default('pending');
             $table->decimal('budget', 12, 2)->default(0.0);
             $table->decimal('balance', 12, 2)->default(0.0);
+            $table
+                ->integer('category_id')
+                ->references('id')
+                ->on('campaign_categories');
             $table->string('ref');
             $table->string('start_at');
             $table->string('expire_at');
