@@ -15,6 +15,8 @@ class CreateAdminEarningsTable extends Migration
     {
         Schema::create('admin_earnings', function (Blueprint $table) {
             $table->id();
+            $table->enum('event_type', ['click', 'view']);
+            $table->decimal('amount', 12, 2);
             $table->timestamps();
         });
     }
