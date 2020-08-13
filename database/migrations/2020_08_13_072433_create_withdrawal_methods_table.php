@@ -15,6 +15,9 @@ class CreateWithdrawalMethodsTable extends Migration
     {
         Schema::create('withdrawal_methods', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->longText('form');
+            $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
         });
     }

@@ -24,6 +24,7 @@ class CreateWithdrawalsTable extends Migration
                 ->integer('withdrawal_method_id')
                 ->references('id')
                 ->on('withdrawal_methods');
+            $table->longText('form_data');
             $table->timestamps();
         });
     }
