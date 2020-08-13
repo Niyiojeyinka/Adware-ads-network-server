@@ -15,6 +15,8 @@ class CreateTargetingsTable extends Migration
     {
         Schema::create('targetings', function (Blueprint $table) {
             $table->id();
+            $table->enum('type', ['device', 'platform', 'browser']);
+            $table->integer('targeting_id');
             $table->timestamps();
         });
     }
