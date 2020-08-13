@@ -43,6 +43,10 @@ class CreateCampaignsTable extends Migration
                 ->integer('category_id')
                 ->references('id')
                 ->on('campaign_categories');
+            $table
+                ->integer('targeting_id')
+                ->references('id')
+                ->on('targetings');
             $table->string('ref');
             $table->string('start_at');
             $table->string('expire_at');
