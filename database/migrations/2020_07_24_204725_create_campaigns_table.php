@@ -21,6 +21,7 @@ class CreateCampaignsTable extends Migration
                 ->references('id')
                 ->on('users'); //owner
             $table->enum('type', ['text', 'banner']);
+            $table->string('landing_url');
             $table->decimal('amount_per_view', 12, 2);
             $table->decimal('amount_per_click', 12, 2);
             $table

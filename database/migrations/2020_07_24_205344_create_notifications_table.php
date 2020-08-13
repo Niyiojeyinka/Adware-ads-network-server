@@ -20,7 +20,7 @@ class CreateNotificationsTable extends Migration
                 ->references('id')
                 ->on('users');
             $table->string('payload');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->enum('account_type', ['advertiser', 'publisher']);
             $table->timestamps();
         });
