@@ -15,6 +15,15 @@ class CreateWithdrawalsTable extends Migration
     {
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->id();
+            $table->decimal('amount', 12, 2);
+            $table
+                ->integer('user_id')
+                ->references('id')
+                ->on('users');
+            $table
+                ->integer('payment_method_id')
+                ->references('id')
+                ->on('payment_methods');
             $table->timestamps();
         });
     }
