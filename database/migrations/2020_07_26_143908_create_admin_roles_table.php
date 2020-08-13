@@ -15,6 +15,14 @@ class CreateAdminRolesTable extends Migration
     {
         Schema::create('admin_roles', function (Blueprint $table) {
             $table->id();
+            $table->integer('level');
+            /*
+            1 for super admin
+            2 for admin
+            3 for member
+            to be define later
+            */
+            $table->string('name');
             $table->timestamps();
         });
     }
