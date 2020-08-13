@@ -21,9 +21,9 @@ class CreateWithdrawalsTable extends Migration
                 ->references('id')
                 ->on('users');
             $table
-                ->integer('payment_method_id')
+                ->integer('withdrawal_method_id')
                 ->references('id')
-                ->on('payment_methods');
+                ->on('withdrawal_methods');
             $table->timestamps();
         });
     }
