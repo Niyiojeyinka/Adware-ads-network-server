@@ -15,6 +15,11 @@ class CreateBannerCampaignsTable extends Migration
     {
         Schema::create('banner_campaigns', function (Blueprint $table) {
             $table->id();
+            $table
+                ->integer('banner_id')
+                ->references('id')
+                ->on('media');
+            $table->enum('banner_size', ['720X60']);
             $table->timestamps();
         });
     }
