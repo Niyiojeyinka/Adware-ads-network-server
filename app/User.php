@@ -12,11 +12,11 @@ class User extends Authenticatable implements JWTSubject
     use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * enable  mass assignment.
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
