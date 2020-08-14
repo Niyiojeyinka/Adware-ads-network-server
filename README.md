@@ -18,6 +18,8 @@
 This is in development.
 The previous codeigniter version is ready for use and sourcode available on <a href="https://github.com/Niyiojeyinka/Adware/tree/withCI">WithCI Branch</a>
 
+The API Documentation for this backend is available at https://documenter.getpostman.com/view/11964368/T1LPCmgy?version=latest
+
 <ul>
 <li><a href="#req">Requirements</a></li>
 <li><a href="#pub">Publisher's Features</a></li>
