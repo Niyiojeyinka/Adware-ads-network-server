@@ -143,4 +143,17 @@ class UserAuthTest extends TestCase
         ]);
         $response->assertJSON(['result' => 0]);
     }
+
+    /** Test if user can reset password to new password
+     * change
+     * @test
+     *  @return void */
+    public function user_can_reset_password()
+    {
+        $this->register();
+        $response = $this->post($this->baseURL . 'reset/password', [
+            'email' => 'testt@email.com',
+        ]);
+        $response->assertJSON(['result' => 1]);
+    }
 }
