@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\ForgetRequest;
+use App\Events\UserForgetPassword;
 
 class UserAuthController extends Controller
 {
@@ -111,11 +112,19 @@ class UserAuthController extends Controller
         }
 
         //save token
+        $token = md5(base64_encode(time()));
         DB::table('password_resets')->insert([
             'email' => $request->email,
-            'token' => md5(base64_encode(time())),
+            'token' => $token,
         ]);
 
+        event(
+            new UserForgetPassword([
+                'token' => $token,
+                'email' => $user->email,
+                'name' => $user->firstname . ' ' . $user->firstname,
+            ])
+        );
         return response()->json(
             [
                 'result' => 1,

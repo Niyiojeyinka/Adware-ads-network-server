@@ -16,9 +16,10 @@ class RecoverPasswordMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -28,6 +29,16 @@ class RecoverPasswordMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        $address = 'noreply@adware.com';
+        $subject = 'Forgot Password';
+        $name = 'Adware';
+
+        return $this->view('mails.forget_password')
+            ->from($address, $name)
+            ->subject($subject)
+            ->with([
+                'token' => $this->data['token'],
+                'name' => $this->data['name'],
+            ]);
     }
 }
