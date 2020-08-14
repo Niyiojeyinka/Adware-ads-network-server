@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\User as User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\ForgetRequest;
 
 class UserAuthController extends Controller
 {
@@ -79,6 +80,50 @@ class UserAuthController extends Controller
         return response()->json(
             ['result' => 1, 'data' => ['message' => 'Successfully logged out']],
             200
+        );
+    }
+
+    public function forget(ForgetRequest $request)
+    {
+        if ($request->validator->fails()) {
+            return response()->json(
+                [
+                    'result' => 0,
+                    'error' => $request->validator->messages(),
+                    'data' => [],
+                ],
+                400
+            );
+        }
+
+        $user = User::where('email', $request->email)->first();
+        if (empty($user)) {
+            return response()->json(
+                [
+                    'result' => 0,
+                    'error' => [
+                        'email' => ['User with this email does not exists.'],
+                    ],
+                    'data' => [],
+                ],
+                400
+            );
+        }
+
+        //save token
+        DB::table('password_resets')->insert([
+            'email' => $request->email,
+            'token' => md5(base64_encode(time())),
+        ]);
+
+        return response()->json(
+            [
+                'result' => 1,
+                'data' => [
+                    'report' => 'Email Sent Successfully,Check you mail.',
+                ],
+            ],
+            201
         );
     }
 }

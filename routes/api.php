@@ -19,6 +19,7 @@ Route::prefix('user')
         Route::post('register', 'UserAuthController@register');
         Route::post('logout', 'UserAuthController@logout');
         Route::post('login', 'UserAuthController@login');
+        Route::post('forgot/password', 'UserAuthController@forget');
     });
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

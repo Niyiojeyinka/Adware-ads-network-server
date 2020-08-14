@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\User as User;
+use DB;
 
 class UserAuthTest extends TestCase
 {
@@ -26,6 +27,15 @@ class UserAuthTest extends TestCase
                 'country_id' => 1,
             ]
         );
+    }
+
+    /** Test if homepage is accessible
+     * @test
+     * @return void */
+    public function homepage_test()
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
     }
 
     /** Test if user can register
@@ -105,5 +115,32 @@ class UserAuthTest extends TestCase
 
         $logout->assertJSON(['result' => 1]);
         $logout->assertOk();
+    }
+
+    /** Test if user can request new password
+     * change
+     * @test
+     *  @return void */
+    public function user_request_password_change()
+    {
+        $this->register();
+        $response = $this->post($this->baseURL . 'forgot/password', [
+            'email' => 'test@email.com',
+        ]);
+        $response->assertJSON(['result' => 1]);
+        $passwordResets = DB::table('password_resets')->get();
+        $this->assertCount(1, $passwordResets);
+    }
+    /** Test if user can request new password
+     * change
+     * @test
+     *  @return void */
+    public function unregistered_user_cant_request_password_change()
+    {
+        $this->register();
+        $response = $this->post($this->baseURL . 'forgot/password', [
+            'email' => 'testt@email.com',
+        ]);
+        $response->assertJSON(['result' => 0]);
     }
 }
