@@ -34,7 +34,6 @@ class UserAuthTest extends TestCase
     public function new_user_can_register()
     {
         $response = $this->register();
-        dd($response);
         $this->assertCount(1, User::all());
         $response->assertStatus(201);
     }
