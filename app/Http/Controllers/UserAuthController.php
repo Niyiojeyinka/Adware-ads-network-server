@@ -164,12 +164,12 @@ class UserAuthController extends Controller
                 200
             );
         }
-        $token = Request::segment(5);
+        $token = $request->segment(5);
         $passwordResets = DB::table('password_resets')
             ->where('token', $token)
             ->first();
 
-        if (empty($token)) {
+        if (empty($passwordResets) || $passwordResets == null) {
             return response()->json(
                 [
                     'result' => 0,

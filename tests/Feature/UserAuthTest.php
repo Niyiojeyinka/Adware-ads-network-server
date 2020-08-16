@@ -174,11 +174,39 @@ class UserAuthTest extends TestCase
     public function invalid_token_cant_reset_password()
     {
         $response = $this->post(
-            $this->baseURL . 'reset/password/incorrecttoken',
+            $this->baseURL . 'reset/password/invalidtoken',
             [
                 'password' => 'newpassword',
             ]
         );
-        $response->assertJSON(['result' => 0]);
+        $response->assertJSON([
+            'result' => 0,
+            'error' => ['token' => 'Invalid Token'],
+        ]);
+    }
+
+    /** Test  expire token cannot reset password
+     * @test
+     *  @return void */
+    public function expired_token_cant_reset_password()
+    {
+        //create expired token here
+
+        $data = [
+            'token' => 'expiredtoken',
+            'email' => 'test@email.com',
+        ];
+        DB::table('password_resets')->insert($data);
+
+        $response = $this->post(
+            $this->baseURL . 'reset/password/expiredtoken',
+            [
+                'password' => 'newpassword',
+            ]
+        );
+        $response->assertJSON([
+            'result' => 0,
+            'error' => ['token' => 'Token Expired'],
+        ]);
     }
 }
