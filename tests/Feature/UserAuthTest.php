@@ -194,7 +194,8 @@ class UserAuthTest extends TestCase
 
         $data = [
             'token' => 'expiredtoken',
-            'email' => 'test@email.com',
+            'email' => 'test@gmail.com',
+            'updated_at' => '2015-08-16 18:04:51',
         ];
         DB::table('password_resets')->insert($data);
 

@@ -180,7 +180,8 @@ class UserAuthController extends Controller
             );
         } else {
             //24hrs 86400
-            if (time() - strtotime($passwordResets->updated_at) > 86400) {
+            $period = time() - strtotime($passwordResets->updated_at);
+            if ($period > 86400) {
                 return response()->json(
                     [
                         'result' => 0,
