@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\User as User;
+use App\PasswordReset;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -113,10 +114,21 @@ class UserAuthController extends Controller
 
         //save token
         $token = md5(base64_encode(time()));
-        DB::table('password_resets')->insert([
-            'email' => $request->email,
-            'token' => $token,
-        ]);
+        //DB::table('password_resets')->insert();
+        $previousReset = PasswordReset::where(
+            'email',
+            $request->email
+        )->first();
+        if (empty($previousReset)) {
+            PasswordReset::create([
+                'email' => $request->email,
+                'token' => $token,
+            ]);
+        } else {
+            PasswordReset::where('email', $request->email)->update([
+                'token' => $token,
+            ]);
+        }
 
         event(
             new UserForgetPassword([
@@ -132,7 +144,69 @@ class UserAuthController extends Controller
                     'report' => 'Email Sent Successfully,Check you mail.',
                 ],
             ],
-            201
+            200
         );
+    }
+
+    public function reset(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|min:4',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(
+                [
+                    'result' => 0,
+                    'error' => $validator->messages(),
+                    'data' => [],
+                ],
+                200
+            );
+        }
+        $token = Request::segment(5);
+        $passwordResets = DB::table('password_resets')
+            ->where('token', $token)
+            ->first();
+
+        if (empty($token)) {
+            return response()->json(
+                [
+                    'result' => 0,
+                    'error' => ['token' => 'Invalid Token'],
+                    'data' => [],
+                ],
+                400
+            );
+        } else {
+            //24hrs 86400
+            if (time() - strtotime($passwordResets->updated_at) > 86400) {
+                return response()->json(
+                    [
+                        'result' => 0,
+                        'error' => ['token' => 'Token Expired'],
+                        'data' => [],
+                    ],
+                    400
+                );
+            } else {
+                //change password here to new one
+
+                User::where('email', $passwordResets->email)->update([
+                    'password' => Hash::make($request->password),
+                ]);
+
+                return response()->json(
+                    [
+                        'result' => 1,
+                        'error' => [],
+                        'data' => [
+                            'report' => 'Password Changed Successfully.',
+                        ],
+                    ],
+                    200
+                );
+            }
+        }
     }
 }
