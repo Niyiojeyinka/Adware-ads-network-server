@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 use App\User as User;
 use DB;
@@ -151,9 +152,33 @@ class UserAuthTest extends TestCase
     public function user_can_reset_password()
     {
         $this->register();
-        $response = $this->post($this->baseURL . 'reset/password', [
-            'email' => 'testt@email.com',
+        $this->post($this->baseURL . 'forgot/password', [
+            'email' => 'test@email.com',
         ]);
+        $passwordResets = DB::table('password_resets')
+            ->where('email', 'test@email.com')
+            ->first();
+
+        $response = $this->post(
+            $this->baseURL . 'reset/password/' . $passwordResets->token,
+            [
+                'password' => 'newpassword',
+            ]
+        );
         $response->assertJSON(['result' => 1]);
+    }
+
+    /** Test if invalid token can reset password
+     * @test
+     *  @return void */
+    public function invalid_token_cant_reset_password()
+    {
+        $response = $this->post(
+            $this->baseURL . 'reset/password/incorrecttoken',
+            [
+                'password' => 'newpassword',
+            ]
+        );
+        $response->assertJSON(['result' => 0]);
     }
 }
