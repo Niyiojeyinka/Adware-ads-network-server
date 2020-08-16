@@ -2,6 +2,7 @@
 
 <center>
 <span>
+[![CircleCI](https://circleci.com/gh/Niyiojeyinka/Adware-ads-network-server.svg?style=svg)](https://circleci.com/gh/Niyiojeyinka/Adware-ads-network-server)
 <img src="https://img.shields.io/badge/Development-active-green">
 <img src="https://img.shields.io/badge/stars-10%2B-orange">
 <img src="https://img.shields.io/badge/license-MIT-orange">
