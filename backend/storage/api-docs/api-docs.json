@@ -1,0 +1,930 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Cudium API Docs",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/admin/login": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Sign in the admin",
+                "description": "allow admin to be able to sign in returns data object with token",
+                "operationId": "authadminsignin",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Admin's Email Address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "now@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Admin's Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "babatunde"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Sign in to user's dashboard",
+                "description": "allow user to be able to sign in returns data object with token",
+                "operationId": "authsignin",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Users Email Address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "olaniyiojeyinka@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "User's Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "test"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Sign out of user's dashboard",
+                "description": "allow user to be able to sign out",
+                "operationId": "authlogout",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/auth/refresh": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Refresh user token",
+                "description": "allow user to be able to refresh token",
+                "operationId": "authrefresh",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Register new user account",
+                "description": "allow user to be able to sign up",
+                "operationId": "authregister",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Users Email Address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "User's Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "description": "User's Firstname",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "description": "User's lastname",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "middlename",
+                        "in": "query",
+                        "description": "User's middlename",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/auth/forget": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Request for token email to reset password",
+                "description": "Request for token email to reset password",
+                "operationId": "authforget",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Users Email Address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/auth/reset": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "reset password with token from email",
+                "description": "Reset password with token from email",
+                "operationId": "authreset",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token sent to email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "New Account Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/country": {
+            "get": {
+                "tags": [
+                    "Country"
+                ],
+                "summary": "get all countries",
+                "description": "get all countries",
+                "operationId": "getcountries",
+                "responses": {
+                    "200": {
+                        "description": "Successful fetch operation"
+                    }
+                }
+            }
+        },
+        "/api/currency": {
+            "get": {
+                "tags": [
+                    "Currency"
+                ],
+                "summary": "get all currencies",
+                "description": "get all currencies",
+                "operationId": "getcurrencies",
+                "responses": {
+                    "200": {
+                        "description": "Successful fetch operation"
+                    }
+                }
+            }
+        },
+        "/api/offer": {
+            "get": {
+                "tags": [
+                    "Offer"
+                ],
+                "summary": "Get all user's Offers",
+                "description": "Let you get all offers",
+                "operationId": "getoffer",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve offer"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Offer"
+                ],
+                "summary": "Create new Offer",
+                "description": "Let you create new offer with user's token",
+                "operationId": "createaoffer",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    },
+                    {
+                        "name": "min",
+                        "in": "query",
+                        "description": "Minimum Unit Selling Amount",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 50
+                    },
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "Selling Currency ID,check currencies endpoint",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 50
+                    },
+                    {
+                        "name": "max",
+                        "in": "query",
+                        "description": "Maximum selling amount",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 200
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "Total Currency available for sale",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 5000
+                    },
+                    {
+                        "name": "rate",
+                        "in": "query",
+                        "description": "User's selling rate 5N/1RMB this will be 5",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 5
+                    },
+                    {
+                        "name": "expire",
+                        "in": "query",
+                        "description": "Expiry Period pending transaction is closed in minutes",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 30
+                    },
+                    {
+                        "name": "terms",
+                        "in": "query",
+                        "description": "Seller's terms or any other info they want buyer to know",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "This is my custom terms"
+                    },
+                    {
+                        "name": "auto_reply",
+                        "in": "query",
+                        "description": "First messaege the seller want the buyer\r\n     * to see immediately a new conversation is opened",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "This is my auto message"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/offer/{offerId}": {
+            "get": {
+                "tags": [
+                    "Offer"
+                ],
+                "summary": "Get an Offer",
+                "description": "Let you get an offer by ID",
+                "operationId": "showoffer",
+                "parameters": [
+                    {
+                        "name": "offerId",
+                        "in": "path",
+                        "description": "Offer ID to get",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 50
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve offer"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/order": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Get all buyer's Orders",
+                "description": "Let you get all orders",
+                "operationId": "getorder",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve order"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/order/{orderId}": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Get an Order",
+                "description": "Let you get an order by ID",
+                "operationId": "getaorder",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "Order ID to get",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 50
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve order"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/order/{offerID}": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Buy new Currency(RMB)",
+                "description": "Let you buy new currency out of offer",
+                "operationId": "odercurrency",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount of RMB",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 50
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful transaction"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    },
+                    "500": {
+                        "description": "Internal Server error"
+                    }
+                }
+            }
+        },
+        "/api/sale": {
+            "get": {
+                "tags": [
+                    "Sale"
+                ],
+                "summary": "Get all user's Orders",
+                "description": "Let you get all orders",
+                "operationId": "getsales",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve order"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    }
+                }
+            }
+        },
+        "/api/sale/{orderId}": {
+            "get": {
+                "tags": [
+                    "Sale"
+                ],
+                "summary": "Get an Order",
+                "description": "Let you get an order by ID",
+                "operationId": "getsale",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "Order ID to get",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 50
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxODk5OTQ5OCwiZXhwIjoxNjE5MDAzMDk4LCJuYmYiOjE2MTg5OTk0OTgsImp0aSI6IjRZdjlCTGdxVUhBZGpHM1kiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yjNvT61ON8zeFwS2XUPHHXbsxYC2r6ABwbRQK3LVDH4"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve order"
+                    },
+                    "404": {
+                        "description": "Order/Sale not found"
+                    }
+                }
+            }
+        },
+        "/api/transfer": {
+            "get": {
+                "tags": [
+                    "Transfer"
+                ],
+                "summary": "Get all user's transfer",
+                "description": "Let you get all transfers",
+                "operationId": "fetchTransfers",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxOTE2MTA2OCwiZXhwIjoxNjE5MTY0NjY4LCJuYmYiOjE2MTkxNjEwNjgsImp0aSI6InYwaUFvTEdldnI2VlQ4bXIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dJx2G6MdbDz4r9SSgDdKpIbBp3gNtuFt1AuvbwQmQoM"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Results found"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    },
+                    "404": {
+                        "description": "No results"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Transfer"
+                ],
+                "summary": "Transfer to another user on the app",
+                "description": "Allow user to transfer  to another user on the app",
+                "operationId": "transfer",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxOTE2MTA2OCwiZXhwIjoxNjE5MTY0NjY4LCJuYmYiOjE2MTkxNjEwNjgsImp0aSI6InYwaUFvTEdldnI2VlQ4bXIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dJx2G6MdbDz4r9SSgDdKpIbBp3gNtuFt1AuvbwQmQoM"
+                    },
+                    {
+                        "name": "receiver",
+                        "in": "query",
+                        "description": "email or account no",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount to tranfer",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Transfer Successfully"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/transfer/{id}": {
+            "get": {
+                "tags": [
+                    "Transfer"
+                ],
+                "summary": "Let you view a transfer",
+                "description": "Allows to view a transfer",
+                "operationId": "viewTransfer",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "transfer id to get transfer",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 1
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxOTE2MTA2OCwiZXhwIjoxNjE5MTY0NjY4LCJuYmYiOjE2MTkxNjEwNjgsImp0aSI6InYwaUFvTEdldnI2VlQ4bXIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dJx2G6MdbDz4r9SSgDdKpIbBp3gNtuFt1AuvbwQmQoM"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve order"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/pin": {
+            "post": {
+                "tags": [
+                    "Pin"
+                ],
+                "summary": "Create User's Pin",
+                "description": "allows user to be able to create pin",
+                "operationId": "addpin",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlciIsImlhdCI6MTYxOTAzMjk2MywiZXhwIjoxNjE5MDM2NTYzLCJuYmYiOjE2MTkwMzI5NjMsImp0aSI6IllsMmZ1dGRxaksybWNjcVgiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ds1SkBXLeFU_cx0EVx8m5l3pc3IBA4_jexYv6TC7yzs"
+                    },
+                    {
+                        "name": "pin",
+                        "in": "query",
+                        "description": "User's 4-digit Pin",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Error Occurred,check error object"
+                    }
+                }
+            }
+        },
+        "/api/profile/{id}": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Let you view user's profile",
+                "description": "Allow to view user's profile",
+                "operationId": "viewUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id to get user",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": 1
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxOTE2MTA2OCwiZXhwIjoxNjE5MTY0NjY4LCJuYmYiOjE2MTkxNjEwNjgsImp0aSI6InYwaUFvTEdldnI2VlQ4bXIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dJx2G6MdbDz4r9SSgDdKpIbBp3gNtuFt1AuvbwQmQoM"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully Retrieve order"
+                    },
+                    "400": {
+                        "description": "Error occurred"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/profile": {
+            "put": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Edit user's profile",
+                "description": "allows user to be able to edit profile",
+                "operationId": "editProfile",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Token value",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9yZWdpc3RlciIsImlhdCI6MTYxOTAzMjk2MywiZXhwIjoxNjE5MDM2NTYzLCJuYmYiOjE2MTkwMzI5NjMsImp0aSI6IllsMmZ1dGRxaksybWNjcVgiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ds1SkBXLeFU_cx0EVx8m5l3pc3IBA4_jexYv6TC7yzs"
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "User's new phone",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "User's  new Password",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Error Occurred"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
